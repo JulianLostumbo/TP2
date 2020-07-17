@@ -14,7 +14,7 @@ namespace Business.Logic
 
         public UsuarioLogic()
         {
-            Data.Database.UsuarioAdapter UsuarioData = new Data.Database.UsuarioAdapter();
+            UsuarioData = new Data.Database.UsuarioAdapter();
         }
 
         public List<Usuario> GetAll()
@@ -35,6 +35,11 @@ namespace Business.Logic
         public void Save (Business.Entities.Usuario usuario)
         {
             UsuarioData.Save(usuario);
+        }
+
+        public void Update(Business.Entities.Usuario usuario)
+        {
+            UsuarioData.Update(usuario);
         }
     }
 }
