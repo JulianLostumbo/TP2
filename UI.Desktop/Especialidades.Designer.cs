@@ -87,6 +87,7 @@
             // 
             this.dgvEspecialidades.AllowUserToAddRows = false;
             this.dgvEspecialidades.AllowUserToDeleteRows = false;
+            this.dgvEspecialidades.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvEspecialidades.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvEspecialidades.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.id,
@@ -107,7 +108,6 @@
             this.id.HeaderText = "ID Especialidad";
             this.id.Name = "id";
             this.id.ReadOnly = true;
-            this.id.Width = 150;
             // 
             // Descripcion
             // 
@@ -115,7 +115,6 @@
             this.Descripcion.HeaderText = "Descripcion";
             this.Descripcion.Name = "Descripcion";
             this.Descripcion.ReadOnly = true;
-            this.Descripcion.Width = 300;
             // 
             // btnSalir
             // 

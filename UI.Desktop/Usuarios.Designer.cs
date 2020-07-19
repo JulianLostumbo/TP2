@@ -92,6 +92,7 @@
             // 
             this.dgvUsuarios.AllowUserToAddRows = false;
             this.dgvUsuarios.AllowUserToDeleteRows = false;
+            this.dgvUsuarios.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvUsuarios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvUsuarios.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.id,
@@ -144,7 +145,6 @@
             this.email.HeaderText = "Email";
             this.email.Name = "email";
             this.email.ReadOnly = true;
-            this.email.Width = 200;
             // 
             // habilitado
             // 
@@ -186,7 +186,7 @@
             this.tbsImprimir});
             this.tsUsuarios.Location = new System.Drawing.Point(3, 0);
             this.tsUsuarios.Name = "tsUsuarios";
-            this.tsUsuarios.Size = new System.Drawing.Size(135, 25);
+            this.tsUsuarios.Size = new System.Drawing.Size(104, 25);
             this.tsUsuarios.TabIndex = 0;
             // 
             // tbsNuevo

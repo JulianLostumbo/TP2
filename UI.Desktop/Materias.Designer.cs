@@ -90,6 +90,7 @@
             // 
             this.dgvMaterias.AllowUserToAddRows = false;
             this.dgvMaterias.AllowUserToDeleteRows = false;
+            this.dgvMaterias.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvMaterias.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvMaterias.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.id,
@@ -113,7 +114,6 @@
             this.id.HeaderText = "ID Materia";
             this.id.Name = "id";
             this.id.ReadOnly = true;
-            this.id.Width = 150;
             // 
             // Descripcion
             // 
@@ -121,7 +121,6 @@
             this.Descripcion.HeaderText = "Descripcion";
             this.Descripcion.Name = "Descripcion";
             this.Descripcion.ReadOnly = true;
-            this.Descripcion.Width = 300;
             // 
             // HsSemanales
             // 
@@ -129,7 +128,6 @@
             this.HsSemanales.HeaderText = "Horas Semanales";
             this.HsSemanales.Name = "HsSemanales";
             this.HsSemanales.ReadOnly = true;
-            this.HsSemanales.Width = 150;
             // 
             // HsTotales
             // 

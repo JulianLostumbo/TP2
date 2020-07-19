@@ -25,7 +25,7 @@ namespace Academia
             List<Usuario> listaUsuarios = dbu.GetAll();
             
             ReportDataSource rds = new ReportDataSource("ReporteUsuarios", listaUsuarios);
-            this.reportViewer1.LocalReport.ReportEmbeddedResource = "UI.Desktop.ReporteUsuarios.rdlc";
+            this.reportViewer1.LocalReport.ReportPath=@"C:\Net\TP2_Academia\UI.Desktop\ReporteUsuarios.rdlc";
             this.reportViewer1.LocalReport.DataSources.Clear();
             this.reportViewer1.LocalReport.DataSources.Add(rds);
             this.reportViewer1.RefreshReport();

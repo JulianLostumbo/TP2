@@ -89,6 +89,7 @@
             // 
             this.dgvComisiones.AllowUserToAddRows = false;
             this.dgvComisiones.AllowUserToDeleteRows = false;
+            this.dgvComisiones.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvComisiones.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvComisiones.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.id,
@@ -111,7 +112,6 @@
             this.id.HeaderText = "ID Comision";
             this.id.Name = "id";
             this.id.ReadOnly = true;
-            this.id.Width = 150;
             // 
             // Descripcion
             // 
@@ -119,7 +119,6 @@
             this.Descripcion.HeaderText = "Descripcion";
             this.Descripcion.Name = "Descripcion";
             this.Descripcion.ReadOnly = true;
-            this.Descripcion.Width = 300;
             // 
             // AnioEspecialidad
             // 

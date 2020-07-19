@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using System.Data.SqlClient;
 using Business.Entities;
 using System.Data.Common;
+using Data.Database;
 
 namespace Academia
 {
@@ -26,55 +27,21 @@ namespace Academia
         }
 
         private void btnIngresar_Click(object sender, EventArgs e)
-        {            
-            SqlConnection conn = new SqlConnection("Server = localhost; Initial Catalog = tp2_net; Integrated Security = True;");
-            try
+        {
+            string nombreUser = this.txtUsuario.Text;
+            string claveUser = this.txtPass.Text;
+
+            UsuarioAdapter BuscarUser = new UsuarioAdapter();
+            Usuario usuario = BuscarUser.GetOne(nombreUser, claveUser);
+
+            if (nombreUser == usuario.NombreUsuario && claveUser == usuario.Clave)
             {
-                conn.Open();
-
-                string nombreUser = this.txtUsuario.Text;
-                string claveUser = this.txtPass.Text;
-                Usuario user = new Usuario();
-                string sqlconsulta = "select * from usuarios where nombre_usuario= @username and clave= @pass";
-
-                SqlCommand cmd = new SqlCommand(sqlconsulta, conn);
-                cmd.Parameters.Add("@username", SqlDbType.VarChar).Value = nombreUser;
-                cmd.Parameters.Add("@pass", SqlDbType.VarChar).Value = claveUser;
-
-                SqlDataReader drUsuarios = cmd.ExecuteReader();
-                if (drUsuarios.Read())
-                {
-                    user.NombreUsuario = (string)drUsuarios["nombre_usuario"];
-                    user.Clave = (string)drUsuarios["clave"];
-                }
-
-                conn.Close();
-
-                if (this.txtUsuario.Text == user.NombreUsuario && this.txtPass.Text == user.Clave)
-
-                {
-
-                    this.DialogResult = DialogResult.OK;
-                    
-
-                }
-
-                else
-
-                {
-
-                    MessageBox.Show("Usuario y/o contraseña incorrectos", "Login", MessageBoxButtons.OK, MessageBoxIcon.Error);
-
-                }
+               this.DialogResult = DialogResult.OK;
             }
-            catch (Exception ex)
+            else
             {
-                MessageBox.Show(ex.ToString());
-            }
-            finally
-            {
-                conn.Close();
-            }
+                MessageBox.Show("Usuario y/o contraseña incorrectos", "Login", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }            
         }
 
         private void lnkOlvidaPass_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)

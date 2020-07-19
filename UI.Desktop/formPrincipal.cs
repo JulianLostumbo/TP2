@@ -35,11 +35,14 @@ namespace Academia
         
         private void salirToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            this.Dispose();
+            if((MessageBox.Show("¿Desea salir?", "Salir", MessageBoxButtons.YesNo, MessageBoxIcon.Question)) == DialogResult.Yes)
+            {
+                this.Dispose();
+            }
         }
 
         private void listarToolStripMenuItem_Click(object sender, EventArgs e)
-        {
+        {   
             Usuarios frm = new Usuarios();
             frm.MdiParent = this;
             frm.Show();

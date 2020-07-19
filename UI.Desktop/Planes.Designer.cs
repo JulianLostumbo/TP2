@@ -32,15 +32,15 @@
             this.tcUsuarios = new System.Windows.Forms.ToolStripContainer();
             this.tlUsuarios = new System.Windows.Forms.TableLayoutPanel();
             this.dgvPlanes = new System.Windows.Forms.DataGridView();
+            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.IdEspecialidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnSalir = new System.Windows.Forms.Button();
             this.btnActualizar = new System.Windows.Forms.Button();
             this.tsUsuarios = new System.Windows.Forms.ToolStrip();
             this.tbsNuevo = new System.Windows.Forms.ToolStripButton();
             this.tbsEditar = new System.Windows.Forms.ToolStripButton();
             this.tbsEliminar = new System.Windows.Forms.ToolStripButton();
-            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.IdEspecialidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tcUsuarios.ContentPanel.SuspendLayout();
             this.tcUsuarios.TopToolStripPanel.SuspendLayout();
             this.tcUsuarios.SuspendLayout();
@@ -88,6 +88,7 @@
             // 
             this.dgvPlanes.AllowUserToAddRows = false;
             this.dgvPlanes.AllowUserToDeleteRows = false;
+            this.dgvPlanes.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvPlanes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvPlanes.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.id,
@@ -102,6 +103,27 @@
             this.dgvPlanes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvPlanes.Size = new System.Drawing.Size(592, 324);
             this.dgvPlanes.TabIndex = 0;
+            // 
+            // id
+            // 
+            this.id.DataPropertyName = "ID";
+            this.id.HeaderText = "ID Plan";
+            this.id.Name = "id";
+            this.id.ReadOnly = true;
+            // 
+            // Descripcion
+            // 
+            this.Descripcion.DataPropertyName = "Descripcion";
+            this.Descripcion.HeaderText = "Descripcion";
+            this.Descripcion.Name = "Descripcion";
+            this.Descripcion.ReadOnly = true;
+            // 
+            // IdEspecialidad
+            // 
+            this.IdEspecialidad.DataPropertyName = "IdEspecialidad";
+            this.IdEspecialidad.HeaderText = "ID Especialidad";
+            this.IdEspecialidad.Name = "IdEspecialidad";
+            this.IdEspecialidad.ReadOnly = true;
             // 
             // btnSalir
             // 
@@ -167,29 +189,6 @@
             this.tbsEliminar.Text = "toolStripButton2";
             this.tbsEliminar.ToolTipText = "Eliminar";
             this.tbsEliminar.Click += new System.EventHandler(this.tbsEliminar_Click);
-            // 
-            // id
-            // 
-            this.id.DataPropertyName = "ID";
-            this.id.HeaderText = "ID Plan";
-            this.id.Name = "id";
-            this.id.ReadOnly = true;
-            this.id.Width = 150;
-            // 
-            // Descripcion
-            // 
-            this.Descripcion.DataPropertyName = "Descripcion";
-            this.Descripcion.HeaderText = "Descripcion";
-            this.Descripcion.Name = "Descripcion";
-            this.Descripcion.ReadOnly = true;
-            this.Descripcion.Width = 300;
-            // 
-            // IdEspecialidad
-            // 
-            this.IdEspecialidad.DataPropertyName = "IdEspecialidad";
-            this.IdEspecialidad.HeaderText = "ID Especialidad";
-            this.IdEspecialidad.Name = "IdEspecialidad";
-            this.IdEspecialidad.ReadOnly = true;
             // 
             // Planes
             // 
