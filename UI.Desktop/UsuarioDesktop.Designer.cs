@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UsuarioDesktop));
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.btnAceptar = new System.Windows.Forms.Button();
             this.txtID = new System.Windows.Forms.TextBox();
@@ -69,10 +70,10 @@
             this.tableLayoutPanel1.Controls.Add(this.lblApellido, 2, 1);
             this.tableLayoutPanel1.Controls.Add(this.lblUsuario, 2, 2);
             this.tableLayoutPanel1.Controls.Add(this.lblConfirmarClave, 2, 3);
-            this.tableLayoutPanel1.Controls.Add(this.btnCancelar, 3, 4);
             this.tableLayoutPanel1.Controls.Add(this.txtApellido, 3, 1);
             this.tableLayoutPanel1.Controls.Add(this.txtUsuario, 3, 2);
             this.tableLayoutPanel1.Controls.Add(this.txtConfirmarClave, 3, 3);
+            this.tableLayoutPanel1.Controls.Add(this.btnCancelar, 3, 4);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
@@ -82,7 +83,7 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(351, 164);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(351, 135);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
             // btnAceptar
@@ -234,8 +235,9 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(351, 164);
+            this.ClientSize = new System.Drawing.Size(351, 135);
             this.Controls.Add(this.tableLayoutPanel1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "UsuarioDesktop";
             this.Text = "Usuario";
             this.tableLayoutPanel1.ResumeLayout(false);

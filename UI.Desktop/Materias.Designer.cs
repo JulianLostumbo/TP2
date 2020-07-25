@@ -214,6 +214,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(849, 384);
             this.Controls.Add(this.tcUsuarios);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Materias";
             this.Text = "Materias";
             this.Load += new System.EventHandler(this.Materias_Load);

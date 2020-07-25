@@ -205,6 +205,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(699, 384);
             this.Controls.Add(this.tcUsuarios);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Comisiones";
             this.Text = "Comisiones";
             this.Load += new System.EventHandler(this.Comision_Load);

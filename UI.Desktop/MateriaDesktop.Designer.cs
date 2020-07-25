@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MateriaDesktop));
             this.btnAceptar = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.lblDescripcion = new System.Windows.Forms.Label();
@@ -161,6 +162,7 @@
             this.Controls.Add(this.lblID);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnAceptar);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "MateriaDesktop";
             this.Text = "Materia";
             this.ResumeLayout(false);

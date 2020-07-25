@@ -228,7 +228,7 @@
             this.tbsImprimir.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tbsImprimir.Name = "tbsImprimir";
             this.tbsImprimir.Size = new System.Drawing.Size(23, 22);
-            this.tbsImprimir.Text = "toolStripButton1";
+            this.tbsImprimir.Text = "Imprimir";
             this.tbsImprimir.Click += new System.EventHandler(this.tbsImprimir_Click);
             // 
             // Usuarios
@@ -237,6 +237,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(748, 384);
             this.Controls.Add(this.tcUsuarios);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Usuarios";
             this.Text = "Usuarios";
             this.Load += new System.EventHandler(this.Usuarios_Load);

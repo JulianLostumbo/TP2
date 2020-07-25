@@ -51,9 +51,6 @@ namespace Academia
             MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
         }
 
-        private void formLogin_Load(object sender, EventArgs e)
-        {
-            //console.wirte
-        }
+
     }
 }

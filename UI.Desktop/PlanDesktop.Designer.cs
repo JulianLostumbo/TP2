@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PlanDesktop));
             this.btnAceptar = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.lblID = new System.Windows.Forms.Label();
@@ -121,6 +122,7 @@
             this.Controls.Add(this.lblID);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnAceptar);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "PlanDesktop";
             this.Text = "Plan";
             this.ResumeLayout(false);

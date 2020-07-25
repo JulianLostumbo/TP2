@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(formPrincipal));
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.aRToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.loginToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -58,7 +59,7 @@
             this.funcionesToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(800, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(984, 24);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -201,14 +202,14 @@
             // listarToolStripMenuItem4
             // 
             this.listarToolStripMenuItem4.Name = "listarToolStripMenuItem4";
-            this.listarToolStripMenuItem4.Size = new System.Drawing.Size(180, 22);
+            this.listarToolStripMenuItem4.Size = new System.Drawing.Size(135, 22);
             this.listarToolStripMenuItem4.Text = "Listar";
             this.listarToolStripMenuItem4.Click += new System.EventHandler(this.listarToolStripMenuItem4_Click);
             // 
             // nuevoPlanToolStripMenuItem
             // 
             this.nuevoPlanToolStripMenuItem.Name = "nuevoPlanToolStripMenuItem";
-            this.nuevoPlanToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.nuevoPlanToolStripMenuItem.Size = new System.Drawing.Size(135, 22);
             this.nuevoPlanToolStripMenuItem.Text = "Nuevo Plan";
             this.nuevoPlanToolStripMenuItem.Click += new System.EventHandler(this.nuevoPlanToolStripMenuItem_Click);
             // 
@@ -216,11 +217,13 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(984, 561);
             this.Controls.Add(this.menuStrip1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.IsMdiContainer = true;
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "formPrincipal";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Menu Principal";
             this.Load += new System.EventHandler(this.formPrincipal_Load);
             this.menuStrip1.ResumeLayout(false);
