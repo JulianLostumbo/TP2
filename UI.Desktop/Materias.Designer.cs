@@ -43,6 +43,7 @@
             this.tbsNuevo = new System.Windows.Forms.ToolStripButton();
             this.tbsEditar = new System.Windows.Forms.ToolStripButton();
             this.tbsEliminar = new System.Windows.Forms.ToolStripButton();
+            this.tbsImprimir = new System.Windows.Forms.ToolStripButton();
             this.tcUsuarios.ContentPanel.SuspendLayout();
             this.tcUsuarios.TopToolStripPanel.SuspendLayout();
             this.tcUsuarios.SuspendLayout();
@@ -170,10 +171,11 @@
             this.tsUsuarios.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tbsNuevo,
             this.tbsEditar,
-            this.tbsEliminar});
+            this.tbsEliminar,
+            this.tbsImprimir});
             this.tsUsuarios.Location = new System.Drawing.Point(3, 0);
             this.tsUsuarios.Name = "tsUsuarios";
-            this.tsUsuarios.Size = new System.Drawing.Size(81, 25);
+            this.tsUsuarios.Size = new System.Drawing.Size(135, 25);
             this.tsUsuarios.TabIndex = 0;
             // 
             // tbsNuevo
@@ -207,6 +209,16 @@
             this.tbsEliminar.Text = "toolStripButton2";
             this.tbsEliminar.ToolTipText = "Eliminar";
             this.tbsEliminar.Click += new System.EventHandler(this.tbsEliminar_Click);
+            // 
+            // tbsImprimir
+            // 
+            this.tbsImprimir.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.tbsImprimir.Image = ((System.Drawing.Image)(resources.GetObject("tbsImprimir.Image")));
+            this.tbsImprimir.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tbsImprimir.Name = "tbsImprimir";
+            this.tbsImprimir.Size = new System.Drawing.Size(23, 22);
+            this.tbsImprimir.Text = "Imprimir";
+            this.tbsImprimir.Click += new System.EventHandler(this.tbsImprimir_Click);
             // 
             // Materias
             // 
@@ -247,6 +259,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn HsSemanales;
         private System.Windows.Forms.DataGridViewTextBoxColumn HsTotales;
         private System.Windows.Forms.DataGridViewTextBoxColumn IdPlan;
+        private System.Windows.Forms.ToolStripButton tbsImprimir;
     }
 }
 

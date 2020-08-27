@@ -21,11 +21,6 @@ namespace Academia
             InitializeComponent();
         }
 
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void btnIngresar_Click(object sender, EventArgs e)
         {
             string nombreUser = this.txtUsuario.Text;
@@ -50,7 +45,5 @@ namespace Academia
 
             MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
         }
-
-
     }
 }

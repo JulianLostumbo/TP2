@@ -73,5 +73,11 @@ namespace Academia
         {
             Listar();
         }
+
+        private void tbsImprimir_Click(object sender, EventArgs e)
+        {
+            ReporteMaterias frm = new ReporteMaterias();
+            frm.ShowDialog();
+        }
     }
 }

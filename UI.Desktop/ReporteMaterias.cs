@@ -12,20 +12,20 @@ using Microsoft.Reporting.WinForms;
 
 namespace Academia
 {
-    public partial class ReporteUsuarios : Form
+    public partial class ReporteMaterias : Form
     {
-        public ReporteUsuarios()
+        public ReporteMaterias()
         {
             InitializeComponent();
         }
 
-        private void ReporteUsuarios_Load(object sender, EventArgs e)
+        private void ReporteMaterias_Load(object sender, EventArgs e)
         {
-            Data.Database.UsuarioAdapter dbu = new Data.Database.UsuarioAdapter();           
-            List<Usuario> listaUsuarios = dbu.GetAll();
-            
-            ReportDataSource rds = new ReportDataSource("ReporteUsuarios", listaUsuarios);
-            this.reportViewer1.LocalReport.ReportPath=@"C:\Net\TP2_Academia\UI.Desktop\ReporteUsuarios.rdlc";
+            Data.Database.MateriaAdapter dbu = new Data.Database.MateriaAdapter();
+            List<Materia> listaMaterias = dbu.GetAll();
+
+            ReportDataSource rds = new ReportDataSource("DataSetMaterias", listaMaterias);
+            this.reportViewer1.LocalReport.ReportPath = @"C:\Net\TP2_Academia\UI.Desktop\ReporteMaterias.rdlc";
             this.reportViewer1.LocalReport.DataSources.Clear();
             this.reportViewer1.LocalReport.DataSources.Add(rds);
             this.reportViewer1.RefreshReport();
