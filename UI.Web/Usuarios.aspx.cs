@@ -112,21 +112,22 @@ namespace UI.Web
         }
 
         protected void editarLinkButton_Click(object sender, EventArgs e)
-        {          
+        {
+            this.EnableForm(true);
             if (this.IsEntitySelected)
             {
                 this.formPanel.Visible = true;
                 this.FormMode = FormModes.Modificacion;
                 this.LoadForm(this.SelectedID);
             }
-            this.EnableForm(true);
+            
         }
 
         private void LoadEntity(Usuario usuario)
         {
             usuario.Nombre = this.nombreTextBox.Text;
             usuario.Apellido = this.apellidoTextBox.Text;
-            usuario.Email = this.nombreTextBox.Text;
+            usuario.Email = this.emailTextBox.Text;
             usuario.NombreUsuario = this.nombreUsuarioTextBox.Text;
             usuario.Clave = this.claveTextBox.Text;
             usuario.Habilitado = this.habilitadoCheckBox.Checked;
@@ -220,7 +221,7 @@ namespace UI.Web
         protected void CustomValidator1_ServerValidate(object source, ServerValidateEventArgs args)
         {
             string clave=args.Value;
-            if (clave.Length < 8)
+            if (clave.Length >= 8)
             {
                 args.IsValid = true;
             }
@@ -234,6 +235,19 @@ namespace UI.Web
         protected void imprimirLinkButton_Click(object sender, EventArgs e)
         {
             Response.Redirect("~/ReportUsuarios.aspx");
+        }
+
+        protected void CustomValidator2_ServerValidate(object source, ServerValidateEventArgs args)
+        {
+            string mail = args.Value;
+            if (mail.Contains("@") && (mail.Contains(".com") || mail.Contains(".com.ar")))
+            {
+                args.IsValid = true;
+            }
+            else
+            {
+                args.IsValid = false;
+            }
         }
     }
 }

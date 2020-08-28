@@ -36,7 +36,7 @@
         <asp:Label ID="emailLabel" runat="server" Text="Email: "></asp:Label>
         <asp:TextBox ID="emailTextBox" runat="server"></asp:TextBox>  
         <asp:RequiredFieldValidator ID="RequiredFieldValidator8" runat="server" ControlToValidate="emailTextBox" ErrorMessage="El email no puede estar vacío" ForeColor="Red"></asp:RequiredFieldValidator>
-        <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ControlToValidate="emailTextBox" ErrorMessage="Email inválido" ForeColor="#FF6600" ValidationExpression="\w+([-+.']\w+)*@\w+-([-.]\w+)*\.\w+([-.]\+)*"></asp:RegularExpressionValidator>
+        <asp:CustomValidator ID="CustomValidator2" runat="server" ControlToValidate="emailTextBox" ErrorMessage="Email ingresado inválido" ForeColor="#FF6600" OnServerValidate="CustomValidator2_ServerValidate" ValidateEmptyText="True" ValidationGroup="vg"></asp:CustomValidator>
         <br />
         <asp:Label ID="habilitadoLabel" runat="server" Text="Habilitado: "></asp:Label>
         <asp:CheckBox ID="habilitadoCheckBox" runat="server"/><br />
@@ -47,10 +47,12 @@
         <asp:Label ID="claveLabel" runat="server" Text="Clave: "></asp:Label>
         <asp:TextBox ID="claveTextBox" TextMode="Password" runat="server"></asp:TextBox>
         <asp:CustomValidator ID="CustomValidator1" runat="server" ControlToValidate="claveTextBox" ErrorMessage="La clave debe tener 8 o más caracteres" ForeColor="#FF6600" OnServerValidate="CustomValidator1_ServerValidate" ValidateEmptyText="True"></asp:CustomValidator>
+        <asp:RequiredFieldValidator ID="RequiredFieldValidator10" runat="server" ControlToValidate="claveTextBox" ErrorMessage="La clave no puede estar vacía" ForeColor="Red"></asp:RequiredFieldValidator>
         <br />
         <asp:Label ID="repetirClaveLabel" runat="server" Text="Repetir clave: "></asp:Label>
         <asp:TextBox ID="repetirClaveTextBox" TextMode="Password" runat="server"></asp:TextBox>
-        <asp:CompareValidator ID="CompareValidator1" runat="server" ControlToCompare="claveTextBox" ControlToValidate="repetirClaveTextBox" ErrorMessage="Las claves no coinciden" ForeColor="Red"></asp:CompareValidator>
+        <asp:CompareValidator ID="CompareValidator1" runat="server" ControlToCompare="claveTextBox" ControlToValidate="repetirClaveTextBox" ErrorMessage="Las claves no coinciden" ForeColor="#FF6600"></asp:CompareValidator>
+        <asp:RequiredFieldValidator ID="RequiredFieldValidator11" runat="server" ControlToValidate="repetirClaveTextBox" ErrorMessage="La clave de confirmación no puede estar vacía" ForeColor="Red"></asp:RequiredFieldValidator>
         <br />
     </asp:Panel>
 

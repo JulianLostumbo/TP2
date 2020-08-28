@@ -38,7 +38,6 @@ namespace UI.Web
 
         protected void lnkRecordarClave_Click(object sender, EventArgs e)
         {
-            /*Response.Redirect("~/Home.aspx?msj=Es Ud. un usuario muy descuidado, haga memoria");*/
             Response.Write("<script> alert(" + "'Es Ud. un usuario muy descuidado, haga memoria'" + ") </script>");
         }
     }
