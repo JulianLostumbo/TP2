@@ -88,11 +88,13 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_Themes\Login\Login.css" />
     <Content Include="Home.aspx" />
     <Content Include="Global.asax" />
+    <Content Include="Images\login.png" />
     <Content Include="Login.aspx" />
-    <Content Include="ReportMaterias.aspx" />
     <Content Include="ReportUsuarios.aspx" />
+    <Content Include="ReportMaterias.aspx" />
     <Content Include="SqlServerTypes\readme.htm" />
     <Content Include="SqlServerTypes\x64\msvcr120.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
@@ -133,19 +135,19 @@
       <DependentUpon>Login.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="ReportMaterias.aspx.cs">
-      <DependentUpon>ReportMaterias.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="ReportMaterias.aspx.designer.cs">
-      <DependentUpon>ReportMaterias.aspx</DependentUpon>
-    </Compile>
     <Compile Include="ReportUsuarios.aspx.cs">
       <DependentUpon>ReportUsuarios.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="ReportUsuarios.aspx.designer.cs">
       <DependentUpon>ReportUsuarios.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ReportMaterias.aspx.cs">
+      <DependentUpon>ReportMaterias.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ReportMaterias.aspx.designer.cs">
+      <DependentUpon>ReportMaterias.aspx</DependentUpon>
     </Compile>
     <Compile Include="Site.Master.cs">
       <DependentUpon>Site.Master</DependentUpon>
@@ -173,6 +175,7 @@
     <Content Include="DataSetAcademia.xsc">
       <DependentUpon>DataSetAcademia.xsd</DependentUpon>
     </Content>
+    <Content Include="App_Themes\Login\Login.skin" />
     <None Include="DataSetAcademia.xsd">
       <SubType>Designer</SubType>
       <Generator>MSDataSetGenerator</Generator>

@@ -15,7 +15,7 @@ namespace UI.Web
             if (!Page.IsPostBack)
             {
                 Usuario Usuario = (Usuario)Session["usuario"];
-                lblUsuario.Text = Usuario.NombreUsuario;
+                lblUsuario.Text = Usuario.Nombre + ' ' + Usuario.Apellido;
             }
             
         }

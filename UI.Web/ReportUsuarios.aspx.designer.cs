@@ -11,7 +11,7 @@ namespace UI.Web
 {
 
 
-    public partial class ReportUsuarios
+    public partial class Reporte
     {
 
         /// <summary>
@@ -24,13 +24,13 @@ namespace UI.Web
         protected global::System.Web.UI.ScriptManager ScriptManager1;
 
         /// <summary>
-        /// Control ReportViewer1.
+        /// Control ReportViewer2.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::Microsoft.Reporting.WebForms.ReportViewer ReportViewer1;
+        protected global::Microsoft.Reporting.WebForms.ReportViewer ReportViewer2;
 
         /// <summary>
         /// Control ObjectDataSource1.

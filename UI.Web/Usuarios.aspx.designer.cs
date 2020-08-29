@@ -177,6 +177,15 @@ namespace UI.Web
         protected global::System.Web.UI.WebControls.CustomValidator CustomValidator2;
 
         /// <summary>
+        /// Control lblErrorEmail.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblErrorEmail;
+
+        /// <summary>
         /// Control habilitadoLabel.
         /// </summary>
         /// <remarks>
@@ -256,6 +265,15 @@ namespace UI.Web
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator10;
+
+        /// <summary>
+        /// Control lblErrorClave.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblErrorClave;
 
         /// <summary>
         /// Control repetirClaveLabel.

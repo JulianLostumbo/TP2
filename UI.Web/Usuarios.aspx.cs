@@ -14,11 +14,10 @@ namespace UI.Web
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            //if (IsPostBack== true)
-            //{
-            //    this.LoadGrid();
-            //}
-            this.LoadGrid();
+            if (IsPostBack==false)
+            {
+                this.LoadGrid();
+            }
 
 
         }
@@ -215,19 +214,26 @@ namespace UI.Web
 
         protected void cancelarLinkButton_Click(object sender, EventArgs e)
         {
+            
+            this.formPanel.Visible = false;
             this.LoadGrid();
+            this.gridActionsPanel.Visible = true;
+
+
         }
 
         protected void CustomValidator1_ServerValidate(object source, ServerValidateEventArgs args)
         {
-            string clave=args.Value;
-            if (clave.Length >= 8)
+            if (Convert.ToString(args.Value).Length >= 8)
             {
                 args.IsValid = true;
             }
             else
             {
                 args.IsValid = false;
+
+                this.lblErrorClave.Text = "La clave debe tener 8 o más caracteres";
+
             }
 
         }
@@ -239,14 +245,14 @@ namespace UI.Web
 
         protected void CustomValidator2_ServerValidate(object source, ServerValidateEventArgs args)
         {
-            string mail = args.Value;
-            if (mail.Contains("@") && (mail.Contains(".com") || mail.Contains(".com.ar")))
+           if (Convert.ToString(args.Value).Contains("@") && (Convert.ToString(args.Value).Contains(".com") || Convert.ToString(args.Value).Contains(".com.ar")))
             {
                 args.IsValid = true;
             }
             else
             {
                 args.IsValid = false;
+                this.lblErrorEmail.Text = "La clave debe tener 8 o más caracteres";
             }
         }
     }
