@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Data.SqlClient;
+using System.Configuration;
 
 namespace Data.Database
 {
@@ -9,19 +10,29 @@ namespace Data.Database
     {
         //private SqlConnection sqlConnection = new SqlConnection("ConnectionString;");
 
+        //Clave por defecto a utlizar para la cadena de conexion
+        const string consKeyDefaultCnnString = "ConnStringLocal";
+
+        public SqlConnection sqlConn { get; set; }
+
         protected void OpenConnection()
         {
-            throw new Exception("Metodo no implementado");
+            string strconn = ConfigurationManager.ConnectionStrings[consKeyDefaultCnnString].ConnectionString; //"Data Source = .; Initial Catalog = tp2_net; Integrated Security = True;";
+
+            sqlConn = new SqlConnection(strconn);
+            sqlConn.Open();
         }
 
         protected void CloseConnection()
         {
-            throw new Exception("Metodo no implementado");
+            sqlConn.Close();
+            sqlConn = null;
         }
 
         protected SqlDataReader ExecuteReader(String commandText)
         {
             throw new Exception("Metodo no implementado");
         }
+
     }
 }
