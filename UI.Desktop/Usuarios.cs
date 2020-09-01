@@ -18,6 +18,13 @@ namespace Academia
         {
             InitializeComponent();
             this.dgvUsuarios.AutoGenerateColumns = false;
+            if (formLogin.user.Habilitado == false)
+            {
+                this.tbsEditar.Enabled = false;
+                this.tbsEliminar.Enabled = false;
+                this.tbsNuevo.Enabled = false;
+            }
+            
         }
 
         public void Listar()

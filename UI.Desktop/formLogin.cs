@@ -21,15 +21,17 @@ namespace Academia
             InitializeComponent();
         }
 
+        public static Usuario user;
+
         private void btnIngresar_Click(object sender, EventArgs e)
         {
             string nombreUser = this.txtUsuario.Text;
             string claveUser = this.txtPass.Text;
 
             UsuarioAdapter BuscarUser = new UsuarioAdapter();
-            Usuario usuario = BuscarUser.GetOne(nombreUser, claveUser);
+            user = BuscarUser.GetOne(nombreUser, claveUser);
 
-            if (nombreUser == usuario.NombreUsuario && claveUser == usuario.Clave)
+            if (nombreUser == user.NombreUsuario && claveUser == user.Clave)
             {
                this.DialogResult = DialogResult.OK;
             }

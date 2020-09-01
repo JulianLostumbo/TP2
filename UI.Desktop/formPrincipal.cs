@@ -15,6 +15,7 @@ namespace Academia
         public formPrincipal()
         {
             InitializeComponent();
+            
         }
 
         private void formPrincipal_Load(object sender, EventArgs e)
@@ -24,13 +25,43 @@ namespace Academia
 
             {
                 this.Dispose();
-            }            
+            }
+            if (formLogin.user.Habilitado == false)
+            {
+                this.nuevoUsuarioMenuItem.Enabled = false;
+                this.nuevaComisionMenuItem.Enabled = false;
+                this.nuevaEspecialidadMenuItem.Enabled = false;
+                this.nuevaMateriaMenuItem.Enabled = false;
+                this.nuevoPlanMenuItem.Enabled = false;
+            }
+
+            this.lblUser.Text = this.lblUser.Text + ' ' + formLogin.user.Nombre + ' ' + formLogin.user.Apellido;
         }
 
         private void loginToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            this.lblUser.Hide();
+
+
             formLogin frm = new formLogin();
-            frm.ShowDialog();
+
+            if (frm.ShowDialog() != DialogResult.OK)
+
+            {
+                this.Dispose();
+            }
+
+            if (formLogin.user.Habilitado == false)
+            {
+                this.nuevoUsuarioMenuItem.Enabled = false;
+                this.nuevaComisionMenuItem.Enabled = false;
+                this.nuevaEspecialidadMenuItem.Enabled = false;
+                this.nuevaMateriaMenuItem.Enabled = false;
+                this.nuevoPlanMenuItem.Enabled = false;
+            }
+            this.lblUser.Show();
+            this.lblUser.Text = "Usuario: " + formLogin.user.Nombre + " " + formLogin.user.Apellido;
+            
         }
         
         private void salirToolStripMenuItem_Click(object sender, EventArgs e)

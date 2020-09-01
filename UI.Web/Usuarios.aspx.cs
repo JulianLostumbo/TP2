@@ -18,6 +18,17 @@ namespace UI.Web
             {
                 this.LoadGrid();
             }
+            
+            Usuario user = (Usuario)Session["usuario"];
+            if (user.Habilitado == false)
+            {
+                //editarLinkButton.Enabled = false;
+                //nuevoLinkButton.Enabled = false;
+                //eliminarLinkButton.Enabled = false;
+                editarLinkButton.Visible = false;
+                nuevoLinkButton.Visible = false;
+                eliminarLinkButton.Visible = false;
+            }
 
 
         }
