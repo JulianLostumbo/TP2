@@ -23,6 +23,7 @@ namespace Academia
                 this.tbsEditar.Enabled = false;
                 this.tbsEliminar.Enabled = false;
                 this.tbsNuevo.Enabled = false;
+                this.dgvPlanes.Enabled = false;
             }
         }
 

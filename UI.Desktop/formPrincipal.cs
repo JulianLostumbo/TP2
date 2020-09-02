@@ -41,7 +41,7 @@ namespace Academia
         private void loginToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.lblUser.Hide();
-
+            this.Refresh();
 
             formLogin frm = new formLogin();
 
@@ -50,6 +50,7 @@ namespace Academia
             {
                 this.Dispose();
             }
+            
 
             if (formLogin.user.Habilitado == false)
             {

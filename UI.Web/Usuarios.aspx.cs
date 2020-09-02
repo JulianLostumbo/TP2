@@ -28,6 +28,8 @@ namespace UI.Web
                 editarLinkButton.Visible = false;
                 nuevoLinkButton.Visible = false;
                 eliminarLinkButton.Visible = false;
+                gridView.Enabled = false;
+                
             }
 
 
