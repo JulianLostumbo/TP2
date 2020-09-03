@@ -7,6 +7,7 @@
         SelectedRowStyle-ForeColor="White"
         DataKeyNames="ID" OnSelectedIndexChanged="gridView_SelectedIndexChanged" BackColor="#FFFFCC" style="font-family: calibri; background-color: #C4E1FF">   
         <Columns>
+            <asp:BoundField DataField="ID" HeaderText="ID" />
             <asp:BoundField HeaderText="Nombre" DataField="Nombre" />
             <asp:BoundField HeaderText="Apellido" DataField="Apellido" />
             <asp:BoundField HeaderText="Email" DataField="Email" />
