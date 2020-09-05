@@ -13,5 +13,20 @@ namespace UI.Web
         {
 
         }
+
+        protected void menu_MenuItemDataBound(object sender, MenuEventArgs e)
+        {
+            //if (SiteMap.CurrentNode != null)
+            //{
+            //    if (e.Item.Text == SiteMap.CurrentNode.Title)
+            //    {
+            //        e.Item.Parent.Selected = true;
+            //    }
+            //    else
+            //    {
+            //        e.Item.Selected = true;
+            //    }
+            //}
+        }
     }
 }
