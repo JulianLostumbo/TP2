@@ -224,46 +224,16 @@ namespace UI.Web
 
         protected void cancelarLinkButton_Click(object sender, EventArgs e)
         {
-            
             this.formPanel.Visible = false;
+            this.ClearForm();
             this.LoadGrid();
-            this.gridActionsPanel.Visible = true;
-
-
-        }
-
-        protected void CustomValidator1_ServerValidate(object source, ServerValidateEventArgs args)
-        {
-            if (Convert.ToString(args.Value).Length >= 8)
-            {
-                args.IsValid = true;
-            }
-            else
-            {
-                args.IsValid = false;
-
-                this.lblErrorClave.Text = "La clave debe tener 8 o más caracteres";
-
-            }
-
-        }
+        }        
 
         protected void imprimirLinkButton_Click(object sender, EventArgs e)
         {
             Response.Redirect("~/ReportUsuarios.aspx");
         }
 
-        protected void CustomValidator2_ServerValidate(object source, ServerValidateEventArgs args)
-        {
-           if (Convert.ToString(args.Value).Contains("@") && (Convert.ToString(args.Value).Contains(".com") || Convert.ToString(args.Value).Contains(".com.ar")))
-            {
-                args.IsValid = true;
-            }
-            else
-            {
-                args.IsValid = false;
-                this.lblErrorEmail.Text = "La clave debe tener 8 o más caracteres";
-            }
-        }
+        
     }
 }

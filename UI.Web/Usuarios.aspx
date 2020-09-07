@@ -48,8 +48,7 @@
             <asp:Label ID="emailLabel" runat="server" Text="Email: "></asp:Label>
             <asp:TextBox ID="emailTextBox" runat="server" TextMode="Email"></asp:TextBox>
             <asp:RequiredFieldValidator ID="RequiredFieldValidator8" runat="server" ControlToValidate="emailTextBox" ErrorMessage="El email no puede estar vacío" ForeColor="Red"></asp:RequiredFieldValidator>
-            <asp:CustomValidator ID="CustomValidator2" runat="server" ControlToValidate="emailTextBox" ErrorMessage="Email ingresado inválido" ForeColor="Red" OnServerValidate="CustomValidator2_ServerValidate" ValidateEmptyText="True" ValidationGroup="vg">Email ingresado inválido</asp:CustomValidator>
-            <asp:Label ID="lblErrorEmail" runat="server" ForeColor="Red"></asp:Label>
+            <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ControlToValidate="emailTextBox" ErrorMessage="Email ingresado inválido" ForeColor="Red" ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*"></asp:RegularExpressionValidator>
             <br />
             <asp:Label ID="habilitadoLabel" runat="server" Text="Habilitado: "></asp:Label>
             <asp:CheckBox ID="habilitadoCheckBox" runat="server" />
@@ -60,9 +59,8 @@
             <br />
             <asp:Label ID="claveLabel" runat="server" Text="Clave: "></asp:Label>
             <asp:TextBox ID="claveTextBox" runat="server" TextMode="Password"></asp:TextBox>
-            <asp:CustomValidator ID="CustomValidator1" runat="server" ControlToValidate="claveTextBox" ErrorMessage="La clave debe tener 8 o más caracteres" ForeColor="Red" OnServerValidate="CustomValidator1_ServerValidate" ValidateEmptyText="True" ValidationGroup="vg">La clave debe tener 8 o más caracteres</asp:CustomValidator>
             <asp:RequiredFieldValidator ID="RequiredFieldValidator10" runat="server" ControlToValidate="claveTextBox" ErrorMessage="La clave no puede estar vacía" ForeColor="Red"></asp:RequiredFieldValidator>
-            <asp:Label ID="lblErrorClave" runat="server" ForeColor="Red"></asp:Label>
+            <asp:RegularExpressionValidator ID="RegularExpressionValidator2" runat="server" ControlToValidate="claveTextBox" ErrorMessage="La clave debe tener 8 caracteres o más" ForeColor="Red" ValidationExpression="[\w\s]{8,50}"></asp:RegularExpressionValidator>
             <br />
             <asp:Label ID="repetirClaveLabel" runat="server" Text="Repetir clave: "></asp:Label>
             <asp:TextBox ID="repetirClaveTextBox" runat="server" TextMode="Password"></asp:TextBox>

@@ -19,7 +19,7 @@ BackColor="lightblue"
 
 ForeColor="Black"    
 
-Font-Name="Arial"    
+Font-Name="Calibri"    
 
 Font-Size="9px" /> 
 
@@ -29,8 +29,6 @@ Font-Size="9px" />
 
 Font-Bold="True"  
 
-Font-Names="Garamond"  
+Font-Names="Calibri"  
 
-Font-Overline="False"  
-
-BackColor="LightGoldenrodYellow" /> 
+Font-Overline="False"   /> 

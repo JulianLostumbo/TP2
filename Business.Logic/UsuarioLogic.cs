@@ -27,6 +27,11 @@ namespace Business.Logic
             return UsuarioData.GetOne(ID);
         }
 
+        public Business.Entities.Usuario GetOne(string user, string clave)
+        {
+            return UsuarioData.GetOne(user, clave);
+        }
+
         public void Delete (int ID)
         {
             UsuarioData.Delete(ID);

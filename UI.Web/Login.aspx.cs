@@ -4,8 +4,8 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using Business.Logic;
 using Business.Entities;
-using Data.Database;
 
 namespace UI.Web
 {
@@ -21,7 +21,7 @@ namespace UI.Web
             string nombreUser = this.txtUsuario.Text;
             string claveUser = this.txtClave.Text;
 
-            UsuarioAdapter BuscarUser = new UsuarioAdapter();
+            UsuarioLogic BuscarUser = new UsuarioLogic();
             Usuario usuario = BuscarUser.GetOne(nombreUser, claveUser);
 
             if (nombreUser == usuario.NombreUsuario && claveUser == usuario.Clave)

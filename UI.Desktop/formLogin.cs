@@ -10,7 +10,7 @@ using System.Windows.Forms;
 using System.Data.SqlClient;
 using Business.Entities;
 using System.Data.Common;
-using Data.Database;
+using Business.Logic;
 
 namespace Academia
 {
@@ -28,7 +28,7 @@ namespace Academia
             string nombreUser = this.txtUsuario.Text;
             string claveUser = this.txtPass.Text;
 
-            UsuarioAdapter BuscarUser = new UsuarioAdapter();
+            UsuarioLogic BuscarUser = new UsuarioLogic();
             user = BuscarUser.GetOne(nombreUser, claveUser);
 
             if (nombreUser == user.NombreUsuario && claveUser == user.Clave)
