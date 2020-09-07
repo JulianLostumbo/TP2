@@ -14,16 +14,19 @@ namespace UI.Web
         {
             if (!Page.IsPostBack)
             {
+                VerificarSesion();
                 Usuario Usuario = (Usuario)Session["usuario"];
                 lblUsuario.Text = Usuario.Nombre + ' ' + Usuario.Apellido;
+
             }
-            
+
         }
 
         private void VerificarSesion()
         {
             if (Session["usuario"] == null)
             {
+                
                 Response.Redirect("~/Login.aspx");
             }
         }

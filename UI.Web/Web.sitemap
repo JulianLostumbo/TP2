@@ -6,6 +6,6 @@
 	  <siteMapNode url="Comisiones.aspx" title="Menú de Comisiones"  description="" />
 	  <siteMapNode url="Planes.aspx" title="Menú de Planes"  description="" />
 	  <siteMapNode url="Especialidades.aspx" title="Menú de Especialidades"  description="" />
-   <siteMapNode url="Login.aspx" title="Cerrar Sesión"  description="" />
+   <siteMapNode url="Logout.aspx" title="Cerrar Sesión"  description="" />
   </siteMapNode>
 </siteMap>
