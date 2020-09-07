@@ -13,26 +13,23 @@ namespace UI.Web
     public partial class Usuarios : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
-        {
+        {            
             if (IsPostBack==false)
             {
+                Usuario user = (Usuario)Session["usuario"];
+                if (user.Habilitado == false)
+                {
+                    //editarLinkButton.Enabled = false;
+                    //nuevoLinkButton.Enabled = false;
+                    //eliminarLinkButton.Enabled = false;
+                    editarLinkButton.Visible = false;
+                    nuevoLinkButton.Visible = false;
+                    eliminarLinkButton.Visible = false;
+                    gridView.Enabled = false;
+                    gridView.AutoGenerateSelectButton = false;
+                }
                 this.LoadGrid();
-            }
-            
-            Usuario user = (Usuario)Session["usuario"];
-            if (user.Habilitado == false)
-            {
-                //editarLinkButton.Enabled = false;
-                //nuevoLinkButton.Enabled = false;
-                //eliminarLinkButton.Enabled = false;
-                editarLinkButton.Visible = false;
-                nuevoLinkButton.Visible = false;
-                eliminarLinkButton.Visible = false;
-                gridView.Enabled = false;
-                
-            }
-
-
+            }                      
         }
 
         UsuarioLogic _Logic;

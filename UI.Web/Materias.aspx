@@ -5,14 +5,13 @@
     <asp:GridView ID="gridView" runat="server" AutoGenerateColumns="False"
         SelectedRowStyle-BackColor="#002b82"
         SelectedRowStyle-ForeColor="White"
-        DataKeyNames="ID" OnSelectedIndexChanged="gridView_SelectedIndexChanged" BackColor="#FFFFCC" style="font-family: calibri; background-color: #C4E1FF">   
+        DataKeyNames="ID" OnSelectedIndexChanged="gridView_SelectedIndexChanged" BackColor="#FFFFCC" style="font-family: calibri; background-color: #C4E1FF" AutoGenerateSelectButton="True">   
         <Columns>
             <asp:BoundField DataField="ID" HeaderText="ID Materia" />
             <asp:BoundField HeaderText="Descripción" DataField="Descripcion" />
             <asp:BoundField HeaderText="Horas Semanales" DataField="HsSemanales" />
             <asp:BoundField HeaderText="Horas Totales" DataField="HsTotales" />
             <asp:BoundField DataField="IdPlan" HeaderText="ID Plan" />
-            <asp:CommandField SelectText="Seleccionar" ShowSelectButton="True" />
         </Columns>
         <RowStyle BorderStyle="Groove" ForeColor="Black" />
         <SelectedRowStyle BackColor="Black" ForeColor="White" />
