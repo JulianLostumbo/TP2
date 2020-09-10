@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Microsoft.Reporting.WinForms;
+using Business.Logic;
 
 namespace Academia
 {
@@ -21,8 +22,8 @@ namespace Academia
 
         private void ReporteMaterias_Load(object sender, EventArgs e)
         {
-            Data.Database.MateriaAdapter dbu = new Data.Database.MateriaAdapter();
-            List<Materia> listaMaterias = dbu.GetAll();
+            MateriaLogic logic = new MateriaLogic();
+            List<Materia> listaMaterias = logic.GetAll();
 
             ReportDataSource rds = new ReportDataSource("DataSetMaterias", listaMaterias);
             this.reportViewer1.LocalReport.ReportPath = @"C:\Net\TP2_Academia\UI.Desktop\ReporteMaterias.rdlc";

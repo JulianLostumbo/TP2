@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Microsoft.Reporting.WinForms;
+using Business.Logic;
 
 namespace Academia
 {
@@ -21,8 +22,8 @@ namespace Academia
 
         private void ReporteUsuarios_Load(object sender, EventArgs e)
         {
-            Data.Database.UsuarioAdapter dbu = new Data.Database.UsuarioAdapter();           
-            List<Usuario> listaUsuarios = dbu.GetAll();
+            UsuarioLogic logic = new UsuarioLogic();           
+            List<Usuario> listaUsuarios = logic.GetAll();
             
             ReportDataSource rds = new ReportDataSource("ReporteUsuarios", listaUsuarios);
             this.reportViewer1.LocalReport.ReportPath=@"C:\Net\TP2_Academia\UI.Desktop\ReporteUsuarios.rdlc";
