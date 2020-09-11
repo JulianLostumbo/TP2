@@ -40,13 +40,26 @@
     height: 100%;
     text-align: center;
     }
+            .auto-style2 {
+                font-family: Calibri;
+                font-size: xx-large;
+            }
+            .auto-style3 {
+                text-align: left;
+                font-family: calibri;
+            }
+            .auto-style4 {
+                text-decoration: underline;
+            }
         </style>
         <title>Academia</title>
     </head>
     <body>
         <form id="bodyForm" runat="server" class="form">
             <div >
-                    <strong>
+
+                    <strong> 
+                        <asp:ContentPlaceHolder ID="Header" runat="server">
             <asp:Menu runat="server" ID="menu" DataSourceID="SiteMapDataSource" DynamicMenuItemStyle-Font-Bold="true" StaticSubMenuIndent="10px" OnMenuItemDataBound="menu_MenuItemDataBound">
                 <LevelMenuItemStyles>
                     <asp:MenuItemStyle CssClass="mainmenu" />
@@ -54,10 +67,16 @@
                     <asp:MenuItemStyle CssClass="submenu1" />
                 </LevelMenuItemStyles>
             </asp:Menu>
+                        </asp:ContentPlaceHolder>                  
                     </strong>
             <asp:SiteMapDataSource ID="SiteMapDataSource" runat="server" />
             
                 <asp:ContentPlaceHolder ID="bodyContentPlaceHolder" runat="server">
+                </asp:ContentPlaceHolder>
+                <asp:ContentPlaceHolder ID="Footer" runat="server">
+
+                    <p class="auto-style3">
+                        <em>Sistema desarrollado para la asignatura &quot;<span class="auto-style4">Desarrollo de Tecnologías de Software IDE</span>&quot;</em></p>
                 </asp:ContentPlaceHolder>
             </div>
         </form>

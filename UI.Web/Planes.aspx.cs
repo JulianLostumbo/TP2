@@ -210,8 +210,8 @@ namespace UI.Web
         {
 
             this.formPanel.Visible = false;
+            this.ClearForm();
             this.LoadGrid();
-            this.gridActionsPanel.Visible = true;
 
 
         }
