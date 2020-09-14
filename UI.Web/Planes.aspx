@@ -26,28 +26,28 @@
             <asp:LinkButton ID="editarLinkButton" runat="server" BackColor="#003399" BorderStyle="Ridge" BorderWidth="2px" Font-Bold="False" ForeColor="White" Height="20px" OnClick="editarLinkButton_Click" style="text-decoration: none; color: #000000; font-family: Calibri; background-color: #FFFFFF" Width="80px">Editar</asp:LinkButton>
             </strong>
             <asp:LinkButton ID="eliminarLinkButton" runat="server" BackColor="#003399" BorderStyle="Ridge" BorderWidth="2px" ForeColor="White" Height="20px" OnClick="eliminarLinkButton_Click" style="text-decoration: none; color: #000000; font-family: Calibri; background-color: #FFFFFF" Width="80px">Eliminar</asp:LinkButton>
+            <br />
         </div>
     </asp:Panel>
 
     </div>
 
     <asp:Panel ID="formPanel" Visible="false" runat="server" Width="737px" Class="form">
-        <div style="text-align: left; height: 58px;">
+        <div style="text-align: left; height: 176px;">
+            <br />
             <asp:Label ID="descripcionLabel" runat="server" Text="Descripción: "></asp:Label>
             <asp:TextBox ID="descripcionTextBox" runat="server" Height="16px" Width="363px"></asp:TextBox>
-            <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="descripcionTextBox" ErrorMessage="La descripción no puede estar vacía" ForeColor="Red"></asp:RequiredFieldValidator>
+            <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="descripcionTextBox" ErrorMessage="La descripción no puede estar vacía" ForeColor="Red">*</asp:RequiredFieldValidator>
             <br />
             <asp:Label ID="idEspecialidadLabel" runat="server" Text="ID Especialidad: "></asp:Label>
             <asp:TextBox ID="idEspecialidadTextBox" runat="server"></asp:TextBox>
-            <asp:RequiredFieldValidator ID="RequiredFieldValidator9" runat="server" ControlToValidate="idEspecialidadTextBox" ErrorMessage="El ID especialidad no puede estar vacío" ForeColor="Red"></asp:RequiredFieldValidator>
+            <asp:RequiredFieldValidator ID="RequiredFieldValidator9" runat="server" ControlToValidate="idEspecialidadTextBox" ErrorMessage="El ID especialidad no puede estar vacío" ForeColor="Red">*</asp:RequiredFieldValidator>
             <br />
+            <asp:ValidationSummary ID="ValidationSummary1" runat="server" ForeColor="Red" Height="36px" Width="437px" />
+            <br />
+            <asp:LinkButton ID="aceptarLinkButton" runat="server" OnClick="aceptarLinkButton_Click" BorderStyle="Ridge" BorderWidth="2px" Height="20px" style="text-decoration: none; color: #000000; font-family: calibri; background-color: #FFFFFF" Width="80px">Aceptar</asp:LinkButton>
+            <asp:LinkButton ID="cancelarLinkButton" runat="server" OnClick="cancelarLinkButton_Click" BorderStyle="Ridge" BorderWidth="2px" Height="20px" style="text-decoration: none; color: #000000; font-family: calibri; background-color: #FFFFFF" Width="80px">Cancelar</asp:LinkButton>
+
         </div>
-        <asp:Panel ID="formActionsPanel" runat="server" Width="449px">
-        <asp:LinkButton ID="aceptarLinkButton" runat="server" OnClick="aceptarLinkButton_Click" BorderStyle="Ridge" BorderWidth="2px" Height="20px" style="text-decoration: none; color: #000000; font-family: calibri; background-color: #FFFFFF" Width="80px">Aceptar</asp:LinkButton>
-        <asp:LinkButton ID="cancelarLinkButton" runat="server" OnClick="cancelarLinkButton_Click" BorderStyle="Ridge" BorderWidth="2px" Height="20px" style="text-decoration: none; color: #000000; font-family: calibri; background-color: #FFFFFF" Width="80px">Cancelar</asp:LinkButton>
-            <div style="text-align: left">
-                <asp:ValidationSummary ID="ValidationSummary1" runat="server" ForeColor="Red" Height="45px" ValidationGroup="vg" Width="437px" />
-            </div>
-    </asp:Panel>
     </asp:Panel>
 </asp:Content>
