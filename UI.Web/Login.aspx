@@ -149,7 +149,7 @@
                 <td class="auto-style3">
                     <span class="auto-style25">Nombre de Usuario</span></td>
                 <td class="auto-style22">
-        <asp:TextBox ID="txtUsuario" runat="server" Width="204px"></asp:TextBox>
+        <asp:TextBox ID="txtUsuario" runat="server" Width="206px"></asp:TextBox>
                 </td>
             </tr>
             <tr>

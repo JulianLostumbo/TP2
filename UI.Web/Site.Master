@@ -77,7 +77,7 @@
                 <asp:ContentPlaceHolder ID="Footer" runat="server">
 
                     <p class="auto-style3">
-                        &nbsp;<em>Sistema desarrollado para la asignatura &quot;<span class="auto-style4">Desarrollo de Tecnologías de Software IDE</span>&quot;</em></p>
+                        &nbsp;<em>Sistema desarrollado para la asignatura &quot;<span class="auto-style4">Tecnologías de Desarrollo de Software IDE</span>&quot;</em></p>
                 </asp:ContentPlaceHolder>
             </div>
         </form>
