@@ -55,6 +55,10 @@
     <Compile Include="ModuloUsuario.cs" />
     <Compile Include="Plan.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Persona.cs" />
+    <Compile Include="Curso.cs" />
+    <Compile Include="Inscripcion.cs" />
+    <Compile Include="Dictado.cs" />
     <Compile Include="Usuario.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

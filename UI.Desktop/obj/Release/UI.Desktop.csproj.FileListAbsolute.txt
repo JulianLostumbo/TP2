@@ -1,0 +1,6 @@
+C:\Net\TP2L05\WindowsFormsApp1\obj\Release\UI.Desktop.csprojAssemblyReference.cache
+C:\Net\TP2L05\WindowsFormsApp1\obj\Release\WindowsFormsApp1.UsuarioDesktop.resources
+C:\Net\TP2L05\WindowsFormsApp1\obj\Release\WindowsFormsApp1.Usuarios.resources
+C:\Net\TP2L05\WindowsFormsApp1\obj\Release\WindowsFormsApp1.Properties.Resources.resources
+C:\Net\TP2L05\WindowsFormsApp1\obj\Release\UI.Desktop.csproj.GenerateResource.cache
+C:\Net\TP2L05\WindowsFormsApp1\obj\Release\UI.Desktop.csproj.CoreCompileInputs.cache

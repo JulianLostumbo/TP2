@@ -1,0 +1,2 @@
+C:\Net\TP2L05\Business.Logic\obj\Release\Business.Logic.csprojAssemblyReference.cache
+C:\Net\TP2L05\Business.Logic\obj\Release\Business.Logic.csproj.CoreCompileInputs.cache

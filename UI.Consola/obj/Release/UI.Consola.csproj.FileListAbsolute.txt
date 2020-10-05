@@ -1,0 +1,1 @@
+C:\Net\TP2L05\UI.Consola\obj\Release\UI.Consola.csproj.CoreCompileInputs.cache
