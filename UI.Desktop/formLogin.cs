@@ -21,7 +21,39 @@ namespace Academia
             InitializeComponent();
         }
 
-        public static Usuario user;
+        //private Usuario _UsAct;
+        //public Usuario UsuarioActual
+        //{
+        //    get { return _UsAct; }
+        //    set { _UsAct = value; }
+        //}
+
+        //private Persona _PerAct;
+        //public Persona PersonaActual
+        //{
+        //    get { return _PerAct; }
+        //    set { _PerAct = value; }
+        //}
+
+        public static Persona PersonaActual;
+
+        public static Usuario UsuarioActual;
+
+        private Persona.TipoPersonas tipoper;
+
+        public Persona.TipoPersonas tipoPersona
+        {
+            get { return tipoper; }
+            set { tipoper = value; }
+        }
+
+        private int _idAlum;
+
+        public int idAlum
+        {
+            get { return _idAlum; }
+            set { _idAlum = value; }
+        }
 
         private void btnIngresar_Click(object sender, EventArgs e)
         {
@@ -29,11 +61,17 @@ namespace Academia
             string claveUser = this.txtPass.Text;
 
             UsuarioLogic BuscarUser = new UsuarioLogic();
-            user = BuscarUser.GetOne(nombreUser, claveUser);
+            /*Usuario user = new Usuario();*/
+            UsuarioActual = BuscarUser.GetOne(nombreUser, claveUser);
 
-            if (nombreUser == user.NombreUsuario && claveUser == user.Clave)
+            if (nombreUser == UsuarioActual.NombreUsuario && claveUser == UsuarioActual.Clave)
             {
-               this.DialogResult = DialogResult.OK;
+                PersonaLogic BuscarPersona = new PersonaLogic();
+                /*Persona PersonaActual = new Persona();*/
+                PersonaActual = BuscarPersona.GetOne(UsuarioActual.IdPersona);
+                idAlum = PersonaActual.ID;
+                tipoPersona = PersonaActual.TipoPersona;
+                this.DialogResult = DialogResult.OK;
             }
             else
             {
@@ -46,6 +84,19 @@ namespace Academia
             MessageBox.Show("Es Ud. un usuario muy descuidado, haga memoria", "Olvidé mi contraseña",
 
             MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+        }
+
+        private void cbContraseña_CheckedChanged(object sender, EventArgs e)
+        {
+            if (cbContraseña.Checked == false)
+            {
+                txtPass.PasswordChar = '*';
+            }
+            else
+            {
+                txtPass.PasswordChar = '\0';
+            }
+
         }
     }
 }

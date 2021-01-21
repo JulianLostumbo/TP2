@@ -18,13 +18,13 @@ namespace Academia
         {
             InitializeComponent();
             this.dgvMaterias.AutoGenerateColumns = false;
-            if (formLogin.user.Habilitado == false)
+            /*if (formLogin.UsuarioActual.Habilitado == false)
             {
                 this.tbsEditar.Enabled = false;
                 this.tbsEliminar.Enabled = false;
                 this.tbsNuevo.Enabled = false;
                 this.dgvMaterias.Enabled = false;
-            }
+            }*/
         }
 
         public void Listar()
@@ -79,6 +79,12 @@ namespace Academia
         private void Materias_Load(object sender, EventArgs e)
         {
             Listar();
+            if (formLogin.PersonaActual.TipoPersona != Persona.TipoPersonas.Administrador)
+            {
+                tbsEditar.Enabled = false;
+                tbsEliminar.Enabled = false;
+                tbsNuevo.Enabled = false;
+            }
         }
 
         private void tbsImprimir_Click(object sender, EventArgs e)

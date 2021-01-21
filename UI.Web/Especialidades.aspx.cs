@@ -15,18 +15,15 @@ namespace UI.Web
         {
             if (IsPostBack == false)
             {
-                Usuario user = (Usuario)Session["usuario"];
-                if (user.Habilitado == false)
+                Per = (Persona)Session["persona"];
+                formPanel.Visible = false;
+                if (Per.TipoPersona != Persona.TipoPersonas.Administrador)
                 {
-                    //editarLinkButton.Enabled = false;
-                    //nuevoLinkButton.Enabled = false;
-                    //eliminarLinkButton.Enabled = false;
-                    editarLinkButton.Visible = false;
                     nuevoLinkButton.Visible = false;
                     eliminarLinkButton.Visible = false;
+                    editarLinkButton.Visible = false;
                     gridView.Enabled = false;
                     gridView.AutoGenerateSelectButton = false;
-
                 }
                 this.LoadGrid();
             }
@@ -65,6 +62,8 @@ namespace UI.Web
             }
         }
 
+        public Persona Per { get; set; }
+
         private Especialidad Entity
         {
             get;
@@ -101,7 +100,8 @@ namespace UI.Web
 
         private void LoadGrid()
         {
-            this.gridView.DataSource = this.Logic.GetAll();
+            EspecialidadLogic el = new EspecialidadLogic();
+            this.gridView.DataSource = el.GetAll();
             this.gridView.DataBind();
         }
 

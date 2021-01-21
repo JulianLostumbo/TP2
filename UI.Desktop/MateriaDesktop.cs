@@ -40,7 +40,7 @@ namespace Academia
             this.txtDescripcion.Text = this.MateriaActual.Descripcion;
             this.txtHsSemanales.Text = this.MateriaActual.HsSemanales.ToString();
             this.txtHsTotales.Text = this.MateriaActual.HsTotales.ToString();
-            this.txtIdPlan.Text = this.MateriaActual.IdPlan.ToString();
+            this.cmbPlan.SelectedItem = this.MateriaActual.IdPlan;
             if (Modo == ModoForm.Alta)
             {
                 btnAceptar.Text = "Guardar";
@@ -52,6 +52,11 @@ namespace Academia
             else if (Modo == ModoForm.Baja)
             {
                 btnAceptar.Text = "Eliminar";
+                txtID.Enabled = false;
+                txtDescripcion.Enabled = false;
+                txtHsSemanales.Enabled = false;
+                txtHsTotales.Enabled = false;
+                cmbPlan.Enabled = false;
             }
             else
             {
@@ -69,7 +74,7 @@ namespace Academia
                 MatNueva.Descripcion = this.txtDescripcion.Text.ToString();
                 MatNueva.HsSemanales = Convert.ToInt32(this.txtHsSemanales.Text);
                 MatNueva.HsTotales = Convert.ToInt32(this.txtHsTotales.Text);
-                MatNueva.IdPlan = Convert.ToInt32(this.txtIdPlan.Text);
+                MatNueva.IdPlan = Convert.ToInt32(cmbPlan.SelectedValue.ToString());
 
                 MateriaActual = MatNueva;
                 MateriaLogic nuevaMat = new MateriaLogic();
@@ -83,7 +88,7 @@ namespace Academia
                 MateriaActual.Descripcion = this.txtDescripcion.Text.ToString();
                 MateriaActual.HsSemanales = Convert.ToInt32(this.txtHsSemanales.Text);
                 MateriaActual.HsTotales = Convert.ToInt32(this.txtHsTotales.Text);
-                MateriaActual.IdPlan = Convert.ToInt32(this.txtIdPlan.Text);
+                MateriaActual.IdPlan = Convert.ToInt32(cmbPlan.SelectedValue.ToString());
 
                 MateriaLogic nuevaMat = new MateriaLogic();
                 nuevaMat.Update(MateriaActual);
@@ -109,9 +114,22 @@ namespace Academia
             
         }
 
+        public void MapearPlanes()
+        {
+            MateriaLogic ml = new MateriaLogic();
+            cmbPlan.DataSource = ml.GetPlanes();
+            cmbPlan.ValueMember = "ID";
+            cmbPlan.DisplayMember = "Descripcion";
+            if (Modo != ModoForm.Alta)
+            {
+                cmbPlan.SelectedValue = MateriaActual.IdPlan;
+
+            };
+        }
+
         public override bool Validar() 
         {
-            if (this.txtDescripcion.ToString()!="" && this.txtHsSemanales.ToString() != "" && this.txtHsTotales.ToString() != "0" && this.txtIdPlan.ToString() != "0" && this.txtHsSemanales.ToString() != "0" && this.txtHsTotales.ToString() != "0" && this.txtIdPlan.ToString() != "0")
+            if (this.txtDescripcion.ToString()!="" && this.txtHsSemanales.ToString() != "" && this.txtHsTotales.ToString() != "0" && this.cmbPlan.ToString() != string.Empty && this.txtHsSemanales.ToString() != "0" && this.txtHsTotales.ToString() != "0")
             {
                 return true;
             }
@@ -156,6 +174,9 @@ namespace Academia
             this.Close();
         }
 
-        
+        private void MateriaDesktop_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

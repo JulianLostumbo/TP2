@@ -62,6 +62,18 @@
     <Compile Include="ApplicationForm.Designer.cs">
       <DependentUpon>ApplicationForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="EstadoAcademico.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EstadoAcademico.Designer.cs">
+      <DependentUpon>EstadoAcademico.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FechaUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="FechaUserControl.designer.cs">
+      <DependentUpon>FechaUserControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="ComisionDesktop.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -73,6 +85,30 @@
     </Compile>
     <Compile Include="Comisiones.designer.cs">
       <DependentUpon>Comisiones.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Cursos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Cursos.Designer.cs">
+      <DependentUpon>Cursos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CursoDesktop.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CursoDesktop.Designer.cs">
+      <DependentUpon>CursoDesktop.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DocenteDesktop.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DocenteDesktop.Designer.cs">
+      <DependentUpon>DocenteDesktop.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Docentes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Docentes.Designer.cs">
+      <DependentUpon>Docentes.cs</DependentUpon>
     </Compile>
     <Compile Include="EspecialidadDesktop.cs">
       <SubType>Form</SubType>
@@ -98,6 +134,12 @@
     <Compile Include="formPrincipal.Designer.cs">
       <DependentUpon>formPrincipal.cs</DependentUpon>
     </Compile>
+    <Compile Include="Inscripcion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Inscripcion.Designer.cs">
+      <DependentUpon>Inscripcion.cs</DependentUpon>
+    </Compile>
     <Compile Include="MateriaDesktop.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -109,6 +151,30 @@
     </Compile>
     <Compile Include="Materias.designer.cs">
       <DependentUpon>Materias.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NotaDesktop.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NotaDesktop.Designer.cs">
+      <DependentUpon>NotaDesktop.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Notas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Notas.Designer.cs">
+      <DependentUpon>Notas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PersonaDesktop.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PersonaDesktop.Designer.cs">
+      <DependentUpon>PersonaDesktop.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Personas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Personas.Designer.cs">
+      <DependentUpon>Personas.cs</DependentUpon>
     </Compile>
     <Compile Include="PlanDesktop.cs">
       <SubType>Form</SubType>
@@ -122,11 +188,23 @@
     <Compile Include="Planes.designer.cs">
       <DependentUpon>Planes.cs</DependentUpon>
     </Compile>
+    <Compile Include="ReporteCursos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReporteCursos.Designer.cs">
+      <DependentUpon>ReporteCursos.cs</DependentUpon>
+    </Compile>
     <Compile Include="ReporteMaterias.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="ReporteMaterias.Designer.cs">
       <DependentUpon>ReporteMaterias.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ReportePlanes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReportePlanes.Designer.cs">
+      <DependentUpon>ReportePlanes.cs</DependentUpon>
     </Compile>
     <Compile Include="ReporteUsuarios.cs">
       <SubType>Form</SubType>
@@ -156,11 +234,29 @@
     <EmbeddedResource Include="ApplicationForm.resx">
       <DependentUpon>ApplicationForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="EstadoAcademico.resx">
+      <DependentUpon>EstadoAcademico.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FechaUserControl.resx">
+      <DependentUpon>FechaUserControl.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ComisionDesktop.resx">
       <DependentUpon>ComisionDesktop.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Comisiones.resx">
       <DependentUpon>Comisiones.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CursoDesktop.resx">
+      <DependentUpon>CursoDesktop.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Cursos.resx">
+      <DependentUpon>Cursos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DocenteDesktop.resx">
+      <DependentUpon>DocenteDesktop.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Docentes.resx">
+      <DependentUpon>Docentes.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="EspecialidadDesktop.resx">
       <DependentUpon>EspecialidadDesktop.cs</DependentUpon>
@@ -174,11 +270,26 @@
     <EmbeddedResource Include="formPrincipal.resx">
       <DependentUpon>formPrincipal.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Inscripcion.resx">
+      <DependentUpon>Inscripcion.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MateriaDesktop.resx">
       <DependentUpon>MateriaDesktop.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Materias.resx">
       <DependentUpon>Materias.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NotaDesktop.resx">
+      <DependentUpon>NotaDesktop.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Notas.resx">
+      <DependentUpon>Notas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PersonaDesktop.resx">
+      <DependentUpon>PersonaDesktop.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Personas.resx">
+      <DependentUpon>Personas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PlanDesktop.resx">
       <DependentUpon>PlanDesktop.cs</DependentUpon>
@@ -186,9 +297,17 @@
     <EmbeddedResource Include="Planes.resx">
       <DependentUpon>Planes.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ReporteCursos.rdlc" />
+    <EmbeddedResource Include="ReporteCursos.resx">
+      <DependentUpon>ReporteCursos.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ReporteMaterias.rdlc" />
     <EmbeddedResource Include="ReporteMaterias.resx">
       <DependentUpon>ReporteMaterias.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReportePlanes.rdlc" />
+    <EmbeddedResource Include="ReportePlanes.resx">
+      <DependentUpon>ReportePlanes.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ReporteUsuarios.rdlc" />
     <EmbeddedResource Include="ReporteUsuarios.resx">
@@ -210,8 +329,13 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <None Include="Properties\DataSources\Business.Entities.Comision.datasource" />
+    <None Include="Properties\DataSources\Business.Entities.Curso.datasource" />
     <None Include="Properties\DataSources\Business.Entities.Materia.datasource" />
+    <None Include="Properties\DataSources\Business.Entities.Plan.datasource" />
     <None Include="Properties\DataSources\Business.Entities.Usuario.datasource" />
+    <None Include="Properties\DataSources\Business.Logic.ComisionLogic.datasource" />
+    <None Include="Properties\DataSources\Data.Database.CursoAdapter.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -252,6 +376,15 @@
       <Project>{18d1c50f-58e0-4d94-b05b-4a95a146e6bb}</Project>
       <Name>Data.Database</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\fecha.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\fecha1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\fecha2.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -18,5 +18,9 @@ namespace Business.Entities
 
         public int Cupo { get; set; }
 
+        public string DescComision { get; set; }
+
+        public string DescMateria { get; set; }
+
     }
 }

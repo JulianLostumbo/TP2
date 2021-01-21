@@ -32,13 +32,14 @@ namespace Academia
             PlanLogic plan = new PlanLogic();
             PlanActual = plan.GetOne(ID);
             this.MapearDeDatos();
+            this.MapearEspecialidades();
         }
 
         public override void MapearDeDatos()
         {
             this.txtID.Text = this.PlanActual.ID.ToString();
             this.txtDescripcion.Text = this.PlanActual.Descripcion;
-            this.txtIdEspecialidad.Text = this.PlanActual.IdEspecialidad.ToString();
+            this.cmbEspecialidad.SelectedItem = this.PlanActual.IdEspecialidad.ToString();
             if (Modo == ModoForm.Alta)
             {
                 btnAceptar.Text = "Guardar";
@@ -65,7 +66,7 @@ namespace Academia
                 Plan planNuevo = new Plan();
 
                 planNuevo.Descripcion = this.txtDescripcion.Text.ToString();
-                planNuevo.IdEspecialidad = Convert.ToInt32(this.txtIdEspecialidad.Text);
+                planNuevo.IdEspecialidad = Convert.ToInt32(this.cmbEspecialidad.SelectedValue.ToString());
 
                 PlanActual = planNuevo;
                 PlanLogic nuevoPlan = new PlanLogic();
@@ -79,7 +80,7 @@ namespace Academia
             {
 
                 PlanActual.Descripcion = this.txtDescripcion.Text.ToString();
-                PlanActual.IdEspecialidad = Convert.ToInt32(this.txtIdEspecialidad.Text);
+                PlanActual.IdEspecialidad = Convert.ToInt32(this.cmbEspecialidad.SelectedValue.ToString());
 
                 PlanLogic nuevoPlan = new PlanLogic();
                 nuevoPlan.Update(PlanActual);
@@ -97,6 +98,18 @@ namespace Academia
                 btnAceptar.Text = "Aceptar";
         }
 
+        public void MapearEspecialidades()
+        {
+            PlanLogic p1 = new PlanLogic();
+            cmbEspecialidad.DataSource = p1.GetEspecialidad();
+            cmbEspecialidad.ValueMember = "ID";
+            cmbEspecialidad.DisplayMember = "Descripcion";
+            if (Modo != ModoForm.Alta)
+            {
+                cmbEspecialidad.SelectedValue = PlanActual.IdEspecialidad;
+            }
+        }
+
         public override void GuardarCambios() 
         {
             this.MapearADatos();
@@ -105,7 +118,7 @@ namespace Academia
 
         public override bool Validar() 
         {
-            if (this.txtDescripcion.ToString()!="" && this.txtIdEspecialidad.ToString() != "" && this.txtIdEspecialidad.ToString() != "0")
+            if (this.txtDescripcion.ToString()!="" && this.cmbEspecialidad.SelectedItem.ToString() != string.Empty)
             {
                 return true;
             }

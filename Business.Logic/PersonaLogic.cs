@@ -22,10 +22,21 @@ namespace Business.Logic
             return PersonaData.GetAll();
         }
 
+        public List<Persona> GetAll(int id)
+        {
+            return PersonaData.GetAll(id);
+        }
+
         public Business.Entities.Persona GetOne(int ID)
         {
             return PersonaData.GetOne(ID);
         }
+
+        public List<Plan> GetPlanes()
+        {
+            return PersonaData.GetPlanes();
+        }
+
 
         public void Delete (int ID)
         {

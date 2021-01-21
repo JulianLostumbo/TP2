@@ -29,23 +29,47 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EspecialidadDesktop));
-            this.btnAceptar = new System.Windows.Forms.Button();
-            this.btnCancelar = new System.Windows.Forms.Button();
-            this.lblID = new System.Windows.Forms.Label();
-            this.lblDescripcion = new System.Windows.Forms.Label();
-            this.txtID = new System.Windows.Forms.TextBox();
             this.txtDescripcion = new System.Windows.Forms.RichTextBox();
+            this.txtID = new System.Windows.Forms.TextBox();
+            this.lblDescripcion = new System.Windows.Forms.Label();
+            this.lblID = new System.Windows.Forms.Label();
+            this.btnCancelar = new System.Windows.Forms.Button();
+            this.btnAceptar = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // btnAceptar
+            // txtDescripcion
             // 
-            this.btnAceptar.Location = new System.Drawing.Point(135, 170);
-            this.btnAceptar.Name = "btnAceptar";
-            this.btnAceptar.Size = new System.Drawing.Size(75, 23);
-            this.btnAceptar.TabIndex = 0;
-            this.btnAceptar.Text = "Aceptar";
-            this.btnAceptar.UseVisualStyleBackColor = true;
-            this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click);
+            this.txtDescripcion.Location = new System.Drawing.Point(79, 38);
+            this.txtDescripcion.Name = "txtDescripcion";
+            this.txtDescripcion.Size = new System.Drawing.Size(213, 126);
+            this.txtDescripcion.TabIndex = 0;
+            this.txtDescripcion.Text = "";
+            // 
+            // txtID
+            // 
+            this.txtID.Location = new System.Drawing.Point(110, 12);
+            this.txtID.Name = "txtID";
+            this.txtID.ReadOnly = true;
+            this.txtID.Size = new System.Drawing.Size(181, 20);
+            this.txtID.TabIndex = 4;
+            // 
+            // lblDescripcion
+            // 
+            this.lblDescripcion.AutoSize = true;
+            this.lblDescripcion.Location = new System.Drawing.Point(12, 38);
+            this.lblDescripcion.Name = "lblDescripcion";
+            this.lblDescripcion.Size = new System.Drawing.Size(69, 13);
+            this.lblDescripcion.TabIndex = 3;
+            this.lblDescripcion.Text = "Descripcion: ";
+            // 
+            // lblID
+            // 
+            this.lblID.AutoSize = true;
+            this.lblID.Location = new System.Drawing.Point(12, 12);
+            this.lblID.Name = "lblID";
+            this.lblID.Size = new System.Drawing.Size(102, 13);
+            this.lblID.TabIndex = 2;
+            this.lblID.Text = "ID de Especialidad: ";
             // 
             // btnCancelar
             // 
@@ -57,39 +81,15 @@
             this.btnCancelar.UseVisualStyleBackColor = true;
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
-            // lblID
+            // btnAceptar
             // 
-            this.lblID.AutoSize = true;
-            this.lblID.Location = new System.Drawing.Point(12, 12);
-            this.lblID.Name = "lblID";
-            this.lblID.Size = new System.Drawing.Size(102, 13);
-            this.lblID.TabIndex = 2;
-            this.lblID.Text = "ID de Especialidad: ";
-            // 
-            // lblDescripcion
-            // 
-            this.lblDescripcion.AutoSize = true;
-            this.lblDescripcion.Location = new System.Drawing.Point(12, 38);
-            this.lblDescripcion.Name = "lblDescripcion";
-            this.lblDescripcion.Size = new System.Drawing.Size(69, 13);
-            this.lblDescripcion.TabIndex = 3;
-            this.lblDescripcion.Text = "Descripcion: ";
-            // 
-            // txtID
-            // 
-            this.txtID.Location = new System.Drawing.Point(110, 12);
-            this.txtID.Name = "txtID";
-            this.txtID.ReadOnly = true;
-            this.txtID.Size = new System.Drawing.Size(181, 20);
-            this.txtID.TabIndex = 4;
-            // 
-            // txtDescripcion
-            // 
-            this.txtDescripcion.Location = new System.Drawing.Point(79, 38);
-            this.txtDescripcion.Name = "txtDescripcion";
-            this.txtDescripcion.Size = new System.Drawing.Size(213, 126);
-            this.txtDescripcion.TabIndex = 5;
-            this.txtDescripcion.Text = "";
+            this.btnAceptar.Location = new System.Drawing.Point(135, 170);
+            this.btnAceptar.Name = "btnAceptar";
+            this.btnAceptar.Size = new System.Drawing.Size(75, 23);
+            this.btnAceptar.TabIndex = 0;
+            this.btnAceptar.Text = "Aceptar";
+            this.btnAceptar.UseVisualStyleBackColor = true;
+            this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click);
             // 
             // EspecialidadDesktop
             // 

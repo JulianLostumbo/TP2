@@ -12,5 +12,6 @@ namespace Business.Entities
         public int HsSemanales { get; set; }
         public int HsTotales { get; set; }
         public int IdPlan { get; set; }
+        public string DescPlan { get; set; }
     }
 }

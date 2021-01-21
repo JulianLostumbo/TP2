@@ -24,6 +24,7 @@ namespace Academia
         public UsuarioDesktop(ModoForm modo) : this()
         {
             Modo = modo;
+            this.MapearPersonas();
         }
 
         public UsuarioDesktop(int ID, ModoForm modo) : this()
@@ -32,6 +33,7 @@ namespace Academia
             UsuarioLogic usuario = new UsuarioLogic();
             UsuarioActual = usuario.GetOne(ID);
             this.MapearDeDatos();
+            this.MapearPersonas();
         }
 
         public override void MapearDeDatos()
@@ -42,8 +44,8 @@ namespace Academia
             this.txtApellido.Text = this.UsuarioActual.Apellido;
             this.txtEmail.Text = this.UsuarioActual.Email;
             this.txtUsuario.Text = this.UsuarioActual.NombreUsuario;
-            this.txtClave.Text = this.UsuarioActual.Clave.ToString();
-            this.txtConfirmarClave.Text = this.UsuarioActual.Clave.ToString();
+            this.txtPass.Text = this.UsuarioActual.Clave.ToString();
+            this.txtRepetirPass.Text = this.UsuarioActual.Clave.ToString();
             if (Modo == ModoForm.Alta)
             {
                 btnAceptar.Text = "Guardar";
@@ -59,6 +61,10 @@ namespace Academia
             else
             {
                 btnAceptar.Text = "Aceptar";
+                txtApellido.Enabled = false;
+                txtEmail.Enabled = false;
+                txtNombre.Enabled = false;
+                txtUsuario.Enabled = false;
             }
 
 
@@ -70,20 +76,16 @@ namespace Academia
             if (Modo == ModoForm.Alta)
             {
                 Usuario UsuarioNuevo = new Usuario();
-
-
                 UsuarioNuevo.Habilitado = this.chkHabilitado.Checked;
                 UsuarioNuevo.Nombre = this.txtNombre.Text;
                 UsuarioNuevo.Apellido = this.txtApellido.Text;
                 UsuarioNuevo.Email = this.txtEmail.Text;
-                UsuarioNuevo.Clave = this.txtClave.Text;
-                UsuarioNuevo.NombreUsuario = this.txtUsuario.Text;
+                UsuarioNuevo.Clave = this.txtPass.Text;
+                UsuarioNuevo.NombreUsuario = this.txtUsuario.Text; 
+                UsuarioNuevo.IdPersona = Convert.ToInt32(this.cmbLegajo.SelectedValue.ToString());
                 UsuarioActual = UsuarioNuevo;
                 UsuarioLogic nuevousuario = new UsuarioLogic();
                 nuevousuario.Save(UsuarioActual);
-
-
-
             }
 
             else if (Modo == ModoForm.Modificacion)
@@ -93,9 +95,9 @@ namespace Academia
                 UsuarioActual.Nombre = this.txtNombre.Text;
                 UsuarioActual.Apellido = this.txtApellido.Text;
                 UsuarioActual.Email = this.txtEmail.Text;
-                UsuarioActual.Clave = this.txtClave.Text;
+                UsuarioActual.Clave = this.txtPass.Text;
                 UsuarioActual.NombreUsuario = this.txtUsuario.Text;
-
+                UsuarioActual.IdPersona = Convert.ToInt32(this.cmbLegajo.SelectedValue.ToString());
                 UsuarioLogic nuevousuario = new UsuarioLogic();
                 nuevousuario.Update(UsuarioActual);
 
@@ -116,6 +118,18 @@ namespace Academia
                 btnAceptar.Text = "Aceptar";
         }
 
+        public void MapearPersonas()
+        {
+            UsuarioLogic ul = new UsuarioLogic();
+            cmbLegajo.DataSource = ul.GetPersonas();
+            cmbLegajo.ValueMember = "ID";
+            cmbLegajo.DisplayMember = "Legajo";
+            if (Modo != ModoForm.Alta)
+            {
+                cmbLegajo.SelectedValue = UsuarioActual.Legajo;
+            }
+        }
+
         public override void GuardarCambios() 
         {
             this.MapearADatos();
@@ -126,11 +140,12 @@ namespace Academia
             if (this.txtNombre.ToString() != "" &&
                 this.txtApellido.ToString() != "" &&
                 this.txtNombre.ToString() != "" &&
+                this.cmbLegajo.SelectedItem.ToString() != string.Empty &&
                 this.txtEmail.ToString() != "" &&
                 this.txtUsuario.ToString() != "" &&
-                this.txtClave.ToString() != "" &&
-                this.txtClave.ToString().Length >= 8 &&
-                this.txtClave.ToString() == this.txtConfirmarClave.ToString() &&
+                this.txtPass.ToString() != "" &&
+                this.txtPass.ToString().Length >= 8 &&
+                this.txtPass.ToString() == this.txtRepetirPass.ToString() &&
                 this.txtEmail.ToString().Contains("@") &&
                 (this.txtEmail.ToString().Contains(".com") || this.txtEmail.ToString().Contains(".com.ar")))
             {
@@ -183,6 +198,15 @@ namespace Academia
             this.Close();
         }
 
-        
+        private void button1_Click(object sender, EventArgs e)
+        {
+            PersonaDesktop frm = new PersonaDesktop(ApplicationForm.ModoForm.Alta);
+            frm.ShowDialog();
+        }
+
+        private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

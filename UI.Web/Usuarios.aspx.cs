@@ -16,17 +16,14 @@ namespace UI.Web
         {            
             if (IsPostBack==false)
             {
-                Usuario user = (Usuario)Session["usuario"];
-                if (user.Habilitado == false)
+                Per = (Persona)Session["persona"];
+                Entity = (Usuario)Session["usuario"];
+                formPanel.Visible = false;
+                if (Per.TipoPersona != Persona.TipoPersonas.Administrador)
                 {
-                    //editarLinkButton.Enabled = false;
-                    //nuevoLinkButton.Enabled = false;
-                    //eliminarLinkButton.Enabled = false;
-                    editarLinkButton.Visible = false;
-                    nuevoLinkButton.Visible = false;
+                    imprimirLinkButton.Visible = false;
                     eliminarLinkButton.Visible = false;
-                    gridView.Enabled = false;
-                    gridView.AutoGenerateSelectButton = false;
+                    nuevoLinkButton.Visible = false;
                 }
                 this.LoadGrid();
             }                      
@@ -70,6 +67,13 @@ namespace UI.Web
             set;
         }
 
+        private Persona Per
+        {
+            get;
+            set;
+        }
+
+
         private int SelectedID
         {
             get
@@ -100,7 +104,15 @@ namespace UI.Web
 
         private void LoadGrid()
         {
-            this.gridView.DataSource = this.Logic.GetAll();
+            UsuarioLogic ul = new UsuarioLogic();
+            if (Per.TipoPersona != Persona.TipoPersonas.Administrador)
+            {
+                this.gridView.DataSource = ul.GetAll(Entity.ID);
+            }
+            else
+            {
+                this.gridView.DataSource = ul.GetAll();
+            }
             this.gridView.DataBind();
         }
 
@@ -118,6 +130,7 @@ namespace UI.Web
             this.emailTextBox.Text = this.Entity.Email;
             this.habilitadoCheckBox.Checked = this.Entity.Habilitado;
             this.nombreUsuarioTextBox.Text = this.Entity.NombreUsuario;
+            this.idpersona.SelectedValue = Convert.ToString(this.Entity.IdPersona);
         }
 
         protected void editarLinkButton_Click(object sender, EventArgs e)
@@ -140,6 +153,7 @@ namespace UI.Web
             usuario.NombreUsuario = this.nombreUsuarioTextBox.Text;
             usuario.Clave = this.claveTextBox.Text;
             usuario.Habilitado = this.habilitadoCheckBox.Checked;
+            usuario.IdPersona = Convert.ToInt32(this.idpersona.SelectedValue);
 
         }
 
@@ -156,6 +170,7 @@ namespace UI.Web
                 case FormModes.Baja:
                     this.DeleteEntity(this.SelectedID);
                     this.LoadGrid();
+                    this.formPanel.Visible = false;
                     break;
                 case FormModes.Modificacion:
                     this.Entity = new Usuario();
@@ -164,12 +179,14 @@ namespace UI.Web
                     this.LoadEntity(this.Entity);
                     this.SaveEntity(this.Entity);
                     this.LoadGrid();
+                    this.formPanel.Visible = false;
                     break;
                 case FormModes.Alta:
                     this.Entity = new Usuario();
                     this.LoadEntity(this.Entity);
                     this.SaveEntity(this.Entity);
                     this.LoadGrid();
+                    this.formPanel.Visible = false;
                     break;
                 default:
                     break;
@@ -187,6 +204,7 @@ namespace UI.Web
             this.claveLabel.Visible = enable;
             this.repetirClaveTextBox.Visible = enable;
             this.repetirClaveLabel.Visible = enable;
+            this.idpersona.Enabled = enable;
         }
 
         protected void eliminarLinkButton_Click(object sender, EventArgs e)

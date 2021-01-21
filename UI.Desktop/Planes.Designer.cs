@@ -35,12 +35,14 @@
             this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.IdEspecialidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DescEspecialidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnSalir = new System.Windows.Forms.Button();
             this.btnActualizar = new System.Windows.Forms.Button();
             this.tsUsuarios = new System.Windows.Forms.ToolStrip();
             this.tbsNuevo = new System.Windows.Forms.ToolStripButton();
             this.tbsEditar = new System.Windows.Forms.ToolStripButton();
             this.tbsEliminar = new System.Windows.Forms.ToolStripButton();
+            this.tbsImprimir = new System.Windows.Forms.ToolStripButton();
             this.tcUsuarios.ContentPanel.SuspendLayout();
             this.tcUsuarios.TopToolStripPanel.SuspendLayout();
             this.tcUsuarios.SuspendLayout();
@@ -93,7 +95,8 @@
             this.dgvPlanes.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.id,
             this.Descripcion,
-            this.IdEspecialidad});
+            this.IdEspecialidad,
+            this.DescEspecialidad});
             this.tlUsuarios.SetColumnSpan(this.dgvPlanes, 2);
             this.dgvPlanes.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvPlanes.Location = new System.Drawing.Point(3, 3);
@@ -125,6 +128,13 @@
             this.IdEspecialidad.Name = "IdEspecialidad";
             this.IdEspecialidad.ReadOnly = true;
             // 
+            // DescEspecialidad
+            // 
+            this.DescEspecialidad.DataPropertyName = "DescEspecialidad";
+            this.DescEspecialidad.HeaderText = "Descripción de la Especialidad";
+            this.DescEspecialidad.Name = "DescEspecialidad";
+            this.DescEspecialidad.ReadOnly = true;
+            // 
             // btnSalir
             // 
             this.btnSalir.Location = new System.Drawing.Point(520, 333);
@@ -152,10 +162,11 @@
             this.tsUsuarios.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tbsNuevo,
             this.tbsEditar,
-            this.tbsEliminar});
+            this.tbsEliminar,
+            this.tbsImprimir});
             this.tsUsuarios.Location = new System.Drawing.Point(3, 0);
             this.tsUsuarios.Name = "tsUsuarios";
-            this.tsUsuarios.Size = new System.Drawing.Size(81, 25);
+            this.tsUsuarios.Size = new System.Drawing.Size(104, 25);
             this.tsUsuarios.TabIndex = 0;
             // 
             // tbsNuevo
@@ -190,6 +201,16 @@
             this.tbsEliminar.ToolTipText = "Eliminar";
             this.tbsEliminar.Click += new System.EventHandler(this.tbsEliminar_Click);
             // 
+            // tbsImprimir
+            // 
+            this.tbsImprimir.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.tbsImprimir.Image = ((System.Drawing.Image)(resources.GetObject("tbsImprimir.Image")));
+            this.tbsImprimir.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tbsImprimir.Name = "tbsImprimir";
+            this.tbsImprimir.Size = new System.Drawing.Size(23, 22);
+            this.tbsImprimir.Text = "Imprimir";
+            this.tbsImprimir.Click += new System.EventHandler(this.tbsImprimir_Click);
+            // 
             // Planes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -198,7 +219,7 @@
             this.Controls.Add(this.tcUsuarios);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Planes";
-            this.Text = "Especialidades";
+            this.Text = "Planes";
             this.Load += new System.EventHandler(this.Especialidad_Load);
             this.tcUsuarios.ContentPanel.ResumeLayout(false);
             this.tcUsuarios.TopToolStripPanel.ResumeLayout(false);
@@ -227,6 +248,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn id;
         private System.Windows.Forms.DataGridViewTextBoxColumn Descripcion;
         private System.Windows.Forms.DataGridViewTextBoxColumn IdEspecialidad;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DescEspecialidad;
+        private System.Windows.Forms.ToolStripButton tbsImprimir;
     }
 }
 

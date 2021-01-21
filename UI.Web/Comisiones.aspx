@@ -10,6 +10,7 @@
             <asp:BoundField HeaderText="Descripción" DataField="Descripcion" />
             <asp:BoundField HeaderText="Año de Especialidad" DataField="AnioEspecialidad" />
             <asp:BoundField DataField="IdPlan" HeaderText="ID Plan" />
+            <asp:BoundField DataField="DescPlan" HeaderText="Descripción del Plan" />
         </Columns>
         <RowStyle BorderStyle="Groove" ForeColor="Black" />
         <SelectedRowStyle BackColor="Black" ForeColor="White" />
@@ -33,7 +34,7 @@
     </div>
 
     <asp:Panel ID="formPanel" Visible="false" runat="server" Width="737px" Class="form">
-        <div style="text-align: left; height: 224px;">
+        <div style="text-align: left; height: 256px;">
             <br />
             <asp:Label ID="descripcionLabel" runat="server" Text="Descripción: "></asp:Label>
             <asp:TextBox ID="descripcionTextBox" runat="server" Height="16px" Width="363px"></asp:TextBox>
@@ -42,10 +43,10 @@
             <asp:Label ID="anioEspecialidadLabel" runat="server" Text="Año de Especialidad: "></asp:Label>
             <asp:TextBox ID="anioEspecialidadTextBox" runat="server"></asp:TextBox>
             <asp:RequiredFieldValidator ID="RequiredFieldValidator7" runat="server" ControlToValidate="anioEspecialidadTextBox" ErrorMessage="El año de especialidad no puede estar vacío" ForeColor="Red">*</asp:RequiredFieldValidator>
-            <br />
-            <asp:Label ID="idPlanLabel" runat="server" Text="ID Plan: "></asp:Label>
-            <asp:TextBox ID="idPlanTextBox" runat="server"></asp:TextBox>
-            <asp:RequiredFieldValidator ID="RequiredFieldValidator9" runat="server" ControlToValidate="idPlanTextBox" ErrorMessage="El ID plan no puede estar vacío" ForeColor="Red">*</asp:RequiredFieldValidator>
+            <br />                   
+            <asp:Label ID="Label4" runat="server" Text="Plan:"></asp:Label>
+        <asp:DropDownList ID="idplan" runat="server" DataSourceID="objectplan" DataTextField="Descripcion" DataValueField="ID"></asp:DropDownList>
+        <asp:ObjectDataSource ID="objectplan" runat="server" SelectMethod="GetAll" TypeName="Business.Logic.PlanLogic"></asp:ObjectDataSource>
             <br />
             <asp:ValidationSummary ID="ValidationSummary1" runat="server" ForeColor="Red" Height="58px" Width="437px" />
             <br />

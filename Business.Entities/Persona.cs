@@ -10,6 +10,15 @@ namespace Business.Entities
     public class Persona:BusinessEntity
     {
 
+        public enum TipoPersonas
+        {
+            Profesor,
+            Administrador,
+            Alumno
+        }
+
+        public TipoPersonas TipoPersona { get; set; }
+
         public string Nombre { get; set; }
 
         public string Apellido { get; set; }
@@ -24,8 +33,8 @@ namespace Business.Entities
 
         public int Legajo { get; set; }
 
-        public int TipoPersona { get; set; }
-
         public int IdPlan { get; set; }
+
+        public string DescPlan { get; set; }
     }
 }

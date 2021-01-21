@@ -18,13 +18,13 @@ namespace Academia
         {
             InitializeComponent();
             this.dgvEspecialidades.AutoGenerateColumns = false;
-            if (formLogin.user.Habilitado == false)
-            {
-                this.tbsEditar.Enabled = false;
-                this.tbsEliminar.Enabled = false;
-                this.tbsNuevo.Enabled = false;
-                this.dgvEspecialidades.Enabled = false;
-            }
+            //if (formLogin.UsuarioActual.Habilitado == false)
+            //{
+            //    this.tbsEditar.Enabled = false;
+            //    this.tbsEliminar.Enabled = false;
+            //    this.tbsNuevo.Enabled = false;
+            //    this.dgvEspecialidades.Enabled = false;
+            //}
         }
 
         public void Listar()
@@ -78,6 +78,12 @@ namespace Academia
         private void Especialidad_Load(object sender, EventArgs e)
         {
             Listar();
+            if (formLogin.PersonaActual.TipoPersona != Persona.TipoPersonas.Administrador)
+            {
+                tbsEditar.Enabled = false;
+                tbsEliminar.Enabled = false;
+                tbsNuevo.Enabled = false;
+            }
         }
     }
 }

@@ -15,18 +15,17 @@ namespace UI.Web
         {
             if (IsPostBack == false)
             {
-                Usuario user = (Usuario)Session["usuario"];
-                if (user.Habilitado == false)
+            
+                Per = (Persona)Session["persona"];
+                formPanel.Visible = false;
+                if (Per.TipoPersona != Persona.TipoPersonas.Administrador)
                 {
-                    //editarLinkButton.Enabled = false;
-                    //nuevoLinkButton.Enabled = false;
-                    //eliminarLinkButton.Enabled = false;
-                    editarLinkButton.Visible = false;
                     nuevoLinkButton.Visible = false;
                     eliminarLinkButton.Visible = false;
+                    editarLinkButton.Visible = false;
+                    imprimirLinkButton.Visible = false;
                     gridView.Enabled = false;
                     gridView.AutoGenerateSelectButton = false;
-
                 }
                 this.LoadGrid();
             }
@@ -64,6 +63,8 @@ namespace UI.Web
             }
         }
 
+        public Persona Per { get; set; }
+
         private Materia Entity
         {
             get;
@@ -100,7 +101,8 @@ namespace UI.Web
 
         private void LoadGrid()
         {
-            this.gridView.DataSource = this.Logic.GetAll();
+            MateriaLogic ml = new MateriaLogic();
+            this.gridView.DataSource = ml.GetAll();
             this.gridView.DataBind();
         }
 
@@ -116,7 +118,7 @@ namespace UI.Web
             this.descripcionTextBox.Text = this.Entity.Descripcion;
             this.hsSemanalesTextBox.Text = Convert.ToString(this.Entity.HsSemanales);
             this.hsTotalesTextBox.Text = Convert.ToString(this.Entity.HsTotales);
-            this.idPlanTextBox.Text = Convert.ToString(this.Entity.IdPlan);
+            this.idplan.SelectedValue = this.Entity.IdPlan.ToString();
         }
 
         protected void editarLinkButton_Click(object sender, EventArgs e)
@@ -136,7 +138,7 @@ namespace UI.Web
             materia.Descripcion = this.descripcionTextBox.Text;
             materia.HsSemanales = Convert.ToInt32(this.hsSemanalesTextBox.Text);
             materia.HsTotales = Convert.ToInt32(this.hsTotalesTextBox.Text);
-            materia.IdPlan = Convert.ToInt32(this.idPlanTextBox.Text);
+            materia.IdPlan = int.Parse(this.idplan.SelectedValue);
 
         }
 
@@ -179,7 +181,7 @@ namespace UI.Web
             this.descripcionTextBox.Enabled = enable;
             this.hsSemanalesTextBox.Enabled = enable;
             this.hsTotalesTextBox.Enabled = enable;
-            this.idPlanTextBox.Enabled = enable;
+            this.idplan.Enabled = enable;
         }
 
         protected void eliminarLinkButton_Click(object sender, EventArgs e)
@@ -211,7 +213,6 @@ namespace UI.Web
             this.descripcionTextBox.Text = string.Empty;
             this.hsSemanalesTextBox.Text = string.Empty;
             this.hsTotalesTextBox.Text = string.Empty;
-            this.idPlanTextBox.Text= string.Empty;
         }
 
         protected void cancelarLinkButton_Click(object sender, EventArgs e)

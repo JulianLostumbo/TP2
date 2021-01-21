@@ -78,15 +78,24 @@
   <ItemGroup>
     <Content Include="App_Themes\Login\Login.css" />
     <Content Include="Comisiones.aspx" />
+    <Content Include="Cursos.aspx" />
+    <Content Include="DocentesCursos.aspx" />
     <Content Include="Especialidades.aspx" />
+    <Content Include="EstadoAcademico.aspx" />
     <Content Include="Home.aspx" />
     <Content Include="Global.asax" />
     <Content Include="Images\login.png" />
+    <Content Include="Images\logout-512.png" />
+    <Content Include="Inscripciones.aspx" />
     <Content Include="Login.aspx" />
     <Content Include="Logout.aspx" />
     <Content Include="Materias.aspx" />
+    <Content Include="Notas.aspx" />
+    <Content Include="Personas.aspx" />
     <Content Include="Planes.aspx" />
+    <Content Include="ReportCursos.aspx" />
     <Content Include="ReportUsuarios.aspx" />
+    <Content Include="ReportPlanes.aspx" />
     <Content Include="ReportMaterias.aspx" />
     <Content Include="SqlServerTypes\readme.htm" />
     <Content Include="SqlServerTypes\x64\msvcr120.dll">
@@ -101,6 +110,7 @@
     <Content Include="SqlServerTypes\x86\SqlServerSpatial140.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="UserControl.ascx" />
     <Content Include="Usuarios.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
@@ -112,10 +122,24 @@
     <Compile Include="Comisiones.aspx.designer.cs">
       <DependentUpon>Comisiones.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Cursos.aspx.cs">
+      <DependentUpon>Cursos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Cursos.aspx.designer.cs">
+      <DependentUpon>Cursos.aspx</DependentUpon>
+    </Compile>
     <Compile Include="DataSetAcademia.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>DataSetAcademia.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DocentesCursos.aspx.cs">
+      <DependentUpon>DocentesCursos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DocentesCursos.aspx.designer.cs">
+      <DependentUpon>DocentesCursos.aspx</DependentUpon>
     </Compile>
     <Compile Include="Especialidades.aspx.cs">
       <DependentUpon>Especialidades.aspx</DependentUpon>
@@ -123,6 +147,13 @@
     </Compile>
     <Compile Include="Especialidades.aspx.designer.cs">
       <DependentUpon>Especialidades.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="EstadoAcademico.aspx.cs">
+      <DependentUpon>EstadoAcademico.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="EstadoAcademico.aspx.designer.cs">
+      <DependentUpon>EstadoAcademico.aspx</DependentUpon>
     </Compile>
     <Compile Include="Home.aspx.cs">
       <DependentUpon>Home.aspx</DependentUpon>
@@ -133,6 +164,13 @@
     </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Inscripciones.aspx.cs">
+      <DependentUpon>Inscripciones.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Inscripciones.aspx.designer.cs">
+      <DependentUpon>Inscripciones.aspx</DependentUpon>
     </Compile>
     <Compile Include="Login.aspx.cs">
       <DependentUpon>Login.aspx</DependentUpon>
@@ -155,6 +193,20 @@
     <Compile Include="Materias.aspx.designer.cs">
       <DependentUpon>Materias.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Notas.aspx.cs">
+      <DependentUpon>Notas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Notas.aspx.designer.cs">
+      <DependentUpon>Notas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Personas.aspx.cs">
+      <DependentUpon>Personas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Personas.aspx.designer.cs">
+      <DependentUpon>Personas.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Planes.aspx.cs">
       <DependentUpon>Planes.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -163,12 +215,26 @@
       <DependentUpon>Planes.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ReportCursos.aspx.cs">
+      <DependentUpon>ReportCursos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ReportCursos.aspx.designer.cs">
+      <DependentUpon>ReportCursos.aspx</DependentUpon>
+    </Compile>
     <Compile Include="ReportUsuarios.aspx.cs">
       <DependentUpon>ReportUsuarios.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="ReportUsuarios.aspx.designer.cs">
       <DependentUpon>ReportUsuarios.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ReportPlanes.aspx.cs">
+      <DependentUpon>ReportPlanes.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ReportPlanes.aspx.designer.cs">
+      <DependentUpon>ReportPlanes.aspx</DependentUpon>
     </Compile>
     <Compile Include="ReportMaterias.aspx.cs">
       <DependentUpon>ReportMaterias.aspx</DependentUpon>
@@ -189,6 +255,13 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>tp2_netDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl.ascx.cs">
+      <DependentUpon>UserControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControl.ascx.designer.cs">
+      <DependentUpon>UserControl.ascx</DependentUpon>
     </Compile>
     <Compile Include="Usuarios.aspx.cs">
       <DependentUpon>Usuarios.aspx</DependentUpon>
@@ -252,8 +325,10 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="ReporteCursos.rdlc" />
     <EmbeddedResource Include="ReporteMaterias.rdlc" />
     <EmbeddedResource Include="ReporteUsuarios.rdlc" />
+    <EmbeddedResource Include="ReportePlanes.rdlc" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

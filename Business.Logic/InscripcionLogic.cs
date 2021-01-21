@@ -8,23 +8,44 @@ using System.Threading.Tasks;
 
 namespace Business.Logic
 {
-    public class InscripicionLogic:BusinessLogic
+    public class InscripcionLogic:BusinessLogic
     {
         public Data.Database.InscripcionAdapter InscripcionData { get; set; }
 
-        public InscripicionLogic()
+        public CursoAdapter CursoData { get; set; }
+
+        public InscripcionLogic()
         {
             InscripcionData = new Data.Database.InscripcionAdapter();
         }
 
-        public List<Inscripcion> GetAll()
+        public List<AlumnoInscripcion> GetAll(int id)
         {
-            return InscripcionData.GetAll();
+            return InscripcionData.GetAll(id);
         }
 
-        public Business.Entities.Inscripcion GetOne(int ID)
+        public Business.Entities.AlumnoInscripcion GetOne(int ID)
         {
             return InscripcionData.GetOne(ID);
+        }
+
+        public List<Curso> GetCursosAlumno(Persona p)
+        {
+            List<Curso> cursos = new List<Curso>();
+            List<Curso> disp = new List<Curso>();
+            List<AlumnoInscripcion> inscripciones = new List<AlumnoInscripcion>();
+            inscripciones = InscripcionData.GetInscripciones(p.ID);
+            cursos = CursoData.GetAll();
+            disp = (from Curso in cursos where 
+                    (Curso.AnioCalendario == DateTime.Now.Year && Curso.Cupo > 0 && 
+                    inscripciones.All(p2 => p2.IDCurso != Curso.ID)) 
+                    select Curso).ToList();
+            return disp;
+
+        }
+        public List<Business.Entities.AlumnoInscripcion> GetEstadoAcademico(int ID)
+        {
+            return InscripcionData.GetEstadoAcademico(ID);
         }
 
         public void Delete (int ID)
@@ -32,12 +53,12 @@ namespace Business.Logic
             InscripcionData.Delete(ID);
         }
 
-        public void Save (Business.Entities.Inscripcion inscripcion)
+        public void Save (Business.Entities.AlumnoInscripcion inscripcion)
         {
             InscripcionData.Save(inscripcion);
         }
 
-        public void Update(Business.Entities.Inscripcion inscripcion)
+        public void Update(Business.Entities.AlumnoInscripcion inscripcion)
         {
             InscripcionData.Update(inscripcion);
         }

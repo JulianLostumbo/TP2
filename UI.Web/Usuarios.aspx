@@ -13,6 +13,7 @@
             <asp:BoundField HeaderText="Email" DataField="Email" />
             <asp:BoundField HeaderText="Usuario" DataField="NombreUsuario" />
             <asp:BoundField HeaderText="Habilitado" DataField="Habilitado" />
+            <asp:BoundField DataField="IdPersona" HeaderText="ID Persona" />
         </Columns>
         <RowStyle BorderStyle="Groove" ForeColor="Black" />
         <SelectedRowStyle BackColor="Black" ForeColor="White" />
@@ -38,6 +39,10 @@
 
     <asp:Panel ID="formPanel" Visible="false" runat="server" Width="737px" Class="form" Height="401px">
         <div style="text-align: left; height: 361px;">
+            <br />
+            <asp:Label ID="ID" runat="server" Text="ID: "></asp:Label>
+            <asp:TextBox ID="IDTextBox" runat="server"></asp:TextBox>
+            <asp:RequiredFieldValidator ID="RequiredFieldValidator12" runat="server" ControlToValidate="IDTextBox" ErrorMessage="El ID no puede estar vacío" ForeColor="Red">*</asp:RequiredFieldValidator>
             <br />
             <asp:Label ID="nombreLabel" runat="server" Text="Nombre: "></asp:Label>
             <asp:TextBox ID="nombreTextBox" runat="server"></asp:TextBox>
@@ -68,6 +73,11 @@
             <asp:TextBox ID="repetirClaveTextBox" runat="server" TextMode="Password"></asp:TextBox>
             <asp:CompareValidator ID="CompareValidator1" runat="server" ControlToCompare="claveTextBox" ControlToValidate="repetirClaveTextBox" ErrorMessage="Las claves no coinciden" ForeColor="Red">*</asp:CompareValidator>
             <asp:RequiredFieldValidator ID="RequiredFieldValidator11" runat="server" ControlToValidate="repetirClaveTextBox" ErrorMessage="La clave de confirmación no puede estar vacía" ForeColor="Red">*</asp:RequiredFieldValidator>
+            <br />
+            <asp:Label ID="repetirClaveLabel0" runat="server" Text="ID Persona:  "></asp:Label>
+            <asp:DropDownList ID="idpersona" runat="server" DataSourceID="objectpersona" DataTextField="Legajo" DataValueField="ID">
+            </asp:DropDownList>
+            <asp:ObjectDataSource ID="objectpersona" runat="server" SelectMethod="GetAll" TypeName="Data.Database.PersonaAdapter" OldValuesParameterFormatString="original_{0}"></asp:ObjectDataSource>
             <br />
             <asp:ValidationSummary ID="ValidationSummary1" runat="server" ForeColor="Red" Height="137px" Width="437px" />
             <br />

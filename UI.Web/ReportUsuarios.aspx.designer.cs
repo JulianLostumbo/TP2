@@ -11,7 +11,7 @@ namespace UI.Web
 {
 
 
-    public partial class Reporte
+    public partial class Reporte1
     {
 
         /// <summary>

@@ -6,13 +6,16 @@
         <TablixBody>
           <TablixColumns>
             <TablixColumn>
-              <Width>2.14804cm</Width>
+              <Width>1.55849cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>2.45402cm</Width>
+              <Width>4.89566cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>5.94652cm</Width>
+              <Width>2.5cm</Width>
+            </TablixColumn>
+            <TablixColumn>
+              <Width>5.35697cm</Width>
             </TablixColumn>
             <TablixColumn>
               <Width>4.17381cm</Width>
@@ -68,7 +71,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>ID Plan</Value>
+                              <Value>Descripción</Value>
                               <Style>
                                 <FontWeight>Bold</FontWeight>
                               </Style>
@@ -93,6 +96,38 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
+                    <Textbox Name="Textbox12">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>ID Plan</Value>
+                              <Style>
+                                <FontWeight>Bold</FontWeight>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style />
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>Textbox12</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Color>LightGrey</Color>
+                          <Style>Solid</Style>
+                        </Border>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
                     <Textbox Name="Textbox5">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
@@ -100,7 +135,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>Descripción</Value>
+                              <Value>Descripción del Plan</Value>
                               <Style>
                                 <FontWeight>Bold</FontWeight>
                               </Style>
@@ -224,36 +259,6 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="IdPlan">
-                      <CanGrow>true</CanGrow>
-                      <KeepTogether>true</KeepTogether>
-                      <Paragraphs>
-                        <Paragraph>
-                          <TextRuns>
-                            <TextRun>
-                              <Value>=Fields!IdPlan.Value</Value>
-                              <Style />
-                            </TextRun>
-                          </TextRuns>
-                          <Style />
-                        </Paragraph>
-                      </Paragraphs>
-                      <rd:DefaultName>IdPlan</rd:DefaultName>
-                      <Style>
-                        <Border>
-                          <Color>LightGrey</Color>
-                          <Style>Solid</Style>
-                        </Border>
-                        <PaddingLeft>2pt</PaddingLeft>
-                        <PaddingRight>2pt</PaddingRight>
-                        <PaddingTop>2pt</PaddingTop>
-                        <PaddingBottom>2pt</PaddingBottom>
-                      </Style>
-                    </Textbox>
-                  </CellContents>
-                </TablixCell>
-                <TablixCell>
-                  <CellContents>
                     <Textbox Name="Descripcion">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
@@ -269,6 +274,66 @@
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>Descripcion</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Color>LightGrey</Color>
+                          <Style>Solid</Style>
+                        </Border>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="IdPlan1">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>=Fields!IdPlan.Value</Value>
+                              <Style />
+                            </TextRun>
+                          </TextRuns>
+                          <Style />
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>IdPlan1</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Color>LightGrey</Color>
+                          <Style>Solid</Style>
+                        </Border>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="DescPlan1">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>=Fields!DescPlan.Value</Value>
+                              <Style />
+                            </TextRun>
+                          </TextRuns>
+                          <Style />
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>DescPlan1</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
@@ -353,6 +418,7 @@
             <TablixMember />
             <TablixMember />
             <TablixMember />
+            <TablixMember />
           </TablixMembers>
         </TablixColumnHierarchy>
         <TablixRowHierarchy>
@@ -367,8 +433,8 @@
         </TablixRowHierarchy>
         <DataSetName>DataSetMaterias</DataSetName>
         <Top>4.99339cm</Top>
-        <Height>1.70271cm</Height>
-        <Width>18.83176cm</Width>
+        <Height>1.7027cm</Height>
+        <Width>22.59429cm</Width>
         <Style>
           <Border>
             <Style>None</Style>
@@ -380,7 +446,7 @@
         <Value>iconAcademia</Value>
         <Sizing>FitProportional</Sizing>
         <Top>7.11943cm</Top>
-        <Left>8.41714cm</Left>
+        <Left>10.69256cm</Left>
         <Height>1.86698cm</Height>
         <Width>1.92333cm</Width>
         <ZIndex>1</ZIndex>
@@ -395,7 +461,7 @@
         <Value>academia_logo_40px_padding2x056bcb9e2e000c47b30cc7f6fb3d803ad22322f340bf1987565b815a8987ccbf</Value>
         <Sizing>FitProportional</Sizing>
         <Top>7.96609cm</Top>
-        <Left>3.91837cm</Left>
+        <Left>5.85392cm</Left>
         <Height>4.11868cm</Height>
         <Width>10.67519cm</Width>
         <ZIndex>2</ZIndex>
@@ -476,7 +542,7 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox14</rd:DefaultName>
-        <Left>3.76371cm</Left>
+        <Left>5.85392cm</Left>
         <Height>4.21859cm</Height>
         <Width>10.6812cm</Width>
         <ZIndex>4</ZIndex>
@@ -495,7 +561,7 @@
         <Value>materias</Value>
         <Sizing>FitProportional</Sizing>
         <Top>0.49243cm</Top>
-        <Left>14.48019cm</Left>
+        <Left>18.58956cm</Left>
         <Height>3.72616cm</Height>
         <Width>4.00473cm</Width>
         <ZIndex>5</ZIndex>
@@ -509,7 +575,7 @@
     <Height>4.78556in</Height>
     <Style />
   </Body>
-  <Width>7.41408in</Width>
+  <Width>8.91916in</Width>
   <Page>
     <PageHeight>29.7cm</PageHeight>
     <PageWidth>21cm</PageWidth>
@@ -537,6 +603,10 @@
         <CommandText>/* Local Query */</CommandText>
       </Query>
       <Fields>
+        <Field Name="DescPlan">
+          <DataField>DescPlan</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
         <Field Name="Descripcion">
           <DataField>Descripcion</DataField>
           <rd:TypeName>System.String</rd:TypeName>

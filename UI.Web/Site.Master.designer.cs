@@ -51,6 +51,24 @@ namespace UI.Web
         protected global::System.Web.UI.WebControls.SiteMapDataSource SiteMapDataSource;
 
         /// <summary>
+        /// Control ContentPlaceHolder1.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.ContentPlaceHolder ContentPlaceHolder1;
+
+        /// <summary>
+        /// Control UserControl1.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::WebApplication1.UserControl UserControl1;
+
+        /// <summary>
         /// Control bodyContentPlaceHolder.
         /// </summary>
         /// <remarks>

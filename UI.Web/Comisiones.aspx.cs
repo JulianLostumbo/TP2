@@ -15,18 +15,15 @@ namespace UI.Web
         {
             if (IsPostBack == false)
             {
-                Usuario user = (Usuario)Session["usuario"];
-                if (user.Habilitado == false)
+                Per = (Persona)Session["persona"];
+                formPanel.Visible = false;
+                if (Per.TipoPersona != Persona.TipoPersonas.Administrador)
                 {
-                    //editarLinkButton.Enabled = false;
-                    //nuevoLinkButton.Enabled = false;
-                    //eliminarLinkButton.Enabled = false;
-                    editarLinkButton.Visible = false;
                     nuevoLinkButton.Visible = false;
                     eliminarLinkButton.Visible = false;
+                    editarLinkButton.Visible = false;
                     gridView.Enabled = false;
                     gridView.AutoGenerateSelectButton = false;
-
                 }
                 this.LoadGrid();
             }
@@ -64,6 +61,8 @@ namespace UI.Web
             }
         }
 
+        public Persona Per { get; set; }
+
         private Comision Entity
         {
             get;
@@ -100,7 +99,8 @@ namespace UI.Web
 
         private void LoadGrid()
         {
-            this.gridView.DataSource = this.Logic.GetAll();
+            ComisionLogic cl = new ComisionLogic();
+            this.gridView.DataSource = cl.GetAll();
             this.gridView.DataBind();
         }
 
@@ -115,7 +115,7 @@ namespace UI.Web
             this.Entity = this.Logic.GetOne(id);
             this.descripcionTextBox.Text = this.Entity.Descripcion;
             this.anioEspecialidadTextBox.Text = Convert.ToString(this.Entity.AnioEspecialidad);
-            this.idPlanTextBox.Text = Convert.ToString(this.Entity.IdPlan);
+            this.idplan.SelectedValue = Convert.ToString(this.Entity.IdPlan);
         }
 
         protected void editarLinkButton_Click(object sender, EventArgs e)
@@ -134,7 +134,7 @@ namespace UI.Web
         {
             comision.Descripcion = this.descripcionTextBox.Text;
             comision.AnioEspecialidad = Convert.ToInt32(this.anioEspecialidadTextBox.Text);
-            comision.IdPlan = Convert.ToInt32(this.idPlanTextBox.Text);
+            comision.IdPlan = Convert.ToInt32(this.idplan.SelectedValue);
 
         }
 
@@ -176,7 +176,7 @@ namespace UI.Web
         {
             this.descripcionTextBox.Enabled = enable;
             this.anioEspecialidadTextBox.Enabled = enable;
-            this.idPlanTextBox.Enabled = enable;
+            this.idplan.Enabled = enable;
         }
 
         protected void eliminarLinkButton_Click(object sender, EventArgs e)
@@ -207,7 +207,6 @@ namespace UI.Web
         {
             this.descripcionTextBox.Text = string.Empty;
             this.anioEspecialidadTextBox.Text = string.Empty;
-            this.idPlanTextBox.Text = string.Empty;
         }
 
         protected void cancelarLinkButton_Click(object sender, EventArgs e)

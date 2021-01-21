@@ -15,18 +15,16 @@ namespace UI.Web
         {
             if (IsPostBack == false)
             {
-                Usuario user = (Usuario)Session["usuario"];
-                if (user.Habilitado == false)
+                Per = (Persona)Session["persona"];
+                formPanel.Visible = false;
+                if (Per.TipoPersona != Persona.TipoPersonas.Administrador)
                 {
-                    //editarLinkButton.Enabled = false;
-                    //nuevoLinkButton.Enabled = false;
-                    //eliminarLinkButton.Enabled = false;
-                    editarLinkButton.Visible = false;
                     nuevoLinkButton.Visible = false;
                     eliminarLinkButton.Visible = false;
+                    editarLinkButton.Visible = false;
+                    imprimirLinkButton.Visible = false;
                     gridView.Enabled = false;
                     gridView.AutoGenerateSelectButton = false;
-
                 }
                 this.LoadGrid();
             }
@@ -64,6 +62,8 @@ namespace UI.Web
             }
         }
 
+        public Persona Per { get; set; }
+
         private Plan Entity
         {
             get;
@@ -100,7 +100,8 @@ namespace UI.Web
 
         private void LoadGrid()
         {
-            this.gridView.DataSource = this.Logic.GetAll();
+            PlanLogic pl = new PlanLogic();
+            this.gridView.DataSource = pl.GetAll();
             this.gridView.DataBind();
         }
 
@@ -114,7 +115,7 @@ namespace UI.Web
 
             this.Entity = this.Logic.GetOne(id);
             this.descripcionTextBox.Text = this.Entity.Descripcion;
-            this.idEspecialidadTextBox.Text = Convert.ToString(this.Entity.IdEspecialidad);
+            this.idespec.SelectedValue = this.Entity.IdEspecialidad.ToString();
         }
 
         protected void editarLinkButton_Click(object sender, EventArgs e)
@@ -132,7 +133,7 @@ namespace UI.Web
         private void LoadEntity(Plan plan)
         {
             plan.Descripcion = this.descripcionTextBox.Text;
-            plan.IdEspecialidad = Convert.ToInt32(this.idEspecialidadTextBox.Text);
+            plan.IdEspecialidad = int.Parse(this.idespec.SelectedValue);
 
         }
 
@@ -173,7 +174,7 @@ namespace UI.Web
         private void EnableForm(bool enable)
         {
             this.descripcionTextBox.Enabled = enable;
-            this.idEspecialidadTextBox.Enabled = enable;
+            this.idespec.Enabled = enable;
         }
 
         protected void eliminarLinkButton_Click(object sender, EventArgs e)
@@ -203,7 +204,6 @@ namespace UI.Web
         private void ClearForm()
         {
             this.descripcionTextBox.Text = string.Empty;
-            this.idEspecialidadTextBox.Text = string.Empty;
         }
 
         protected void cancelarLinkButton_Click(object sender, EventArgs e)
@@ -216,6 +216,9 @@ namespace UI.Web
 
         }
 
-        
+        protected void imprimirLinkButton_Click(object sender, EventArgs e)
+        {
+            this.Response.Redirect("~/ReportPlanes.aspx");
+        }
     }
 }

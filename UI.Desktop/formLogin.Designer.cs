@@ -38,6 +38,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.cbContraseña = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -46,7 +47,7 @@
             this.txtUsuario.Location = new System.Drawing.Point(150, 110);
             this.txtUsuario.Name = "txtUsuario";
             this.txtUsuario.Size = new System.Drawing.Size(132, 20);
-            this.txtUsuario.TabIndex = 2;
+            this.txtUsuario.TabIndex = 0;
             // 
             // txtPass
             // 
@@ -54,7 +55,7 @@
             this.txtPass.Name = "txtPass";
             this.txtPass.PasswordChar = '*';
             this.txtPass.Size = new System.Drawing.Size(132, 20);
-            this.txtPass.TabIndex = 3;
+            this.txtPass.TabIndex = 2;
             // 
             // btnIngresar
             // 
@@ -64,7 +65,7 @@
             this.btnIngresar.Location = new System.Drawing.Point(204, 212);
             this.btnIngresar.Name = "btnIngresar";
             this.btnIngresar.Size = new System.Drawing.Size(78, 29);
-            this.btnIngresar.TabIndex = 5;
+            this.btnIngresar.TabIndex = 4;
             this.btnIngresar.Text = "Ingresar";
             this.btnIngresar.UseVisualStyleBackColor = false;
             this.btnIngresar.Click += new System.EventHandler(this.btnIngresar_Click);
@@ -76,7 +77,7 @@
             this.lnkOlvidaPass.Location = new System.Drawing.Point(12, 258);
             this.lnkOlvidaPass.Name = "lnkOlvidaPass";
             this.lnkOlvidaPass.Size = new System.Drawing.Size(107, 13);
-            this.lnkOlvidaPass.TabIndex = 6;
+            this.lnkOlvidaPass.TabIndex = 5;
             this.lnkOlvidaPass.TabStop = true;
             this.lnkOlvidaPass.Text = "Olvidé mi contraseña";
             this.lnkOlvidaPass.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lnkOlvidaPass_LinkClicked);
@@ -136,6 +137,16 @@
             this.pictureBox1.TabIndex = 11;
             this.pictureBox1.TabStop = false;
             // 
+            // cbContraseña
+            // 
+            this.cbContraseña.AutoSize = true;
+            this.cbContraseña.Location = new System.Drawing.Point(289, 165);
+            this.cbContraseña.Name = "cbContraseña";
+            this.cbContraseña.Size = new System.Drawing.Size(15, 14);
+            this.cbContraseña.TabIndex = 3;
+            this.cbContraseña.UseVisualStyleBackColor = true;
+            this.cbContraseña.CheckedChanged += new System.EventHandler(this.cbContraseña_CheckedChanged);
+            // 
             // formLogin
             // 
             this.AcceptButton = this.btnIngresar;
@@ -143,6 +154,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(501, 283);
+            this.Controls.Add(this.cbContraseña);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
@@ -175,6 +187,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.CheckBox cbContraseña;
     }
 }
 

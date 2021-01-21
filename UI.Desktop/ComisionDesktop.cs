@@ -32,6 +32,7 @@ namespace Academia
             ComisionLogic comision = new ComisionLogic();
             ComisionActual = comision.GetOne(ID);
             this.MapearDeDatos();
+            this.MapearPlanes();
         }
 
         public override void MapearDeDatos()
@@ -39,7 +40,6 @@ namespace Academia
             this.txtID.Text = this.ComisionActual.ID.ToString();
             this.txtDescripcion.Text = this.ComisionActual.Descripcion;
             this.txtAnioEspecialidad.Text = this.ComisionActual.AnioEspecialidad.ToString();
-            this.txtIdPlan.Text = this.ComisionActual.IdPlan.ToString();
             if (Modo == ModoForm.Alta)
             {
                 btnAceptar.Text = "Guardar";
@@ -51,6 +51,10 @@ namespace Academia
             else if (Modo == ModoForm.Baja)
             {
                 btnAceptar.Text = "Eliminar";
+                txtID.Enabled = false;
+                txtDescripcion.Enabled = false;
+                txtAnioEspecialidad.Enabled = false;
+                cmbPlanes.Enabled = false;
             }
             else
             {
@@ -67,7 +71,7 @@ namespace Academia
 
                 ComNueva.Descripcion = this.txtDescripcion.Text.ToString();
                 ComNueva.AnioEspecialidad = Convert.ToInt32(this.txtAnioEspecialidad.Text);
-                ComNueva.IdPlan = Convert.ToInt32(this.txtIdPlan.Text);
+                ComNueva.IdPlan = Convert.ToInt32(cmbPlanes.SelectedValue.ToString());
 
                 ComisionActual = ComNueva;
                 ComisionLogic nuevaCom = new ComisionLogic();
@@ -82,7 +86,7 @@ namespace Academia
 
                 ComisionActual.Descripcion = this.txtDescripcion.Text.ToString();
                 ComisionActual.AnioEspecialidad = Convert.ToInt32(this.txtAnioEspecialidad.Text);
-                ComisionActual.IdPlan = Convert.ToInt32(this.txtIdPlan.Text);
+                ComisionActual.IdPlan = Convert.ToInt32(cmbPlanes.SelectedValue.ToString());
 
                 ComisionLogic nuevaCom = new ComisionLogic();
                 nuevaCom.Update(ComisionActual);
@@ -101,6 +105,19 @@ namespace Academia
                 btnAceptar.Text = "Aceptar";
         }
 
+        public void MapearPlanes()
+        {
+            ComisionLogic cl = new ComisionLogic();
+            cmbPlanes.DataSource = cl.GetPlanes();
+            cmbPlanes.ValueMember = "ID";
+            cmbPlanes.DisplayMember = "Descripcion";
+            if (Modo != ModoForm.Alta)
+            {
+                cmbPlanes.SelectedValue = ComisionActual.IdPlan;
+
+            };
+        }
+
         public override void GuardarCambios() 
         {
             this.MapearADatos();
@@ -109,7 +126,7 @@ namespace Academia
 
         public override bool Validar() 
         {
-            if (this.txtDescripcion.ToString() != "" && this.txtAnioEspecialidad.ToString() != "" && this.txtIdPlan.ToString() != "0"  && this.txtAnioEspecialidad.ToString() != "0" && this.txtIdPlan.ToString() != "0" )
+            if (this.txtDescripcion.ToString() != "" && this.txtAnioEspecialidad.ToString() != "" && this.cmbPlanes.SelectedItem.ToString() != string.Empty  && this.txtAnioEspecialidad.ToString() != "0")
             {
                 return true;
             }
@@ -154,6 +171,8 @@ namespace Academia
             this.Close();
         }
 
-        
+        private void ComisionDesktop_Load(object sender, EventArgs e)
+        {
+        }
     }
 }

@@ -18,13 +18,13 @@ namespace Academia
         {
             InitializeComponent();
             this.dgvComisiones.AutoGenerateColumns = false;
-            if (formLogin.user.Habilitado == false)
+            /*if (formLogin.UsuarioActual.Habilitado == false)
             {
                 this.tbsEditar.Enabled = false;
                 this.tbsEliminar.Enabled = false;
                 this.tbsNuevo.Enabled = false;
                 this.dgvComisiones.Enabled = false;
-            }
+            }*/
         }
 
         public void Listar()
@@ -78,6 +78,12 @@ namespace Academia
         private void Comision_Load(object sender, EventArgs e)
         {
             Listar();
+            if (formLogin.PersonaActual.TipoPersona != Persona.TipoPersonas.Administrador)
+            {
+                tbsEditar.Enabled = false;
+                tbsEliminar.Enabled = false;
+                tbsNuevo.Enabled = false;
+            }
         }
     }
 }

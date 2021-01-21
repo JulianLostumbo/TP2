@@ -22,15 +22,32 @@ namespace Business.Logic
             return UsuarioData.GetAll();
         }
 
+        public List<Usuario> GetAll(int ID)
+        {
+            return UsuarioData.GetAll(ID);
+        }
+
         public Business.Entities.Usuario GetOne(int ID)
         {
             return UsuarioData.GetOne(ID);
+        }
+
+        public List<Persona> GetPersonas()
+        {
+            return UsuarioData.GetPersonas();
         }
 
         public Business.Entities.Usuario GetOne(string user, string clave)
         {
             return UsuarioData.GetOne(user, clave);
         }
+        
+        /*public static bool Login2(string user, string pass)
+        {
+            UsuarioAdapter ud = new UsuarioAdapter();
+            return ud.Login2(user, pass);
+        }
+        */
 
         public void Delete (int ID)
         {

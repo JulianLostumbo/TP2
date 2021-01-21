@@ -12,6 +12,7 @@
             <asp:BoundField HeaderText="Horas Semanales" DataField="HsSemanales" />
             <asp:BoundField HeaderText="Horas Totales" DataField="HsTotales" />
             <asp:BoundField DataField="IdPlan" HeaderText="ID Plan" />
+            <asp:BoundField DataField="DescPlan" HeaderText="Descripción del Plan" />
         </Columns>
         <RowStyle BorderStyle="Groove" ForeColor="Black" />
         <SelectedRowStyle BackColor="Black" ForeColor="White" />
@@ -36,7 +37,7 @@
     </div>
 
     <asp:Panel ID="formPanel" Visible="false" runat="server" Width="737px" Class="form">
-        <div style="text-align: left; height: 266px;">
+        <div style="text-align: left; height: 302px;">
             <br />
             <asp:Label ID="descripcionLabel" runat="server" Text="Descripción: "></asp:Label>
             <asp:TextBox ID="descripcionTextBox" runat="server" Height="16px" Width="363px"></asp:TextBox>
@@ -51,8 +52,9 @@
             <asp:RequiredFieldValidator ID="RequiredFieldValidator8" runat="server" ControlToValidate="hsTotalesTextBox" ErrorMessage="El campo de horas totales no puede estar vacío" ForeColor="Red">*</asp:RequiredFieldValidator>
             <br />
             <asp:Label ID="idPlanLabel" runat="server" Text="ID Plan: "></asp:Label>
-            <asp:TextBox ID="idPlanTextBox" runat="server"></asp:TextBox>
-            <asp:RequiredFieldValidator ID="RequiredFieldValidator9" runat="server" ControlToValidate="idPlanTextBox" ErrorMessage="El ID plan no puede estar vacío" ForeColor="Red">*</asp:RequiredFieldValidator>
+            <asp:DropDownList ID="idplan" runat="server" DataSourceID="objectplan" DataTextField="Descripcion" DataValueField="ID">
+            </asp:DropDownList>
+            <asp:ObjectDataSource ID="objectplan" runat="server" SelectMethod="GetAll" TypeName="Business.Logic.PlanLogic"></asp:ObjectDataSource>
             <br />
             <asp:ValidationSummary ID="ValidationSummary1" runat="server" ForeColor="Red" Height="74px" Width="437px" />
             <br />

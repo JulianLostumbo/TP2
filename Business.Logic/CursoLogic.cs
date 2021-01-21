@@ -22,6 +22,16 @@ namespace Business.Logic
             return CursoData.GetAll();
         }
 
+        public List<Materia> GetMaterias()
+        {
+            return CursoData.GetMaterias();
+        }
+
+        public List<Comision> GetComisiones()
+        {
+            return CursoData.GetComisiones();
+        }
+
         public Business.Entities.Curso GetOne(int ID)
         {
             return CursoData.GetOne(ID);

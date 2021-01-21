@@ -23,6 +23,12 @@
             <TablixColumn>
               <Width>3.0234cm</Width>
             </TablixColumn>
+            <TablixColumn>
+              <Width>2.5cm</Width>
+            </TablixColumn>
+            <TablixColumn>
+              <Width>2.5cm</Width>
+            </TablixColumn>
           </TablixColumns>
           <TablixRows>
             <TablixRow>
@@ -197,7 +203,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>Habilitado</Value>
+                              <Value>ID Persona</Value>
                               <Style>
                                 <FontWeight>Bold</FontWeight>
                               </Style>
@@ -207,6 +213,70 @@
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>Textbox11</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Color>LightGrey</Color>
+                          <Style>Solid</Style>
+                        </Border>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="Textbox13">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>Tipo Persona</Value>
+                              <Style>
+                                <FontWeight>Bold</FontWeight>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style />
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>Textbox13</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Color>LightGrey</Color>
+                          <Style>Solid</Style>
+                        </Border>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="Textbox16">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>Nro. Legajo</Value>
+                              <Style>
+                                <FontWeight>Bold</FontWeight>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style />
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>Textbox16</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
@@ -377,21 +447,81 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="Habilitado">
+                    <Textbox Name="IdPersona">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Fields!Habilitado.Value</Value>
+                              <Value>=Fields!IdPersona.Value</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
                           <Style />
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>Habilitado</rd:DefaultName>
+                      <rd:DefaultName>IdPersona</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Color>LightGrey</Color>
+                          <Style>Solid</Style>
+                        </Border>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="TipoPersona">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>=Fields!TipoPersona.Value</Value>
+                              <Style />
+                            </TextRun>
+                          </TextRuns>
+                          <Style />
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>TipoPersona</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Color>LightGrey</Color>
+                          <Style>Solid</Style>
+                        </Border>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="Legajo">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>=Fields!Legajo.Value</Value>
+                              <Style />
+                            </TextRun>
+                          </TextRuns>
+                          <Style />
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>Legajo</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
@@ -417,6 +547,8 @@
             <TablixMember />
             <TablixMember />
             <TablixMember />
+            <TablixMember />
+            <TablixMember />
           </TablixMembers>
         </TablixColumnHierarchy>
         <TablixRowHierarchy>
@@ -432,7 +564,7 @@
         <DataSetName>ReporteUsuarios</DataSetName>
         <Top>4.76546cm</Top>
         <Height>1.54396cm</Height>
-        <Width>22.95771cm</Width>
+        <Width>27.95769cm</Width>
         <Style>
           <Border>
             <Style>None</Style>
@@ -501,7 +633,7 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox14</rd:DefaultName>
-        <Left>3.50046cm</Left>
+        <Left>5.99388cm</Left>
         <Height>4.24505cm</Height>
         <Width>15.62891cm</Width>
         <ZIndex>2</ZIndex>
@@ -520,7 +652,7 @@
         <Value>ID2247606</Value>
         <Sizing>FitProportional</Sizing>
         <Top>0.76122cm</Top>
-        <Left>19.65854cm</Left>
+        <Left>24.65852cm</Left>
         <Height>3.0576cm</Height>
         <Width>3.29917cm</Width>
         <ZIndex>3</ZIndex>
@@ -534,8 +666,8 @@
         <Source>Embedded</Source>
         <Value>academia_logo_40px_padding2x056bcb9e2e000c47b30cc7f6fb3d803ad22322f340bf1987565b815a8987ccbf</Value>
         <Sizing>FitProportional</Sizing>
-        <Top>7.48233cm</Top>
-        <Left>6.44335cm</Left>
+        <Top>7.48234cm</Top>
+        <Left>8.53356cm</Left>
         <Height>4.11868cm</Height>
         <Width>10.67519cm</Width>
         <ZIndex>4</ZIndex>
@@ -550,7 +682,7 @@
         <Value>iconAcademia</Value>
         <Sizing>FitProportional</Sizing>
         <Top>6.63567cm</Top>
-        <Left>10.94212cm</Left>
+        <Left>13.03233cm</Left>
         <Height>1.86698cm</Height>
         <Width>1.92333cm</Width>
         <ZIndex>5</ZIndex>
@@ -564,7 +696,7 @@
     <Height>4.56733in</Height>
     <Style />
   </Body>
-  <Width>9.03847in</Width>
+  <Width>11.00696in</Width>
   <Page>
     <PageHeight>29.7cm</PageHeight>
     <PageWidth>21cm</PageWidth>
@@ -612,6 +744,14 @@
           <DataField>ID</DataField>
           <rd:TypeName>System.Int32</rd:TypeName>
         </Field>
+        <Field Name="IdPersona">
+          <DataField>IdPersona</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="Legajo">
+          <DataField>Legajo</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
         <Field Name="Nombre">
           <DataField>Nombre</DataField>
           <rd:TypeName>System.String</rd:TypeName>
@@ -623,6 +763,10 @@
         <Field Name="State">
           <DataField>State</DataField>
           <rd:TypeName>Business.Entities.BusinessEntity+States</rd:TypeName>
+        </Field>
+        <Field Name="TipoPersona">
+          <DataField>TipoPersona</DataField>
+          <rd:TypeName>Business.Entities.Persona+TipoPersonas</rd:TypeName>
         </Field>
       </Fields>
       <rd:DataSetInfo>

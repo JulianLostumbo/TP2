@@ -36,6 +36,7 @@
             this.Descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.AnioEspecialidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.IdPlan = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DescPlan = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnSalir = new System.Windows.Forms.Button();
             this.btnActualizar = new System.Windows.Forms.Button();
             this.tsUsuarios = new System.Windows.Forms.ToolStrip();
@@ -95,7 +96,8 @@
             this.id,
             this.Descripcion,
             this.AnioEspecialidad,
-            this.IdPlan});
+            this.IdPlan,
+            this.DescPlan});
             this.tlUsuarios.SetColumnSpan(this.dgvComisiones, 2);
             this.dgvComisiones.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvComisiones.Location = new System.Drawing.Point(3, 3);
@@ -133,6 +135,13 @@
             this.IdPlan.HeaderText = "ID Plan";
             this.IdPlan.Name = "IdPlan";
             this.IdPlan.ReadOnly = true;
+            // 
+            // DescPlan
+            // 
+            this.DescPlan.DataPropertyName = "descPlan";
+            this.DescPlan.HeaderText = "Descripción del Plan";
+            this.DescPlan.Name = "DescPlan";
+            this.DescPlan.ReadOnly = true;
             // 
             // btnSalir
             // 
@@ -237,6 +246,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Descripcion;
         private System.Windows.Forms.DataGridViewTextBoxColumn AnioEspecialidad;
         private System.Windows.Forms.DataGridViewTextBoxColumn IdPlan;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DescPlan;
     }
 }
 

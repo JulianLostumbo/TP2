@@ -18,20 +18,31 @@ namespace Academia
         {
             InitializeComponent();
             this.dgvUsuarios.AutoGenerateColumns = false;
-            if (formLogin.user.Habilitado == false)
+            /*if (formLogin.UsuarioActual.Habilitado == false)
             {
                 this.tbsEditar.Enabled = false;
                 this.tbsEliminar.Enabled = false;
                 this.tbsNuevo.Enabled = false;
                 this.dgvUsuarios.Enabled = false;
-            }
+            }*/
             
         }
 
         public void Listar()
         {
             UsuarioLogic ul = new UsuarioLogic();
-            this.dgvUsuarios.DataSource = ul.GetAll();
+            if (formLogin.PersonaActual.TipoPersona == Persona.TipoPersonas.Administrador)
+            {
+
+                this.dgvUsuarios.DataSource = ul.GetAll();
+            }
+            else
+            {
+                tbsEliminar.Visible = false;
+                tbsNuevo.Visible = false;
+                tbsImprimir.Visible = false;
+                this.dgvUsuarios.DataSource = ul.GetAll(formLogin.UsuarioActual.ID);
+            }
         }
 
         private void Usuarios_Load(object sender, EventArgs e)

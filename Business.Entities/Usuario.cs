@@ -21,5 +21,11 @@ namespace Business.Entities
         public string Email { get; set; }
 
         public bool Habilitado { get; set; }
+
+        public int IdPersona { get; set; }
+
+        public int Legajo { get; set; }
+
+        public Persona.TipoPersonas TipoPersona { get; set; }
     }
 }

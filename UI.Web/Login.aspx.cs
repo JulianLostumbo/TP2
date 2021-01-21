@@ -26,6 +26,9 @@ namespace UI.Web
 
             if (nombreUser == usuario.NombreUsuario && claveUser == usuario.Clave)
             {
+
+                PersonaLogic BuscarPersona = new PersonaLogic();
+                Session["persona"] = BuscarPersona.GetOne(usuario.IdPersona);
                 Session["usuario"] = usuario;
                 Response.Redirect("~/Home.aspx");
             }

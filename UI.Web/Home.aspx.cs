@@ -16,7 +16,6 @@ namespace UI.Web
             {
                 VerificarSesion();
                 Usuario Usuario = (Usuario)Session["usuario"];
-                lblUsuario.Text = Usuario.Nombre + ' ' + Usuario.Apellido;
 
             }
 

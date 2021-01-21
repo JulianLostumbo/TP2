@@ -132,31 +132,31 @@ namespace UI.Web
         protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator7;
 
         /// <summary>
-        /// Control idPlanLabel.
+        /// Control Label4.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label idPlanLabel;
+        protected global::System.Web.UI.WebControls.Label Label4;
 
         /// <summary>
-        /// Control idPlanTextBox.
+        /// Control idplan.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox idPlanTextBox;
+        protected global::System.Web.UI.WebControls.DropDownList idplan;
 
         /// <summary>
-        /// Control RequiredFieldValidator9.
+        /// Control objectplan.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator9;
+        protected global::System.Web.UI.WebControls.ObjectDataSource objectplan;
 
         /// <summary>
         /// Control ValidationSummary1.

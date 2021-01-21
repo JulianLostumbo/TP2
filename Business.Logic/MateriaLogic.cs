@@ -22,6 +22,11 @@ namespace Business.Logic
             return MateriaData.GetAll();
         }
 
+        public List<Plan> GetPlanes()
+        {
+            return MateriaData.GetPlanes();
+        }
+
         public Business.Entities.Materia GetOne(int ID)
         {
             return MateriaData.GetOne(ID);

@@ -17,7 +17,6 @@ C:\Net\TP2L05\Business.Entities\obj\Debug\Business.Entities.pdb
 C:\Net\TP2L05\Business.Entities\obj\Debug\Business.Entities.csprojAssemblyReference.cache
 C:\Net\TP2_Academia\Business.Entities\bin\Debug\Business.Entities.dll
 C:\Net\TP2_Academia\Business.Entities\bin\Debug\Business.Entities.pdb
-C:\Net\TP2_Academia\Business.Entities\obj\Debug\Business.Entities.csprojAssemblyReference.cache
 C:\Net\TP2_Academia\Business.Entities\obj\Debug\Business.Entities.csproj.CoreCompileInputs.cache
 C:\Net\TP2_Academia\Business.Entities\obj\Debug\Business.Entities.dll
 C:\Net\TP2_Academia\Business.Entities\obj\Debug\Business.Entities.pdb
