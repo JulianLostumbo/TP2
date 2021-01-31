@@ -17,6 +17,7 @@ namespace Business.Logic
         public InscripcionLogic()
         {
             InscripcionData = new Data.Database.InscripcionAdapter();
+            CursoData= new Data.Database.CursoAdapter();
         }
 
         public List<AlumnoInscripcion> GetAll(int id)

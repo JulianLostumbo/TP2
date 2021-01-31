@@ -1,6 +1,6 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Notas.aspx.cs" Inherits="UI.Web.Notas" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="bodyContentPlaceHolder" runat="server">
-<asp:Panel ID="gridPanel" runat="server" Width="1256px"> 
+    <asp:Panel ID="gridPanel" runat="server" Width="1256px"> 
         <h2 style="font-family: calibri; text-align: left">Registrar Notas de </strong>Materias</h2>
         
     <asp:GridView ID="gridView" runat="server" AutoGenerateColumns="False"
@@ -8,12 +8,11 @@
         SelectedRowStyle-ForeColor="White"
         DataKeyNames="ID" OnSelectedIndexChanged="gridView_SelectedIndexChanged" BackColor="#FFFFCC" style="font-family: calibri; background-color: #C4E1FF" AutoGenerateSelectButton="True" Width="676px">   
         <Columns>
-            <asp:BoundField DataField="ID" HeaderText="ID Materia" />
-            <asp:BoundField HeaderText="Descripción" DataField="Descripcion" />
-            <asp:BoundField HeaderText="Horas Semanales" DataField="HsSemanales" />
-            <asp:BoundField HeaderText="Horas Totales" DataField="HsTotales" />
-            <asp:BoundField DataField="IdPlan" HeaderText="ID Plan" />
-            <asp:BoundField DataField="DescPlan" HeaderText="Descripción del Plan" />
+            <asp:BoundField DataField="ID" HeaderText="ID Inscripcion" />
+            <asp:BoundField HeaderText="Nombre" DataField="Nombre" />
+            <asp:BoundField HeaderText="Apellido" DataField="Apellido" />
+            <asp:BoundField HeaderText="Condición" DataField="Condicion" />
+            <asp:BoundField DataField="Nota" HeaderText="Nota" />
         </Columns>
         <RowStyle BorderStyle="Groove" ForeColor="Black" />
         <SelectedRowStyle BackColor="Black" ForeColor="White" />

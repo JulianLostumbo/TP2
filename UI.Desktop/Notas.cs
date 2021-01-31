@@ -21,6 +21,8 @@ namespace Academia
             set { _cur = value; ; }
         }
 
+        public int idcur { get; set; }
+
         public Notas(int idcur)
         {
             InitializeComponent(); 
@@ -32,8 +34,9 @@ namespace Academia
 
         public void Listar()
         {
+            idcur = cur.ID;
             InscripcionLogic ins = new InscripcionLogic();
-            this.dgvNotas.DataSource = ins.GetAll(cur.ID);
+            this.dgvNotas.DataSource = ins.GetAll(idcur);
         }
 
         private void tbsNota_Click(object sender, EventArgs e)

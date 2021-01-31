@@ -99,10 +99,10 @@ namespace Academia
 
         public void Listar()
         {
-            if (formLogin.PersonaActual.TipoPersona != Persona.TipoPersonas.Profesor)
+            if (formLogin.PersonaActual.TipoPersona == Persona.TipoPersonas.Profesor)
             {
                 DocenteCursoLogic dc = new DocenteCursoLogic();
-                dc.GetCursosDocente(formLogin.PersonaActual.ID);
+                this.dgvCursos.DataSource=dc.GetCursosDocente(formLogin.PersonaActual.ID);
 
             }
             else

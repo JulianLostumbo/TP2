@@ -74,7 +74,7 @@
             <asp:CompareValidator ID="CompareValidator1" runat="server" ControlToCompare="claveTextBox" ControlToValidate="repetirClaveTextBox" ErrorMessage="Las claves no coinciden" ForeColor="Red">*</asp:CompareValidator>
             <asp:RequiredFieldValidator ID="RequiredFieldValidator11" runat="server" ControlToValidate="repetirClaveTextBox" ErrorMessage="La clave de confirmación no puede estar vacía" ForeColor="Red">*</asp:RequiredFieldValidator>
             <br />
-            <asp:Label ID="repetirClaveLabel0" runat="server" Text="ID Persona:  "></asp:Label>
+            <asp:Label ID="repetirClaveLabel0" runat="server" Text="Legajo de Persona:  "></asp:Label>
             <asp:DropDownList ID="idpersona" runat="server" DataSourceID="objectpersona" DataTextField="Legajo" DataValueField="ID">
             </asp:DropDownList>
             <asp:ObjectDataSource ID="objectpersona" runat="server" SelectMethod="GetAll" TypeName="Data.Database.PersonaAdapter" OldValuesParameterFormatString="original_{0}"></asp:ObjectDataSource>

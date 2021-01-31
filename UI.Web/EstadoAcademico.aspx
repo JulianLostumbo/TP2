@@ -7,7 +7,7 @@
         </strong>
     <asp:GridView ID="gridView" runat="server" AutoGenerateColumns="False"
         SelectedRowStyle-BackColor="#002b82"
-        SelectedRowStyle-ForeColor="White" OnSelectedIndexChanged="gridView_SelectedIndexChanged" BackColor="#FFFFCC" style="font-family: calibri; background-color: #C4E1FF">   
+        SelectedRowStyle-ForeColor="White" OnSelectedIndexChanged="gridView_SelectedIndexChanged" BackColor="#FFFFCC" style="font-family: calibri; background-color: #C4E1FF" DataKeyNames="ID">   
         <Columns>
             <asp:BoundField DataField="ID" HeaderText="ID Inscripción" />
             <asp:BoundField DataField="IdCurso" HeaderText="ID Curso" />

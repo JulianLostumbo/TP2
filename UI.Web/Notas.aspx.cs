@@ -95,7 +95,8 @@ namespace UI.Web
         public void Listar()
         {
 
-            this.gridView.DataSource = Logic.GetAll(idCurso);
+            InscripcionLogic ins = new InscripcionLogic();
+            this.gridView.DataSource = ins.GetAll(idCurso);
             this.gridView.DataBind();
         }
 

@@ -33,13 +33,13 @@
             this.tbsNuevo = new System.Windows.Forms.ToolStripButton();
             this.tlUsuarios = new System.Windows.Forms.TableLayoutPanel();
             this.dgvInscripcion = new System.Windows.Forms.DataGridView();
-            this.Descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnSalir = new System.Windows.Forms.Button();
+            this.btnActualizar = new System.Windows.Forms.Button();
+            this.IdCurso = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.AnioEspecialidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.IdPlan = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DescPlan = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btnSalir = new System.Windows.Forms.Button();
-            this.btnActualizar = new System.Windows.Forms.Button();
             this.toolStrip1.SuspendLayout();
             this.tlUsuarios.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvInscripcion)).BeginInit();
@@ -89,7 +89,7 @@
             this.dgvInscripcion.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvInscripcion.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvInscripcion.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Descripcion,
+            this.IdCurso,
             this.AnioEspecialidad,
             this.IdPlan,
             this.DescPlan,
@@ -104,12 +104,33 @@
             this.dgvInscripcion.Size = new System.Drawing.Size(794, 390);
             this.dgvInscripcion.TabIndex = 0;
             // 
-            // Descripcion
+            // btnSalir
             // 
-            this.Descripcion.DataPropertyName = "IdCurso";
-            this.Descripcion.HeaderText = "ID Curso";
-            this.Descripcion.Name = "Descripcion";
-            this.Descripcion.ReadOnly = true;
+            this.btnSalir.Location = new System.Drawing.Point(722, 399);
+            this.btnSalir.Name = "btnSalir";
+            this.btnSalir.Size = new System.Drawing.Size(75, 23);
+            this.btnSalir.TabIndex = 2;
+            this.btnSalir.Text = "Salir";
+            this.btnSalir.UseVisualStyleBackColor = true;
+            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
+            // 
+            // btnActualizar
+            // 
+            this.btnActualizar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnActualizar.Location = new System.Drawing.Point(641, 399);
+            this.btnActualizar.Name = "btnActualizar";
+            this.btnActualizar.Size = new System.Drawing.Size(75, 23);
+            this.btnActualizar.TabIndex = 1;
+            this.btnActualizar.Text = "Actualizar";
+            this.btnActualizar.UseVisualStyleBackColor = true;
+            this.btnActualizar.Click += new System.EventHandler(this.btnActualizar_Click);
+            // 
+            // IdCurso
+            // 
+            this.IdCurso.DataPropertyName = "ID";
+            this.IdCurso.HeaderText = "ID Curso";
+            this.IdCurso.Name = "IdCurso";
+            this.IdCurso.ReadOnly = true;
             // 
             // AnioEspecialidad
             // 
@@ -139,27 +160,6 @@
             this.Nombre.Name = "Nombre";
             this.Nombre.ReadOnly = true;
             // 
-            // btnSalir
-            // 
-            this.btnSalir.Location = new System.Drawing.Point(722, 399);
-            this.btnSalir.Name = "btnSalir";
-            this.btnSalir.Size = new System.Drawing.Size(75, 23);
-            this.btnSalir.TabIndex = 2;
-            this.btnSalir.Text = "Salir";
-            this.btnSalir.UseVisualStyleBackColor = true;
-            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
-            // 
-            // btnActualizar
-            // 
-            this.btnActualizar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnActualizar.Location = new System.Drawing.Point(641, 399);
-            this.btnActualizar.Name = "btnActualizar";
-            this.btnActualizar.Size = new System.Drawing.Size(75, 23);
-            this.btnActualizar.TabIndex = 1;
-            this.btnActualizar.Text = "Actualizar";
-            this.btnActualizar.UseVisualStyleBackColor = true;
-            this.btnActualizar.Click += new System.EventHandler(this.btnActualizar_Click);
-            // 
             // Inscripcion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -187,7 +187,7 @@
         private System.Windows.Forms.Button btnSalir;
         private System.Windows.Forms.Button btnActualizar;
         private System.Windows.Forms.ToolStripButton tbsNuevo;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Descripcion;
+        private System.Windows.Forms.DataGridViewTextBoxColumn IdCurso;
         private System.Windows.Forms.DataGridViewTextBoxColumn AnioEspecialidad;
         private System.Windows.Forms.DataGridViewTextBoxColumn IdPlan;
         private System.Windows.Forms.DataGridViewTextBoxColumn DescPlan;

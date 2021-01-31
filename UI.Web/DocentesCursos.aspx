@@ -5,7 +5,7 @@
       
     <asp:GridView ID="gridView" runat="server" AutoGenerateColumns="False"
         SelectedRowStyle-BackColor="#002b82"
-        SelectedRowStyle-ForeColor="White" OnSelectedIndexChanged="gridView_SelectedIndexChanged" BackColor="#FFFFCC" style="font-family: calibri; background-color: #C4E1FF" AutoGenerateSelectButton="True">   
+        SelectedRowStyle-ForeColor="White" OnSelectedIndexChanged="gridView_SelectedIndexChanged" BackColor="#FFFFCC" style="font-family: calibri; background-color: #C4E1FF" AutoGenerateSelectButton="True" DataKeyNames="ID">   
         <Columns>
             <asp:BoundField DataField="ID" HeaderText="ID" />
             <asp:BoundField DataField="Cargo" HeaderText="Cargo" />

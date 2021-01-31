@@ -33,13 +33,13 @@
             this.tbsNota = new System.Windows.Forms.ToolStripButton();
             this.tlUsuarios = new System.Windows.Forms.TableLayoutPanel();
             this.dgvNotas = new System.Windows.Forms.DataGridView();
-            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.AnioEspecialidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.IdPlan = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DescPlan = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnSalir = new System.Windows.Forms.Button();
             this.btnActualizar = new System.Windows.Forms.Button();
+            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.apellido = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.condicion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nota = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.toolStrip1.SuspendLayout();
             this.tlUsuarios.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvNotas)).BeginInit();
@@ -90,10 +90,10 @@
             this.dgvNotas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvNotas.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.id,
-            this.Descripcion,
-            this.AnioEspecialidad,
-            this.IdPlan,
-            this.DescPlan});
+            this.nombre,
+            this.apellido,
+            this.condicion,
+            this.nota});
             this.tlUsuarios.SetColumnSpan(this.dgvNotas, 2);
             this.dgvNotas.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvNotas.Location = new System.Drawing.Point(3, 3);
@@ -103,41 +103,6 @@
             this.dgvNotas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvNotas.Size = new System.Drawing.Size(794, 390);
             this.dgvNotas.TabIndex = 0;
-            // 
-            // id
-            // 
-            this.id.DataPropertyName = "ID";
-            this.id.HeaderText = "ID Inscripción";
-            this.id.Name = "id";
-            this.id.ReadOnly = true;
-            // 
-            // Descripcion
-            // 
-            this.Descripcion.DataPropertyName = "Nombre";
-            this.Descripcion.HeaderText = "Nombre";
-            this.Descripcion.Name = "Descripcion";
-            this.Descripcion.ReadOnly = true;
-            // 
-            // AnioEspecialidad
-            // 
-            this.AnioEspecialidad.DataPropertyName = "Apellido";
-            this.AnioEspecialidad.HeaderText = "Apellido";
-            this.AnioEspecialidad.Name = "AnioEspecialidad";
-            this.AnioEspecialidad.ReadOnly = true;
-            // 
-            // IdPlan
-            // 
-            this.IdPlan.DataPropertyName = "Condicion";
-            this.IdPlan.HeaderText = "Condición";
-            this.IdPlan.Name = "IdPlan";
-            this.IdPlan.ReadOnly = true;
-            // 
-            // DescPlan
-            // 
-            this.DescPlan.DataPropertyName = "Nota";
-            this.DescPlan.HeaderText = "Nota";
-            this.DescPlan.Name = "DescPlan";
-            this.DescPlan.ReadOnly = true;
             // 
             // btnSalir
             // 
@@ -159,6 +124,41 @@
             this.btnActualizar.Text = "Actualizar";
             this.btnActualizar.UseVisualStyleBackColor = true;
             this.btnActualizar.Click += new System.EventHandler(this.btnActualizar_Click);
+            // 
+            // id
+            // 
+            this.id.DataPropertyName = "ID";
+            this.id.HeaderText = "ID Inscripción";
+            this.id.Name = "id";
+            this.id.ReadOnly = true;
+            // 
+            // nombre
+            // 
+            this.nombre.DataPropertyName = "Nombre";
+            this.nombre.HeaderText = "Nombre";
+            this.nombre.Name = "nombre";
+            this.nombre.ReadOnly = true;
+            // 
+            // apellido
+            // 
+            this.apellido.DataPropertyName = "Apellido";
+            this.apellido.HeaderText = "Apellido";
+            this.apellido.Name = "apellido";
+            this.apellido.ReadOnly = true;
+            // 
+            // condicion
+            // 
+            this.condicion.DataPropertyName = "Condicion";
+            this.condicion.HeaderText = "Condición";
+            this.condicion.Name = "condicion";
+            this.condicion.ReadOnly = true;
+            // 
+            // nota
+            // 
+            this.nota.DataPropertyName = "Nota";
+            this.nota.HeaderText = "Nota";
+            this.nota.Name = "nota";
+            this.nota.ReadOnly = true;
             // 
             // Notas
             // 
@@ -187,9 +187,9 @@
         private System.Windows.Forms.Button btnSalir;
         private System.Windows.Forms.Button btnActualizar;
         private System.Windows.Forms.DataGridViewTextBoxColumn id;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Descripcion;
-        private System.Windows.Forms.DataGridViewTextBoxColumn AnioEspecialidad;
-        private System.Windows.Forms.DataGridViewTextBoxColumn IdPlan;
-        private System.Windows.Forms.DataGridViewTextBoxColumn DescPlan;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nombre;
+        private System.Windows.Forms.DataGridViewTextBoxColumn apellido;
+        private System.Windows.Forms.DataGridViewTextBoxColumn condicion;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nota;
     }
 }

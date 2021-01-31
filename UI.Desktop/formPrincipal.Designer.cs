@@ -58,13 +58,13 @@
             this.tsmiCursos = new System.Windows.Forms.ToolStripMenuItem();
             this.listarToolStripMenuItem7 = new System.Windows.Forms.ToolStripMenuItem();
             this.registrarNuevoToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsmiInscripcion = new System.Windows.Forms.ToolStripMenuItem();
-            this.lblUser = new System.Windows.Forms.Label();
-            this.lblTipo = new System.Windows.Forms.Label();
             this.tsmiEstadoAcademico = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiInscripcion = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiDatosPersonales = new System.Windows.Forms.ToolStripMenuItem();
             this.usuarioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.personaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.lblUser = new System.Windows.Forms.Label();
+            this.lblTipo = new System.Windows.Forms.Label();
             this.fechaHoyUserControl1 = new UI.Desktop.FechaHoyUserControl();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -133,14 +133,14 @@
             // listarToolStripMenuItem
             // 
             this.listarToolStripMenuItem.Name = "listarToolStripMenuItem";
-            this.listarToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.listarToolStripMenuItem.Size = new System.Drawing.Size(158, 22);
             this.listarToolStripMenuItem.Text = "Listar";
             this.listarToolStripMenuItem.Click += new System.EventHandler(this.listarToolStripMenuItem_Click);
             // 
             // nuevoUsuarioMenuItem
             // 
             this.nuevoUsuarioMenuItem.Name = "nuevoUsuarioMenuItem";
-            this.nuevoUsuarioMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.nuevoUsuarioMenuItem.Size = new System.Drawing.Size(158, 22);
             this.nuevoUsuarioMenuItem.Text = "Registrar Nuevo";
             this.nuevoUsuarioMenuItem.Click += new System.EventHandler(this.registrarNuevoToolStripMenuItem_Click);
             // 
@@ -306,12 +306,42 @@
             this.registrarNuevoToolStripMenuItem1.Text = "Registrar Nuevo";
             this.registrarNuevoToolStripMenuItem1.Click += new System.EventHandler(this.registrarNuevoToolStripMenuItem1_Click);
             // 
+            // tsmiEstadoAcademico
+            // 
+            this.tsmiEstadoAcademico.Name = "tsmiEstadoAcademico";
+            this.tsmiEstadoAcademico.Size = new System.Drawing.Size(200, 22);
+            this.tsmiEstadoAcademico.Text = "Ver Estado Académico";
+            this.tsmiEstadoAcademico.Click += new System.EventHandler(this.tsmiEstadoAcademico_Click);
+            // 
             // tsmiInscripcion
             // 
             this.tsmiInscripcion.Name = "tsmiInscripcion";
             this.tsmiInscripcion.Size = new System.Drawing.Size(200, 22);
             this.tsmiInscripcion.Text = "Registrar Inscripción";
             this.tsmiInscripcion.Click += new System.EventHandler(this.registrarInscripciónToolStripMenuItem_Click);
+            // 
+            // tsmiDatosPersonales
+            // 
+            this.tsmiDatosPersonales.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.usuarioToolStripMenuItem,
+            this.personaToolStripMenuItem});
+            this.tsmiDatosPersonales.Name = "tsmiDatosPersonales";
+            this.tsmiDatosPersonales.Size = new System.Drawing.Size(200, 22);
+            this.tsmiDatosPersonales.Text = "Ver Datos Personales";
+            // 
+            // usuarioToolStripMenuItem
+            // 
+            this.usuarioToolStripMenuItem.Name = "usuarioToolStripMenuItem";
+            this.usuarioToolStripMenuItem.Size = new System.Drawing.Size(116, 22);
+            this.usuarioToolStripMenuItem.Text = "Usuario";
+            this.usuarioToolStripMenuItem.Click += new System.EventHandler(this.usuarioToolStripMenuItem_Click);
+            // 
+            // personaToolStripMenuItem
+            // 
+            this.personaToolStripMenuItem.Name = "personaToolStripMenuItem";
+            this.personaToolStripMenuItem.Size = new System.Drawing.Size(116, 22);
+            this.personaToolStripMenuItem.Text = "Persona";
+            this.personaToolStripMenuItem.Click += new System.EventHandler(this.personaToolStripMenuItem_Click);
             // 
             // lblUser
             // 
@@ -332,35 +362,6 @@
             this.lblTipo.Size = new System.Drawing.Size(39, 18);
             this.lblTipo.TabIndex = 5;
             this.lblTipo.Text = "Tipo:";
-            // 
-            // tsmiEstadoAcademico
-            // 
-            this.tsmiEstadoAcademico.Name = "tsmiEstadoAcademico";
-            this.tsmiEstadoAcademico.Size = new System.Drawing.Size(200, 22);
-            this.tsmiEstadoAcademico.Text = "Ver Estado Académico";
-            // 
-            // tsmiDatosPersonales
-            // 
-            this.tsmiDatosPersonales.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.usuarioToolStripMenuItem,
-            this.personaToolStripMenuItem});
-            this.tsmiDatosPersonales.Name = "tsmiDatosPersonales";
-            this.tsmiDatosPersonales.Size = new System.Drawing.Size(200, 22);
-            this.tsmiDatosPersonales.Text = "Ver Datos Personales";
-            // 
-            // usuarioToolStripMenuItem
-            // 
-            this.usuarioToolStripMenuItem.Name = "usuarioToolStripMenuItem";
-            this.usuarioToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.usuarioToolStripMenuItem.Text = "Usuario";
-            this.usuarioToolStripMenuItem.Click += new System.EventHandler(this.usuarioToolStripMenuItem_Click);
-            // 
-            // personaToolStripMenuItem
-            // 
-            this.personaToolStripMenuItem.Name = "personaToolStripMenuItem";
-            this.personaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.personaToolStripMenuItem.Text = "Persona";
-            this.personaToolStripMenuItem.Click += new System.EventHandler(this.personaToolStripMenuItem_Click);
             // 
             // fechaHoyUserControl1
             // 

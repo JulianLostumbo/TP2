@@ -85,8 +85,18 @@ namespace UI.Web
 
         private void LoadGrid()
         {
-            CursoLogic cl = new CursoLogic();
-            this.gridView.DataSource = cl.GetAll();
+            Per = (Persona)Session["persona"];
+            if (Per.TipoPersona == Persona.TipoPersonas.Profesor)
+            {
+                DocenteCursoLogic dc = new DocenteCursoLogic();
+                this.gridView.DataSource = dc.GetCursosDocente(Per.ID);
+
+            }
+            else
+            {
+                CursoLogic cl = new CursoLogic();
+                this.gridView.DataSource = cl.GetAll();
+            }
             this.gridView.DataBind();
         }
 
@@ -124,6 +134,8 @@ namespace UI.Web
                     gridView.Enabled = false;
                     gridView.AutoGenerateSelectButton = false;
                 }
+
+                this.LoadGrid();
             }
 
         }

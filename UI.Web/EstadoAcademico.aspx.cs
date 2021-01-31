@@ -24,6 +24,7 @@ namespace UI.Web
 
                     InscripcionLogic ins = new InscripcionLogic();
                     this.gridView.DataSource = ins.GetEstadoAcademico(Per.ID);
+                    this.gridView.DataBind();
                 }
                 else
                 {

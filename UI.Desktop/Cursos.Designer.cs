@@ -35,7 +35,7 @@
             this.Descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.AnioEspecialidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.IdPlan = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DescPlan = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DescComision = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.IDMateria = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DescMateria = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnSalir = new System.Windows.Forms.Button();
@@ -79,7 +79,7 @@
             this.Descripcion,
             this.AnioEspecialidad,
             this.IdPlan,
-            this.DescPlan,
+            this.DescComision,
             this.IDMateria,
             this.DescMateria});
             this.tlUsuarios.SetColumnSpan(this.dgvCursos, 2);
@@ -120,12 +120,12 @@
             this.IdPlan.Name = "IdPlan";
             this.IdPlan.ReadOnly = true;
             // 
-            // DescPlan
+            // DescComision
             // 
-            this.DescPlan.DataPropertyName = "DescComsion";
-            this.DescPlan.HeaderText = "Descripción de Comisión";
-            this.DescPlan.Name = "DescPlan";
-            this.DescPlan.ReadOnly = true;
+            this.DescComision.DataPropertyName = "DescComsion";
+            this.DescComision.HeaderText = "Descripción de Comisión";
+            this.DescComision.Name = "DescComision";
+            this.DescComision.ReadOnly = true;
             // 
             // IDMateria
             // 
@@ -215,7 +215,7 @@
             this.tbsNotas.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tbsNotas.Name = "tbsNotas";
             this.tbsNotas.Size = new System.Drawing.Size(23, 22);
-            this.tbsNotas.Text = "toolStripButton1";
+            this.tbsNotas.Text = "Notas";
             this.tbsNotas.Click += new System.EventHandler(this.tbsNotas_Click);
             // 
             // tbsImprimir
@@ -258,13 +258,13 @@
         private System.Windows.Forms.DataGridView dgvCursos;
         private System.Windows.Forms.Button btnSalir;
         private System.Windows.Forms.Button btnActualizar;
+        private System.Windows.Forms.ToolStripButton tbsImprimir;
         private System.Windows.Forms.DataGridViewTextBoxColumn id;
         private System.Windows.Forms.DataGridViewTextBoxColumn Descripcion;
         private System.Windows.Forms.DataGridViewTextBoxColumn AnioEspecialidad;
         private System.Windows.Forms.DataGridViewTextBoxColumn IdPlan;
-        private System.Windows.Forms.DataGridViewTextBoxColumn DescPlan;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DescComision;
         private System.Windows.Forms.DataGridViewTextBoxColumn IDMateria;
         private System.Windows.Forms.DataGridViewTextBoxColumn DescMateria;
-        private System.Windows.Forms.ToolStripButton tbsImprimir;
     }
 }

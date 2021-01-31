@@ -67,7 +67,7 @@ namespace Academia
                 case Persona.TipoPersonas.Administrador:
                     tsmiInscripcion.Visible = false;
                     tsmiEstadoAcademico.Visible = false;
-
+                    tsmiDatosPersonales.Visible = false;
                     break;
                 case Persona.TipoPersonas.Alumno:
                     tsmiComisiones.Visible = false;
@@ -151,7 +151,7 @@ namespace Academia
 
         private void registrarNuevoToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            UsuarioDesktop frm = new UsuarioDesktop();
+            UsuarioDesktop frm = new UsuarioDesktop(ApplicationForm.ModoForm.Alta);
             frm.MdiParent = this;
             frm.Show();
         }
@@ -168,7 +168,7 @@ namespace Academia
         private void registrarNuevaToolStripMenuItem_Click(object sender, EventArgs e)
         {
             
-            ComisionDesktop frm = new ComisionDesktop();
+            ComisionDesktop frm = new ComisionDesktop(ApplicationForm.ModoForm.Alta);
             frm.MdiParent = this;
             frm.Show();
         }
@@ -182,7 +182,7 @@ namespace Academia
 
         private void registrarNuevaToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            EspecialidadDesktop frm = new EspecialidadDesktop();
+            EspecialidadDesktop frm = new EspecialidadDesktop(ApplicationForm.ModoForm.Alta);
             frm.MdiParent = this;
             frm.Show();
         }
@@ -196,7 +196,7 @@ namespace Academia
 
         private void registrarNuevaToolStripMenuItem2_Click(object sender, EventArgs e)
         {
-            MateriaDesktop frm = new MateriaDesktop();
+            MateriaDesktop frm = new MateriaDesktop(ApplicationForm.ModoForm.Alta);
             frm.MdiParent = this;
             frm.Show();
         }
@@ -210,7 +210,7 @@ namespace Academia
 
         private void nuevoPlanToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            PlanDesktop frm = new PlanDesktop();
+            PlanDesktop frm = new PlanDesktop(ApplicationForm.ModoForm.Alta);
             frm.MdiParent = this;
             frm.Show();
         }
@@ -238,7 +238,7 @@ namespace Academia
 
         private void registrarNuevaToolStripMenuItem_Click_1(object sender, EventArgs e)
         {
-            PersonaDesktop frm = new PersonaDesktop();
+            PersonaDesktop frm = new PersonaDesktop(ApplicationForm.ModoForm.Alta);
             frm.MdiParent = this;
             frm.Show();
         }
@@ -252,7 +252,7 @@ namespace Academia
 
         private void registrarNuevoToolStripMenuItem_Click_1(object sender, EventArgs e)
         {
-            DocenteDesktop frm = new DocenteDesktop();
+            DocenteDesktop frm = new DocenteDesktop(ApplicationForm.ModoForm.Alta);
             frm.MdiParent = this;
             frm.Show();
         }
@@ -283,6 +283,13 @@ namespace Academia
         private void personaToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Personas frm = new Personas();
+            frm.MdiParent = this;
+            frm.Show();
+        }
+
+        private void tsmiEstadoAcademico_Click(object sender, EventArgs e)
+        {
+            EstadoAcademico frm = new EstadoAcademico();
             frm.MdiParent = this;
             frm.Show();
         }

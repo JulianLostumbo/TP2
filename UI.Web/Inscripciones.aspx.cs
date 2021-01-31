@@ -68,6 +68,8 @@ namespace UI.Web
             alum.IDCurso = cur.ID;
             alum.State = BusinessEntity.States.New;
             Insc.Save(alum);
+            LabelError.Visible = true;
+            LabelError.Text = "Inscripcion registrada correctamente!";
             this.Listar();
         }
 
@@ -82,8 +84,6 @@ namespace UI.Web
             {
                 Insc = new InscripcionLogic();
                 this.Listar();
-                LabelError.Visible = true;
-                LabelError.Text = "Inscripcion registrada correctamente!";
             }
             else
             {

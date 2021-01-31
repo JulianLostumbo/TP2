@@ -5,9 +5,9 @@
         </strong>
     <asp:GridView ID="gridView" runat="server" AutoGenerateColumns="False"
         SelectedRowStyle-BackColor="#002b82"
-        SelectedRowStyle-ForeColor="White" OnSelectedIndexChanged="gridView_SelectedIndexChanged" BackColor="#FFFFCC" style="font-family: calibri; background-color: #C4E1FF" AutoGenerateSelectButton="True">   
+        SelectedRowStyle-ForeColor="White" OnSelectedIndexChanged="gridView_SelectedIndexChanged" BackColor="#FFFFCC" style="font-family: calibri; background-color: #C4E1FF" AutoGenerateSelectButton="True" DataKeyNames="ID">   
         <Columns>
-            <asp:BoundField DataField="IdCurso" HeaderText="ID Curso" />
+            <asp:BoundField DataField="ID" HeaderText="ID Curso" />
             <asp:BoundField HeaderText="Comisión" DataField="DescComision" />
             <asp:BoundField HeaderText="Materia" DataField="DescMateria" />
             <asp:BoundField DataField="AnioCalendario" HeaderText="Año Calendario" />

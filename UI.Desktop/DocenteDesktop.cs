@@ -24,6 +24,7 @@ namespace Academia
         public DocenteDesktop(ModoForm modo) : this()
         {
             Modo = modo;
+            MapearDocentes();
         }
 
         public DocenteDesktop(int ID, ModoForm modo) : this()
@@ -132,7 +133,7 @@ namespace Academia
         {
             DocenteCursoLogic dcl = new DocenteCursoLogic();
             cmbDocente.DataSource = dcl.GetDocente();
-            cmbDocente.ValueMember = "IdDocente";
+            cmbDocente.ValueMember = "ID";
             cmbDocente.DisplayMember = "Apellido";
             if (Modo != ModoForm.Alta)
             {
@@ -187,6 +188,11 @@ namespace Academia
                 this.Close();
             }
 
+        }
+
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

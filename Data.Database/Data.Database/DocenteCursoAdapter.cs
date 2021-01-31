@@ -118,11 +118,11 @@ namespace Data.Database
         {
             List<Curso> cursos = new List<Curso>();
             this.OpenConnection();
-            SqlCommand cmdCursos = new SqlCommand("SELECT cur.id_curso, materias.id_materia, comisiones.id_comision, comisiones.desc_comision, materias.desc_materia, cupo, anio_calendario " +
+            SqlCommand cmdCursos = new SqlCommand("SELECT cur.id_curso, materias.id_materia, comisiones.id_comision, comisiones.desc_comision, materias.desc_materia, cur.cupo, cur.anio_calendario " +
             "FROM cursos cur " +
             "INNER JOIN  materias on materias.id_materia = cur.id_materia " +
             "INNER JOIN comisiones on comisiones.id_comision = cur.id_comision " +
-            "INNER JOIN docentes_cursos dc on dc.id_docente = cur.id_docente " +
+            "INNER JOIN docentes_cursos dc on dc.id_curso = cur.id_curso " +
             "where dc.id_docente=@id", sqlConn);
             cmdCursos.Parameters.Add("@id", SqlDbType.Int).Value = ID;
             SqlDataReader drCursos = cmdCursos.ExecuteReader();

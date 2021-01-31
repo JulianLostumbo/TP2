@@ -13,13 +13,8 @@ namespace Academia
 {
     public partial class EstadoAcademico : Form
     {
+
         public EstadoAcademico()
-        {
-            InitializeComponent();
-        }
-
-
-        public EstadoAcademico(int idcur)
         {
             InitializeComponent();
             this.dgvEstado.AutoGenerateColumns = false;

@@ -4,7 +4,7 @@
         <h2 style="font-family: calibri; text-align: left">Comisiones de &quot;<span style="text-decoration: underline">La Academia</span>&quot;</h2>
     <asp:GridView ID="gridView" runat="server" AutoGenerateColumns="False"
         SelectedRowStyle-BackColor="#002b82"
-        SelectedRowStyle-ForeColor="White" OnSelectedIndexChanged="gridView_SelectedIndexChanged" BackColor="#FFFFCC" style="font-family: calibri; background-color: #C4E1FF" AutoGenerateSelectButton="True">   
+        SelectedRowStyle-ForeColor="White" OnSelectedIndexChanged="gridView_SelectedIndexChanged" BackColor="#FFFFCC" style="font-family: calibri; background-color: #C4E1FF" AutoGenerateSelectButton="True" DataKeyNames="ID">   
         <Columns>
             <asp:BoundField DataField="ID" HeaderText="ID Comision" />
             <asp:BoundField HeaderText="Descripción" DataField="Descripcion" />

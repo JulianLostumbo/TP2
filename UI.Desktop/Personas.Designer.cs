@@ -45,7 +45,7 @@
             this.DescPlan = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.FechaNac = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Legajo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Tipo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TipoPersona = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ID_Plan = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Desc_Plan = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.toolStrip1.SuspendLayout();
@@ -129,7 +129,7 @@
             this.DescPlan,
             this.FechaNac,
             this.Legajo,
-            this.Tipo,
+            this.TipoPersona,
             this.ID_Plan,
             this.Desc_Plan});
             this.tlUsuarios.SetColumnSpan(this.dgvPersonas, 2);
@@ -219,12 +219,12 @@
             this.Legajo.Name = "Legajo";
             this.Legajo.ReadOnly = true;
             // 
-            // Tipo
+            // TipoPersona
             // 
-            this.Tipo.DataPropertyName = "Tipo";
-            this.Tipo.HeaderText = "Tipo";
-            this.Tipo.Name = "Tipo";
-            this.Tipo.ReadOnly = true;
+            this.TipoPersona.DataPropertyName = "TipoPersona";
+            this.TipoPersona.HeaderText = "Tipo";
+            this.TipoPersona.Name = "TipoPersona";
+            this.TipoPersona.ReadOnly = true;
             // 
             // ID_Plan
             // 
@@ -277,7 +277,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn DescPlan;
         private System.Windows.Forms.DataGridViewTextBoxColumn FechaNac;
         private System.Windows.Forms.DataGridViewTextBoxColumn Legajo;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Tipo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TipoPersona;
         private System.Windows.Forms.DataGridViewTextBoxColumn ID_Plan;
         private System.Windows.Forms.DataGridViewTextBoxColumn Desc_Plan;
     }
