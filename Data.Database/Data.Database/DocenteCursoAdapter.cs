@@ -166,7 +166,7 @@ namespace Data.Database
             try
             {
                 this.OpenConnection();
-                SqlCommand cmdDelete = new SqlCommand("delete docentes_cursos where id_docente=@id", sqlConn);
+                SqlCommand cmdDelete = new SqlCommand("delete docentes_cursos where id_dictado=@id", sqlConn);
                 cmdDelete.Parameters.Add("@id", SqlDbType.Int).Value = ID;
                 cmdDelete.ExecuteNonQuery();
             }
@@ -180,7 +180,7 @@ namespace Data.Database
                 this.CloseConnection();
             }
         }
-        public void Update(DocenteCurso dc) //protected
+        public void Update(DocenteCurso dc) 
         {
             try
             {
@@ -210,7 +210,7 @@ namespace Data.Database
             {
                 this.OpenConnection();
                 SqlCommand cmdSave = new SqlCommand("INSERT INTO docentes_cursos(id_docente, id_curso, cargo) " +
-                    "values (@cargo,@IDCurso,@IDDocente) " +
+                    "values (@IDDocente, @IDCurso, @cargo) " +
                     "select @@identity", sqlConn);
                 cmdSave.Parameters.Add("@cargo", SqlDbType.Int).Value = dc.Cargo;
                 cmdSave.Parameters.Add("@IDDocente", SqlDbType.Int).Value = dc.IdDocente;

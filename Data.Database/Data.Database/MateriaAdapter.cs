@@ -108,7 +108,6 @@ namespace Data.Database
                 SqlCommand cmdDelete = new SqlCommand("delete materias where id_materia=@id", sqlConn);
                 cmdDelete.Parameters.Add("@id", SqlDbType.Int).Value = ID;
                 cmdDelete.ExecuteNonQuery();
-                //Usuarios.Remove(this.GetOne(ID));
             }
             catch (Exception Ex)
             {
@@ -120,7 +119,7 @@ namespace Data.Database
                 this.CloseConnection();
             }
         }
-        public void Update(Materia mat) //protected
+        public void Update(Materia mat) 
         {
             try
             {

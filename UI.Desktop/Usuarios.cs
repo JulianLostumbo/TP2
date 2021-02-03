@@ -18,13 +18,6 @@ namespace Academia
         {
             InitializeComponent();
             this.dgvUsuarios.AutoGenerateColumns = false;
-            /*if (formLogin.UsuarioActual.Habilitado == false)
-            {
-                this.tbsEditar.Enabled = false;
-                this.tbsEliminar.Enabled = false;
-                this.tbsNuevo.Enabled = false;
-                this.dgvUsuarios.Enabled = false;
-            }*/
             
         }
 
@@ -73,7 +66,6 @@ namespace Academia
             {
                 int ID = ((Business.Entities.Usuario)this.dgvUsuarios.SelectedRows[0].DataBoundItem).ID;
                 UsuarioDesktop formUsuario = new UsuarioDesktop(ID, ApplicationForm.ModoForm.Modificacion);
-                //formUsuario.MapearADatos();
                 formUsuario.ShowDialog();
                 this.Listar();
             }

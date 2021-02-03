@@ -21,20 +21,6 @@ namespace Academia
             InitializeComponent();
         }
 
-        //private Usuario _UsAct;
-        //public Usuario UsuarioActual
-        //{
-        //    get { return _UsAct; }
-        //    set { _UsAct = value; }
-        //}
-
-        //private Persona _PerAct;
-        //public Persona PersonaActual
-        //{
-        //    get { return _PerAct; }
-        //    set { _PerAct = value; }
-        //}
-
         public static Persona PersonaActual;
 
         public static Usuario UsuarioActual;
@@ -61,13 +47,11 @@ namespace Academia
             string claveUser = this.txtPass.Text;
 
             UsuarioLogic BuscarUser = new UsuarioLogic();
-            /*Usuario user = new Usuario();*/
             UsuarioActual = BuscarUser.GetOne(nombreUser, claveUser);
 
             if (nombreUser == UsuarioActual.NombreUsuario && claveUser == UsuarioActual.Clave)
             {
                 PersonaLogic BuscarPersona = new PersonaLogic();
-                /*Persona PersonaActual = new Persona();*/
                 PersonaActual = BuscarPersona.GetOne(UsuarioActual.IdPersona);
                 idAlum = PersonaActual.ID;
                 tipoPersona = PersonaActual.TipoPersona;

@@ -86,7 +86,7 @@ namespace Data.Database
             }
         }
 
-        public void Update(Especialidad esp) //protected
+        public void Update(Especialidad esp) 
         {
             try
             {

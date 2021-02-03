@@ -18,13 +18,6 @@ namespace Academia
         {
             InitializeComponent();
             this.dgvMaterias.AutoGenerateColumns = false;
-            /*if (formLogin.UsuarioActual.Habilitado == false)
-            {
-                this.tbsEditar.Enabled = false;
-                this.tbsEliminar.Enabled = false;
-                this.tbsNuevo.Enabled = false;
-                this.dgvMaterias.Enabled = false;
-            }*/
         }
 
         public void Listar()
@@ -56,7 +49,6 @@ namespace Academia
             {
                 int ID = ((Business.Entities.Materia)this.dgvMaterias.SelectedRows[0].DataBoundItem).ID;
                 MateriaDesktop formMateria = new MateriaDesktop(ID, ApplicationForm.ModoForm.Modificacion);
-                //formMateria.MapearADatos();
                 formMateria.ShowDialog();
                 this.Listar();
             }

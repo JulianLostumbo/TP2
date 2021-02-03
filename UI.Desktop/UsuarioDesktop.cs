@@ -44,8 +44,10 @@ namespace Academia
             this.txtApellido.Text = this.UsuarioActual.Apellido;
             this.txtEmail.Text = this.UsuarioActual.Email;
             this.txtUsuario.Text = this.UsuarioActual.NombreUsuario;
-            //this.txtPass.Text = this.UsuarioActual.Clave.ToString();
-            //this.txtRepetirPass.Text = this.UsuarioActual.Clave.ToString();
+            if (formLogin.PersonaActual.TipoPersona!=Persona.TipoPersonas.Administrador)
+            {
+                this.txtPass.Text = this.UsuarioActual.Clave.ToString();
+            }
             if (Modo == ModoForm.Alta)
             {
                 btnAceptar.Text = "Guardar";
@@ -151,7 +153,8 @@ namespace Academia
                 this.txtPass.ToString() != string.Empty &&
                 this.txtPass.ToString().Length >= 8 &&
                 this.txtPass.ToString() == this.txtRepetirPass.ToString() &&
-                (UsuarioActual.Clave == txtPass.Text) &&
+                ((Modo!=ApplicationForm.ModoForm.Alta && UsuarioActual.Clave == this.txtPass.Text.ToString() && formLogin.PersonaActual.TipoPersona == Persona.TipoPersonas.Administrador) ||
+                formLogin.PersonaActual.TipoPersona != Persona.TipoPersonas.Administrador) &&
                 this.txtEmail.ToString().Contains("@") &&
                 (this.txtEmail.ToString().Contains(".com") || this.txtEmail.ToString().Contains(".com.ar")))
             {
@@ -201,6 +204,30 @@ namespace Academia
         private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void chkClave_CheckedChanged(object sender, EventArgs e)
+        {
+            if (chkClave.Checked == false)
+            {
+                txtPass.PasswordChar = '*';
+            }
+            else
+            {
+                txtPass.PasswordChar = '\0';
+            }
+        }
+
+        private void chkConfirmarClave_CheckedChanged(object sender, EventArgs e)
+        {
+            if (chkConfirmarClave.Checked == false)
+            {
+                txtRepetirPass.PasswordChar = '*';
+            }
+            else
+            {
+                txtRepetirPass.PasswordChar = '\0';
+            }
         }
     }
 }

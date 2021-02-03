@@ -50,17 +50,20 @@
             this.txtUsuario = new System.Windows.Forms.TextBox();
             this.txtRepetirPass = new System.Windows.Forms.TextBox();
             this.txtPass = new System.Windows.Forms.TextBox();
+            this.chkClave = new System.Windows.Forms.CheckBox();
+            this.chkConfirmarClave = new System.Windows.Forms.CheckBox();
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
             // 
             this.tableLayoutPanel1.AutoSize = true;
-            this.tableLayoutPanel1.ColumnCount = 4;
+            this.tableLayoutPanel1.ColumnCount = 5;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel1.Controls.Add(this.txtID, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.txtNombre, 1, 1);
             this.tableLayoutPanel1.Controls.Add(this.chkHabilitado, 2, 0);
@@ -81,6 +84,8 @@
             this.tableLayoutPanel1.Controls.Add(this.txtUsuario, 3, 2);
             this.tableLayoutPanel1.Controls.Add(this.txtRepetirPass, 3, 4);
             this.tableLayoutPanel1.Controls.Add(this.txtPass, 3, 3);
+            this.tableLayoutPanel1.Controls.Add(this.chkConfirmarClave, 4, 4);
+            this.tableLayoutPanel1.Controls.Add(this.chkClave, 4, 3);
             this.tableLayoutPanel1.Location = new System.Drawing.Point(2, 2);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 6;
@@ -90,7 +95,7 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(408, 179);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(379, 179);
             this.tableLayoutPanel1.TabIndex = 0;
             this.tableLayoutPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel1_Paint);
             // 
@@ -266,11 +271,31 @@
             this.txtPass.Size = new System.Drawing.Size(100, 20);
             this.txtPass.TabIndex = 5;
             // 
+            // chkClave
+            // 
+            this.chkClave.AutoSize = true;
+            this.chkClave.Location = new System.Drawing.Point(358, 81);
+            this.chkClave.Name = "chkClave";
+            this.chkClave.Size = new System.Drawing.Size(15, 14);
+            this.chkClave.TabIndex = 22;
+            this.chkClave.UseVisualStyleBackColor = true;
+            this.chkClave.CheckedChanged += new System.EventHandler(this.chkClave_CheckedChanged);
+            // 
+            // chkConfirmarClave
+            // 
+            this.chkConfirmarClave.AutoSize = true;
+            this.chkConfirmarClave.Location = new System.Drawing.Point(358, 108);
+            this.chkConfirmarClave.Name = "chkConfirmarClave";
+            this.chkConfirmarClave.Size = new System.Drawing.Size(15, 14);
+            this.chkConfirmarClave.TabIndex = 23;
+            this.chkConfirmarClave.UseVisualStyleBackColor = true;
+            this.chkConfirmarClave.CheckedChanged += new System.EventHandler(this.chkConfirmarClave_CheckedChanged);
+            // 
             // UsuarioDesktop
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(422, 193);
+            this.ClientSize = new System.Drawing.Size(385, 193);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "UsuarioDesktop";
@@ -305,5 +330,7 @@
         private System.Windows.Forms.Button btnAgregarPersona;
         private System.Windows.Forms.TextBox txtRepetirPass;
         private System.Windows.Forms.TextBox txtPass;
+        private System.Windows.Forms.CheckBox chkConfirmarClave;
+        private System.Windows.Forms.CheckBox chkClave;
     }
 }

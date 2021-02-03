@@ -41,13 +41,6 @@ namespace Business.Logic
         {
             return UsuarioData.GetOne(user, clave);
         }
-        
-        /*public static bool Login2(string user, string pass)
-        {
-            UsuarioAdapter ud = new UsuarioAdapter();
-            return ud.Login2(user, pass);
-        }
-        */
 
         public void Delete (int ID)
         {

@@ -135,6 +135,10 @@ namespace UI.Web
             this.habilitadoCheckBox.Checked = this.Entity.Habilitado;
             this.nombreUsuarioTextBox.Text = this.Entity.NombreUsuario;
             this.idpersona.SelectedValue = Convert.ToString(this.Entity.IdPersona);
+            if (Per.TipoPersona != Persona.TipoPersonas.Administrador )
+            {
+                this.claveTextBox.Text = this.Entity.Clave.ToString();
+            }
         }
 
         protected void editarLinkButton_Click(object sender, EventArgs e)
@@ -173,7 +177,8 @@ namespace UI.Web
             {
                 case FormModes.Baja:
                     this.Entity = this.Logic.GetOne(SelectedID);
-                    if (Entity.Clave == this.claveTextBox.Text.ToString())
+                    if ((Entity.Clave == this.claveTextBox.Text.ToString() && Per.TipoPersona == Persona.TipoPersonas.Administrador) ||
+                        Per.TipoPersona != Persona.TipoPersonas.Administrador)
                     {
                         this.DeleteEntity(this.SelectedID);
                         this.LoadGrid();
@@ -186,7 +191,8 @@ namespace UI.Web
                     break;
                 case FormModes.Modificacion:
                     this.Entity = this.Logic.GetOne(SelectedID);
-                    if (Entity.Clave == this.claveTextBox.Text.ToString())
+                    if ((Entity.Clave == this.claveTextBox.Text.ToString() && Per.TipoPersona == Persona.TipoPersonas.Administrador) || 
+                        Per.TipoPersona != Persona.TipoPersonas.Administrador)
                     {
                         this.Entity = new Usuario();
                         this.Entity.ID = this.SelectedID;
@@ -254,6 +260,8 @@ namespace UI.Web
             this.emailTextBox.Text = string.Empty;
             this.habilitadoCheckBox.Checked = false;
             this.nombreUsuarioTextBox.Text = string.Empty;
+            this.claveTextBox.Text = string.Empty;
+
         }
 
         protected void cancelarLinkButton_Click(object sender, EventArgs e)

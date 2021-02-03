@@ -189,7 +189,6 @@ namespace Data.Database
                 SqlCommand cmdDelete = new SqlCommand("delete alumnos_inscripciones where id_inscripcion=@id", sqlConn);
                 cmdDelete.Parameters.Add("@id", SqlDbType.Int).Value = ID;
                 cmdDelete.ExecuteNonQuery();
-                //Usuarios.Remove(this.GetOne(ID));
             }
             catch (Exception Ex)
             {
@@ -201,7 +200,7 @@ namespace Data.Database
                 this.CloseConnection();
             }
         }
-        public void Update(AlumnoInscripcion ins) //protected
+        public void Update(AlumnoInscripcion ins)
         {
             try
             {

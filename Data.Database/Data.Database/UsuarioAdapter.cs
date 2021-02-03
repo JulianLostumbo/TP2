@@ -224,34 +224,6 @@ namespace Data.Database
             return usr;
         }
 
-        /*public bool Login2(string user, string pass)
-        {
-            try
-            {
-                Usuario u = new Usuario();
-                OpenConnection();
-                SqlCommand cmd = new SqlCommand("select * from usuarios where nombre_usuario= @user and clave= @pass", sqlConn);
-                cmd.Parameters.Add("@user", SqlDbType.VarChar).Value = user;
-                cmd.Parameters.Add("@pass", SqlDbType.VarChar).Value = pass;
-                SqlDataReader dr = cmd.ExecuteReader();
-                if (dr.Read())
-                {
-                    this.CloseConnection();
-                    return true;
-                }
-                else
-                {
-                    this.CloseConnection();
-                    return false;
-                }
-            }
-            catch (Exception e)
-            {
-
-                throw e;
-            }
-        }*/
-
         public Business.Entities.Usuario GetOne(string usuario)
         {
             Usuario usr = new Usuario();
@@ -321,7 +293,6 @@ namespace Data.Database
                 SqlCommand cmdDelete = new SqlCommand("delete usuarios where id_usuario=@id", sqlConn);
                 cmdDelete.Parameters.Add("@id", SqlDbType.Int).Value = ID;
                 cmdDelete.ExecuteNonQuery();
-                //Usuarios.Remove(this.GetOne(ID));
             }
             catch (Exception Ex)
             {
@@ -333,7 +304,7 @@ namespace Data.Database
                 this.CloseConnection();
             }
         }
-        public void Update(Usuario usuario) //protected
+        public void Update(Usuario usuario) 
         {
             try
             {

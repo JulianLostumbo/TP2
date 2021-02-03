@@ -160,7 +160,6 @@ namespace Data.Database
                 SqlCommand cmdDelete = new SqlCommand("delete personas where id_persona=@id", sqlConn);
                 cmdDelete.Parameters.Add("@id", SqlDbType.Int).Value = ID;
                 cmdDelete.ExecuteNonQuery();
-                //Usuarios.Remove(this.GetOne(ID));
             }
             catch (Exception Ex)
             {
@@ -172,7 +171,7 @@ namespace Data.Database
                 this.CloseConnection();
             }
         }
-        public void Update(Persona per) //protected
+        public void Update(Persona per) 
         {
             try
             {

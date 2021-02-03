@@ -18,13 +18,6 @@ namespace Academia
         {
             InitializeComponent();
             this.dgvEspecialidades.AutoGenerateColumns = false;
-            //if (formLogin.UsuarioActual.Habilitado == false)
-            //{
-            //    this.tbsEditar.Enabled = false;
-            //    this.tbsEliminar.Enabled = false;
-            //    this.tbsNuevo.Enabled = false;
-            //    this.dgvEspecialidades.Enabled = false;
-            //}
         }
 
         public void Listar()

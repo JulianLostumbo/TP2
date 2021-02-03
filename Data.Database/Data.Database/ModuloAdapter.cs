@@ -93,7 +93,7 @@ namespace Data.Database
             }
         }
 
-        public void Update(Modulo mod) /*protected*/
+        public void Update(Modulo mod) 
         {
             try
             {

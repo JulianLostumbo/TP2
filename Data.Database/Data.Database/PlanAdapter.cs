@@ -91,7 +91,7 @@ namespace Data.Database
             }
         }
 
-        public void Update(Plan plan) //protected
+        public void Update(Plan plan)
         {
             try
             {

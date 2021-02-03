@@ -18,13 +18,6 @@ namespace Academia
         {
             InitializeComponent();
             this.dgvComisiones.AutoGenerateColumns = false;
-            /*if (formLogin.UsuarioActual.Habilitado == false)
-            {
-                this.tbsEditar.Enabled = false;
-                this.tbsEliminar.Enabled = false;
-                this.tbsNuevo.Enabled = false;
-                this.dgvComisiones.Enabled = false;
-            }*/
         }
 
         public void Listar()
@@ -56,7 +49,6 @@ namespace Academia
             {
                 int ID = ((Business.Entities.Comision)this.dgvComisiones.SelectedRows[0].DataBoundItem).ID;
                 ComisionDesktop formComision = new ComisionDesktop(ID, ApplicationForm.ModoForm.Modificacion);
-                //formComision.MapearADatos();
                 formComision.ShowDialog();
                 this.Listar();
             }

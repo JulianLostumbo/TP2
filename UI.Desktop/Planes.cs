@@ -18,13 +18,6 @@ namespace Academia
         {
             InitializeComponent();
             this.dgvPlanes.AutoGenerateColumns = false;
-            /*if (formLogin.UsuarioActual.Habilitado == false)
-            {
-                this.tbsEditar.Enabled = false;
-                this.tbsEliminar.Enabled = false;
-                this.tbsNuevo.Enabled = false;
-                this.dgvPlanes.Enabled = false;
-            }*/
         }
 
         public void Listar()
@@ -56,7 +49,6 @@ namespace Academia
             {
                 int ID = ((Business.Entities.Plan)this.dgvPlanes.SelectedRows[0].DataBoundItem).ID;
                 PlanDesktop formPlan = new PlanDesktop(ID, ApplicationForm.ModoForm.Modificacion);
-                //formPlan.MapearADatos();
                 formPlan.ShowDialog();
                 this.Listar();
             }

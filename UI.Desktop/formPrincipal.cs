@@ -36,14 +36,6 @@ namespace Academia
             this.lblUser.Text = "Usuario: " + formLogin.UsuarioActual.Nombre + "  " + formLogin.UsuarioActual.Apellido;
             this.lblTipo.Text = "Usted ha ingresado como " + formLogin.UsuarioActual.TipoPersona.ToString();
 
-            //if (formLogin.UsuarioActual.Habilitado == false)
-            //{
-            //    this.nuevoUsuarioMenuItem.Enabled = false;
-            //    this.nuevaComisionMenuItem.Enabled = false;
-            //    this.nuevaEspecialidadMenuItem.Enabled = false;
-            //    this.nuevaMateriaMenuItem.Enabled = false;
-            //    this.nuevoPlanMenuItem.Enabled = false;
-            //}
         }
 
         public void Validar(Persona.TipoPersonas tipoper, int idalum)
@@ -123,14 +115,6 @@ namespace Academia
                 this.lblUser.Text = "Usuario: " + formLogin.UsuarioActual.Nombre + "  " + formLogin.UsuarioActual.Apellido;
             }
 
-            /*if (formLogin.UsuarioActual.Habilitado == false)
-            {
-                this.nuevoUsuarioMenuItem.Enabled = false;
-                this.nuevaComisionMenuItem.Enabled = false;
-                this.nuevaEspecialidadMenuItem.Enabled = false;
-                this.nuevaMateriaMenuItem.Enabled = false;
-                this.nuevoPlanMenuItem.Enabled = false;
-            }*/
         }
 
         private void salirToolStripMenuItem_Click(object sender, EventArgs e)
