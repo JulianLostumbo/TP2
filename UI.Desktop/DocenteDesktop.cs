@@ -216,12 +216,6 @@ namespace Academia
                 MessageBox.Show("Docente del Curso eliminado correctamente", "Eliminar Docente del Curso", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 this.Close();
             }
-            else
-            {
-                this.GuardarCambios();
-                MessageBox.Show("Cambios registrados exitosamente", "Docente del Curso", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                this.Close();
-            }
         }
     }
 }

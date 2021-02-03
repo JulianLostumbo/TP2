@@ -152,12 +152,6 @@ namespace Academia
                 MessageBox.Show("Plan eliminado correctamente", "Eliminar Plan", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 this.Close();
             }
-            else
-            {
-                this.GuardarCambios();
-                MessageBox.Show("Cambios registrados exitosamente", "Plan", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                this.Close();
-            }
 
         }
 

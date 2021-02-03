@@ -1,6 +1,6 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Inscripciones.aspx.cs" Inherits="UI.Web.Inscripciones" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="bodyContentPlaceHolder" runat="server">
-    <asp:Panel ID="gridPanel" runat="server" Width="1256px" Height="180px" style="margin-bottom: 0px" OnLoad="gridPanel_Load"> 
+    <asp:Panel ID="gridPanel" runat="server" Width="1256px" Height="314px" style="margin-bottom: 0px" OnLoad="gridPanel_Load"> 
         <h2 style="font-family: calibri; text-align: left">Inscribirse a un Curso</h2>
         </strong>
     <asp:GridView ID="gridView" runat="server" AutoGenerateColumns="False"

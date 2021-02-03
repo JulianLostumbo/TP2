@@ -44,7 +44,6 @@
             <br />
             <asp:Label ID="Label1" runat="server" Text="ID:"></asp:Label>
             &nbsp;<asp:TextBox ID="IDTextBox" runat="server" Width="150px"></asp:TextBox>
-            <asp:RequiredFieldValidator ID="RequiredFieldValidator10" runat="server" ControlToValidate="IDTextBox" ErrorMessage="ID no puede estar vacío" ForeColor="Red">*</asp:RequiredFieldValidator>
             <br />
             <asp:Label ID="Label2" runat="server" Text="ID Docente:"></asp:Label>
             &nbsp;<asp:DropDownList ID="idDocente" runat="server" DataSourceID="objectdocente" DataTextField="Apellido" DataValueField="ID">
@@ -60,9 +59,6 @@
                 <asp:ListItem>Auxiliar</asp:ListItem>
                 <asp:ListItem>Profesor</asp:ListItem>
             </asp:DropDownList>
-            <br />
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <asp:TextBox ID="cargoTextBox" runat="server" Width="150px"></asp:TextBox>
             <br />
             <asp:ValidationSummary ID="ValidationSummary1" runat="server" ForeColor="Red" Height="90px" Width="437px" />
             <br />

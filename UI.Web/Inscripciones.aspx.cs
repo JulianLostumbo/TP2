@@ -68,6 +68,7 @@ namespace UI.Web
             alum.IDCurso = cur.ID;
             alum.State = BusinessEntity.States.New;
             Insc.Save(alum);
+            ButtonInsc.Visible = false;
             LabelError.Visible = true;
             LabelError.Text = "Inscripcion registrada correctamente!";
             this.Listar();

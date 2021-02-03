@@ -15,9 +15,9 @@ namespace UI.Web
         protected void Page_Load(object sender, EventArgs e)
         {
             Per = (Persona)Session["persona"];
+            User = (Usuario)Session["usuario"];
             if (IsPostBack==false)
             {
-                Entity = (Usuario)Session["usuario"];
                 formPanel.Visible = false;
                 IDTextBox.Enabled = false;
                 if (Per.TipoPersona != Persona.TipoPersonas.Administrador)
@@ -68,6 +68,8 @@ namespace UI.Web
             set;
         }
 
+        public Usuario User { get; set; }
+
         private Persona Per
         {
             get;
@@ -108,7 +110,7 @@ namespace UI.Web
             UsuarioLogic ul = new UsuarioLogic();
             if (Per.TipoPersona != Persona.TipoPersonas.Administrador)
             {
-                this.gridView.DataSource = ul.GetAll(Entity.ID);
+                this.gridView.DataSource = ul.GetAll(User.ID);
             }
             else
             {
@@ -149,7 +151,6 @@ namespace UI.Web
 
         private void LoadEntity(Usuario usuario)
         {
-            usuario.ID = int.Parse(this.IDTextBox.Text);
             usuario.Nombre = this.nombreTextBox.Text;
             usuario.Apellido = this.apellidoTextBox.Text;
             usuario.Email = this.emailTextBox.Text;
@@ -171,18 +172,34 @@ namespace UI.Web
             switch (this.FormMode)
             {
                 case FormModes.Baja:
-                    this.DeleteEntity(this.SelectedID);
-                    this.LoadGrid();
-                    this.formPanel.Visible = false;
+                    this.Entity = this.Logic.GetOne(SelectedID);
+                    if (Entity.Clave == this.claveTextBox.Text.ToString())
+                    {
+                        this.DeleteEntity(this.SelectedID);
+                        this.LoadGrid();
+                        this.formPanel.Visible = false;
+                    }
+                    else
+                    {
+                        Response.Write("<script> alert(" + "'¡ERROR! Contraseña incorrecta'" + ") </script>");
+                    }
                     break;
                 case FormModes.Modificacion:
-                    this.Entity = new Usuario();
-                    this.Entity.ID = this.SelectedID;
-                    this.Entity.State = BusinessEntity.States.Modified;
-                    this.LoadEntity(this.Entity);
-                    this.SaveEntity(this.Entity);
-                    this.LoadGrid();
-                    this.formPanel.Visible = false;
+                    this.Entity = this.Logic.GetOne(SelectedID);
+                    if (Entity.Clave == this.claveTextBox.Text.ToString())
+                    {
+                        this.Entity = new Usuario();
+                        this.Entity.ID = this.SelectedID;
+                        this.Entity.State = BusinessEntity.States.Modified;
+                        this.LoadEntity(this.Entity);
+                        this.SaveEntity(this.Entity);
+                        this.LoadGrid();
+                        this.formPanel.Visible = false;
+                    }
+                    else
+                    {
+                        Response.Write("<script> alert(" + "'¡ERROR! Contraseña incorrecta'" + ") </script>");
+                    }
                     break;
                 case FormModes.Alta:
                     this.Entity = new Usuario();

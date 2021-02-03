@@ -42,7 +42,6 @@
             <br />
             <asp:Label ID="ID" runat="server" Text="ID: "></asp:Label>
             <asp:TextBox ID="IDTextBox" runat="server"></asp:TextBox>
-            <asp:RequiredFieldValidator ID="RequiredFieldValidator12" runat="server" ControlToValidate="IDTextBox" ErrorMessage="El ID no puede estar vacío" ForeColor="Red">*</asp:RequiredFieldValidator>
             <br />
             <asp:Label ID="nombreLabel" runat="server" Text="Nombre: "></asp:Label>
             <asp:TextBox ID="nombreTextBox" runat="server"></asp:TextBox>

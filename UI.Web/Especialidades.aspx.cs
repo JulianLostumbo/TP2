@@ -13,9 +13,9 @@ namespace UI.Web
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            Per = (Persona)Session["persona"];
             if (IsPostBack == false)
             {
-                Per = (Persona)Session["persona"];
                 formPanel.Visible = false;
                 IDTextBox.Enabled = false;
                 if (Per.TipoPersona != Persona.TipoPersonas.Administrador)
@@ -133,7 +133,6 @@ namespace UI.Web
 
         private void LoadEntity(Especialidad especialidad)
         {
-            especialidad.ID = int.Parse(this.IDTextBox.Text);
             especialidad.Descripcion = this.descripcionTextBox.Text;
 
         }

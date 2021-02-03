@@ -92,16 +92,16 @@ namespace UI.Web
             this.IDTextBox.Text = this.Entity.ID.ToString();
             this.idDocente.SelectedValue = this.Entity.IdDocente.ToString();
             this.curso.SelectedValue = this.Entity.IdCurso.ToString();
-            this.cargoTextBox.Text = this.Entity.Cargo.ToString();
+            this.ddlCargo.Text = this.Entity.Cargo.ToString();
         }
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            Per = (Persona)Session["persona"];
             if (!this.Page.IsPostBack)
             {
                 formPanel.Visible = false; 
                 IDTextBox.Enabled = false;
-                Per = (Persona)Session["persona"];
 
                 if (Per.TipoPersona != Persona.TipoPersonas.Administrador)
                 {
@@ -128,7 +128,6 @@ namespace UI.Web
         private void ClearForm()
         {
             this.IDTextBox.Text = string.Empty;
-            this.cargoTextBox.Text = string.Empty;
 
         }
 
@@ -136,14 +135,12 @@ namespace UI.Web
         {
             this.idDocente.Enabled = enable;
             this.curso.Enabled = enable;
-            this.cargoTextBox.Enabled = enable;
             this.ddlCargo.Enabled = enable;
 
         }
 
         private void LoadEntity(DocenteCurso docentecurso)
         {
-            docentecurso.ID = int.Parse(this.IDTextBox.Text);
             docentecurso.IdDocente = int.Parse(this.idDocente.SelectedValue);
             if (this.ddlCargo.SelectedValue.ToString() == "Auxiliar")
             {

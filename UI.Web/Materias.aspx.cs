@@ -13,10 +13,9 @@ namespace UI.Web
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            Per = (Persona)Session["persona"];
             if (IsPostBack == false)
             {
-            
-                Per = (Persona)Session["persona"];
                 IDTextBox.Enabled = false;
                 formPanel.Visible = false;
                 if (Per.TipoPersona != Persona.TipoPersonas.Administrador)
@@ -137,7 +136,6 @@ namespace UI.Web
 
         private void LoadEntity(Materia materia)
         {
-            materia.ID = int.Parse(this.IDTextBox.Text);
             materia.Descripcion = this.descripcionTextBox.Text;
             materia.HsSemanales = Convert.ToInt32(this.hsSemanalesTextBox.Text);
             materia.HsTotales = Convert.ToInt32(this.hsTotalesTextBox.Text);

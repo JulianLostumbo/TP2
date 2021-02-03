@@ -26,11 +26,13 @@ namespace Academia
             this.MapearTipoPersonas();
         }
 
+        public Persona Entity { get; set; }
+
         public PersonaDesktop(int ID, ModoForm modo) : this()
         {
             Modo = modo;
             PersonaLogic persona = new PersonaLogic();
-            formLogin.PersonaActual = persona.GetOne(ID);
+            Entity = persona.GetOne(ID);
             this.MapearDeDatos();
             this.MapearPlanes();
             this.MapearTipoPersonas();
@@ -64,14 +66,14 @@ namespace Academia
 
         public override void MapearDeDatos()
         {
-            this.txtID.Text = formLogin.PersonaActual.ID.ToString();
-            this.txtNombre.Text = formLogin.PersonaActual.Nombre;
-            this.txtApellido.Text = formLogin.PersonaActual.Apellido;
-            this.txtEmail.Text = formLogin.PersonaActual.Email;
-            this.txtDireccion.Text = formLogin.PersonaActual.Direccion;
-            this.txtLegajo.Text = formLogin.PersonaActual.Legajo.ToString();
-            this.txtTelefono.Text = formLogin.PersonaActual.Telefono;
-            this.txtFechaNac.Text = formLogin.PersonaActual.FechaNac.ToString();
+            this.txtID.Text = Entity.ID.ToString();
+            this.txtNombre.Text = Entity.Nombre;
+            this.txtApellido.Text = Entity.Apellido;
+            this.txtEmail.Text = Entity.Email;
+            this.txtDireccion.Text = Entity.Direccion;
+            this.txtLegajo.Text = Entity.Legajo.ToString();
+            this.txtTelefono.Text = Entity.Telefono;
+            this.txtFechaNac.Text = Entity.FechaNac.ToString();
 
 
             if (Modo == ModoForm.Alta)
@@ -187,14 +189,24 @@ namespace Academia
             string Telefono = this.txtTelefono.Text;
             string Direccion = this.txtDireccion.Text;
             int Legajo = int.Parse(this.txtLegajo.Text);
-
-
-            if (Validar(Apellido, Nombre, Email, Direccion, Telefono, Legajo) == true)
+            if (Modo == ModoForm.Alta && this.Validar(Apellido, Nombre, Email, Direccion, Telefono, Legajo) == true)
             {
                 this.GuardarCambios();
+                MessageBox.Show("Materia registrada exitosamente", "Nueva Materia", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                this.Close();
             }
-
-            this.Close();
+            else if (Modo == ModoForm.Modificacion && this.Validar(Apellido, Nombre, Email, Direccion, Telefono, Legajo) == true)
+            {
+                this.GuardarCambios();
+                MessageBox.Show("Materia modificada exitosamente", "Modificar Materia", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                this.Close();
+            }
+            else if (Modo == ModoForm.Baja && this.Validar(Apellido, Nombre, Email, Direccion, Telefono, Legajo) == true)
+            {
+                this.GuardarCambios();
+                MessageBox.Show("Materia eliminada correctamente", "Eliminar Materia", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                this.Close();
+            }
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)

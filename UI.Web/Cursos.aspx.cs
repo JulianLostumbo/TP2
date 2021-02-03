@@ -113,15 +113,13 @@ namespace UI.Web
 
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            Per = (Persona)Session["persona"];
             if (!this.Page.IsPostBack)
             {
 
                 formPanel.Visible = false;
 
                 IDTextBox.Enabled = false;
-
-                Per = (Persona)Session["persona"];
 
                 if (Per.TipoPersona != Persona.TipoPersonas.Profesor)
                 {
@@ -162,7 +160,6 @@ namespace UI.Web
 
         private void LoadEntity(Curso cur)
         {
-            cur.ID = int.Parse(this.IDTextBox.Text);
             cur.Cupo = int.Parse(this.CupoTxt.Text);
             cur.AnioCalendario = int.Parse(this.añocalTxt.Text);
             cur.IdMateria = int.Parse(idMate.SelectedValue);

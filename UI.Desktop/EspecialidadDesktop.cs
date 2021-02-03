@@ -133,12 +133,6 @@ namespace Academia
                 MessageBox.Show("Especialidad eliminada correctamente", "Eliminar Especialidad", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 this.Close();
             }
-            else
-            {
-                this.GuardarCambios();
-                MessageBox.Show("Cambios registrados exitosamente", "Especialidad", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                this.Close();
-            }
 
         }
 

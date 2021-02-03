@@ -165,13 +165,24 @@ namespace Academia
             int cupo = int.Parse(this.txtCupo.Text);
             int anio = int.Parse(this.txtAnioCalendario.Text);
 
-
-            if (Validar(cupo, anio) == true)
+            if (Modo == ModoForm.Alta && this.Validar(cupo, anio) == true)
             {
                 this.GuardarCambios();
+                MessageBox.Show("Comisión registrada exitosamente", "Nueva Comisión", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                this.Close();
             }
-
-            this.Close();
+            else if (Modo == ModoForm.Modificacion && this.Validar(cupo, anio) == true)
+            {
+                this.GuardarCambios();
+                MessageBox.Show("Comisión modificada exitosamente", "Modificar Comisión", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                this.Close();
+            }
+            else if (Modo == ModoForm.Baja && this.Validar(cupo, anio) == true)
+            {
+                this.GuardarCambios();
+                MessageBox.Show("Comisión eliminada correctamente", "Eliminar Comisión", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                this.Close();
+            }
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)

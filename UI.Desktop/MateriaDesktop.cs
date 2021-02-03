@@ -162,12 +162,6 @@ namespace Academia
                 MessageBox.Show("Materia eliminada correctamente", "Eliminar Materia", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 this.Close();
             }
-            else
-            {
-                this.GuardarCambios();
-                MessageBox.Show("Cambios registrados exitosamente", "Materia", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                this.Close();
-            }
 
         }
 

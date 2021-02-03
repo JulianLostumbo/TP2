@@ -42,6 +42,8 @@ namespace UI.Web
             }
         }
 
+        public Persona Per { get; set; }
+
         private Persona Entity
         {
             get;
@@ -95,27 +97,26 @@ namespace UI.Web
 
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            Per = (Persona)Session["persona"];
             if (!this.IsPostBack)
             {
-                Entity = (Persona)Session["persona"];
                 formPanel.Visible = false;
                 IDTextBox.Enabled = false;
-                if (Entity.TipoPersona != Persona.TipoPersonas.Administrador)
+                if (Per.TipoPersona != Persona.TipoPersonas.Administrador)
                 {
                     nuevoLinkButton.Visible = false;
                     eliminarLinkButton.Visible = false;
                 }
-                this.LoadGrid();
             }
+            this.LoadGrid();
         }
 
         private void LoadGrid()
         {
             PersonaLogic pl = new PersonaLogic();
-            if (Entity.TipoPersona != Persona.TipoPersonas.Administrador)
+            if (Per.TipoPersona != Persona.TipoPersonas.Administrador)
             {
-                this.gridView.DataSource = pl.GetAll(Entity.ID);
+                this.gridView.DataSource = pl.GetAll(Per.ID);
             }
             else
             {
@@ -155,11 +156,10 @@ namespace UI.Web
 
         private void LoadEntity(Persona persona)
         {
-            persona.ID = int.Parse(this.IDTextBox.Text);
             persona.Nombre = this.nombreTextBox.Text;
             persona.Apellido = this.apellidoTextBox.Text;
             persona.Email = this.emailTextBox.Text;
-            persona.FechaNac = Convert.ToDateTime(this.fechaNacTextBox);
+            persona.FechaNac = Convert.ToDateTime(this.fechaNacTextBox.Text);
             persona.IdPlan = int.Parse(this.idplan.SelectedValue);
             persona.TipoPersona = (Persona.TipoPersonas)Enum.Parse(typeof(Persona.TipoPersonas), tipoper.SelectedValue.ToString());
             persona.Direccion = this.direccionTextBox.Text;

@@ -133,14 +133,17 @@ namespace Academia
             }
             else
             {
-                this.Notificar("Error", "Los campos no pueden estar vacío o valer '0'", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
         }
 
         private void btnAceptar_Click(object sender, EventArgs e)
         {
-            if (Modo == ModoForm.Alta && this.Validar() == true)
+            if (Validar() == false)
+            {
+                this.Notificar("Error", "Los campos no pueden estar vacío o valer '0'", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else if (Modo == ModoForm.Alta && this.Validar() == true)
             {
                 this.GuardarCambios();
                 MessageBox.Show("Comisión registrada exitosamente", "Nueva Comisión", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -156,12 +159,6 @@ namespace Academia
             {
                 this.GuardarCambios();
                 MessageBox.Show("Comisión eliminada correctamente", "Eliminar Comisión", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                this.Close();
-            }
-            else
-            {
-                this.GuardarCambios();
-                MessageBox.Show("Cambios registrados exitosamente", "Comisión", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 this.Close();
             }
 

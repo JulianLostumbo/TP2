@@ -143,15 +143,15 @@ namespace Academia
 
         public override bool Validar() 
         {
-            if (this.txtNombre.ToString() != "" &&
-                this.txtApellido.ToString() != "" &&
-                this.txtNombre.ToString() != "" &&
+            if (this.txtNombre.ToString() != string.Empty &&
+                this.txtApellido.ToString() != string.Empty &&
                 this.cmbLegajo.SelectedItem.ToString() != string.Empty &&
-                this.txtEmail.ToString() != "" &&
-                this.txtUsuario.ToString() != "" &&
-                this.txtPass.ToString() != "" &&
+                this.txtEmail.ToString() != string.Empty &&
+                this.txtUsuario.ToString() != string.Empty &&
+                this.txtPass.ToString() != string.Empty &&
                 this.txtPass.ToString().Length >= 8 &&
                 this.txtPass.ToString() == this.txtRepetirPass.ToString() &&
+                (UsuarioActual.Clave == txtPass.Text) &&
                 this.txtEmail.ToString().Contains("@") &&
                 (this.txtEmail.ToString().Contains(".com") || this.txtEmail.ToString().Contains(".com.ar")))
             {
@@ -185,18 +185,6 @@ namespace Academia
                 MessageBox.Show("Usuario eliminado correctamente", "Eliminar Usuario", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 this.Close();
             }
-            else
-            {
-                this.GuardarCambios();
-                MessageBox.Show("Cambios registrados exitosamente", "Usuario", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                this.Close();
-            }
-            //if (this.Validar() == true)
-            //{
-            //    this.GuardarCambios();
-            //    MessageBox.Show("Usuario registrado exitosamente", "Nuevo Usuario", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            //    this.Close();
-            //}
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
