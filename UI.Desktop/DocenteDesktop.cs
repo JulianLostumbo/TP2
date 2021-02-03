@@ -25,6 +25,8 @@ namespace Academia
         {
             Modo = modo;
             MapearDocentes();
+            MapearCursos();
+            MapearCargo();
         }
 
         public DocenteDesktop(int ID, ModoForm modo) : this()
@@ -34,13 +36,15 @@ namespace Academia
             DocenteActual = docente.GetOne(ID);
             this.MapearDeDatos();
             this.MapearDocentes();
+            MapearCursos();
+            MapearCargo();
         }
 
         public override void MapearDeDatos()
         {
             this.txtID.Text = this.DocenteActual.ID.ToString();
             this.cmbDocente.SelectedItem = this.DocenteActual.IdDocente;
-            this.txtCurso.Text = this.DocenteActual.IdCurso.ToString();
+            this.cmbCurso.SelectedItem = this.DocenteActual.IdCurso;
             this.cmbCargo.SelectedItem = this.DocenteActual.Cargo;
             if (Modo == ModoForm.Alta)
             {
@@ -55,7 +59,7 @@ namespace Academia
                 btnAceptar.Text = "Eliminar";
                 txtID.Enabled = false;
                 cmbDocente.Enabled = false;
-                txtCurso.Enabled = false;
+                cmbCurso.Enabled = false;
                 cmbCargo.Enabled = false;
             }
             else
@@ -71,7 +75,7 @@ namespace Academia
             {
                 DocenteCurso docNuevo = new DocenteCurso();
 
-                docNuevo.IdCurso = Convert.ToInt32(this.txtCurso.Text);
+                docNuevo.IdCurso = Convert.ToInt32(cmbCurso.SelectedValue.ToString());
                 docNuevo.IdDocente = Convert.ToInt32(cmbDocente.SelectedValue.ToString());
                 if (cmbDocente.SelectedValue.ToString() == "Auxiliar")
                 {
@@ -93,7 +97,7 @@ namespace Academia
             else if (Modo == ModoForm.Modificacion)
             {
 
-                DocenteActual.IdCurso = Convert.ToInt32(this.txtCurso.Text);
+                DocenteActual.IdCurso = Convert.ToInt32(cmbCurso.SelectedValue.ToString());
                 DocenteActual.IdDocente = Convert.ToInt32(cmbDocente.SelectedValue.ToString());
                 if (cmbDocente.SelectedValue.ToString() == "Auxiliar")
                 {
@@ -137,7 +141,32 @@ namespace Academia
             cmbDocente.DisplayMember = "Apellido";
             if (Modo != ModoForm.Alta)
             {
-                cmbDocente.SelectedValue = DocenteActual.IdDocente;
+                cmbDocente.SelectedItem = DocenteActual.IdDocente;
+
+            };
+        }
+
+        public void MapearCargo()
+        {
+            cmbCargo.DataSource = Enum.GetValues(typeof(DocenteCurso.TiposCargos));
+
+            if (Modo != ModoForm.Alta)
+            {
+                cmbCargo.SelectedItem = (DocenteCurso.TiposCargos)Enum.Parse(typeof(DocenteCurso.TiposCargos), cmbCargo.SelectedValue.ToString());
+
+            }
+
+        }
+
+        public void MapearCursos()
+        {
+            CursoLogic cl = new CursoLogic();
+            cmbCurso.DataSource = cl.GetAll();
+            cmbCurso.ValueMember = "ID";
+            cmbCurso.DisplayMember = "ID";
+            if (Modo != ModoForm.Alta)
+            {
+                cmbCurso.SelectedItem = DocenteActual.IdCurso;
 
             };
         }
@@ -150,7 +179,7 @@ namespace Academia
 
         public override bool Validar()
         {
-            if (this.txtCurso.ToString() != "" && this.txtCurso.ToString() != "0" && this.txtCurso.ToString() != "" && this.cmbCargo.SelectedItem.ToString() != string.Empty && this.cmbDocente.SelectedItem.ToString() != string.Empty)
+            if (this.cmbCurso.SelectedItem.ToString() != string.Empty && this.cmbCargo.SelectedItem.ToString() != string.Empty && this.cmbDocente.SelectedItem.ToString() != string.Empty)
             {
                 return true;
             }
@@ -161,7 +190,13 @@ namespace Academia
             }
         }
 
-        private void btnAceptar_Click(object sender, EventArgs e)
+
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void btnAceptar_Click_1(object sender, EventArgs e)
         {
             if (Modo == ModoForm.Alta && this.Validar() == true)
             {
@@ -187,12 +222,6 @@ namespace Academia
                 MessageBox.Show("Cambios registrados exitosamente", "Docente del Curso", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 this.Close();
             }
-
-        }
-
-        private void btnCancelar_Click(object sender, EventArgs e)
-        {
-            this.Close();
         }
     }
 }

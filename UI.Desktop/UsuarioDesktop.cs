@@ -44,8 +44,8 @@ namespace Academia
             this.txtApellido.Text = this.UsuarioActual.Apellido;
             this.txtEmail.Text = this.UsuarioActual.Email;
             this.txtUsuario.Text = this.UsuarioActual.NombreUsuario;
-            this.txtPass.Text = this.UsuarioActual.Clave.ToString();
-            this.txtRepetirPass.Text = this.UsuarioActual.Clave.ToString();
+            //this.txtPass.Text = this.UsuarioActual.Clave.ToString();
+            //this.txtRepetirPass.Text = this.UsuarioActual.Clave.ToString();
             if (Modo == ModoForm.Alta)
             {
                 btnAceptar.Text = "Guardar";
@@ -57,6 +57,12 @@ namespace Academia
             else if (Modo == ModoForm.Baja)
             {
                 btnAceptar.Text = "Eliminar";
+                txtApellido.Enabled = false;
+                txtEmail.Enabled = false;
+                txtNombre.Enabled = false;
+                txtUsuario.Enabled = false;
+                chkHabilitado.Enabled = false;
+                cmbLegajo.Enabled = false;
             }
             else
             {
@@ -126,7 +132,7 @@ namespace Academia
             cmbLegajo.DisplayMember = "Legajo";
             if (Modo != ModoForm.Alta)
             {
-                cmbLegajo.SelectedValue = UsuarioActual.Legajo;
+                cmbLegajo.SelectedItem = UsuarioActual.Legajo;
             }
         }
 

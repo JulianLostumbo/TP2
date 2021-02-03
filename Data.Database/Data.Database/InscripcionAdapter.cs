@@ -84,7 +84,7 @@ namespace Data.Database
                     "where ai.id_alumno = @id", sqlConn);
                 cmdInscripcion.Parameters.Add("@id", SqlDbType.Int).Value = ID;
                 SqlDataReader drInscripciones = cmdInscripcion.ExecuteReader();
-                if (drInscripciones.Read())
+                while (drInscripciones.Read())
                 {
                     AlumnoInscripcion ins = new AlumnoInscripcion();
                     ins.ID = (int)drInscripciones["id_inscripcion"];
@@ -96,15 +96,12 @@ namespace Data.Database
                     inscripciones.Add(ins);
                 }
                 drInscripciones.Close();
+                this.CloseConnection();
             }
             catch (Exception Ex)
             {
                 Exception ExcepcionManejada = new Exception("Error al recuperar las inscripciones del alumno", Ex);
                 throw ExcepcionManejada;
-            }
-            finally
-            {
-                this.CloseConnection();
             }
             return inscripciones;
         }

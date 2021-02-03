@@ -17,6 +17,7 @@ namespace UI.Web
             {
             
                 Per = (Persona)Session["persona"];
+                IDTextBox.Enabled = false;
                 formPanel.Visible = false;
                 if (Per.TipoPersona != Persona.TipoPersonas.Administrador)
                 {
@@ -115,6 +116,7 @@ namespace UI.Web
         {
 
             this.Entity = this.Logic.GetOne(id);
+            this.IDTextBox.Text = this.Entity.ID.ToString();
             this.descripcionTextBox.Text = this.Entity.Descripcion;
             this.hsSemanalesTextBox.Text = Convert.ToString(this.Entity.HsSemanales);
             this.hsTotalesTextBox.Text = Convert.ToString(this.Entity.HsTotales);
@@ -135,6 +137,7 @@ namespace UI.Web
 
         private void LoadEntity(Materia materia)
         {
+            materia.ID = int.Parse(this.IDTextBox.Text);
             materia.Descripcion = this.descripcionTextBox.Text;
             materia.HsSemanales = Convert.ToInt32(this.hsSemanalesTextBox.Text);
             materia.HsTotales = Convert.ToInt32(this.hsTotalesTextBox.Text);
@@ -210,6 +213,7 @@ namespace UI.Web
 
         private void ClearForm()
         {
+            this.IDTextBox.Text = string.Empty;
             this.descripcionTextBox.Text = string.Empty;
             this.hsSemanalesTextBox.Text = string.Empty;
             this.hsTotalesTextBox.Text = string.Empty;

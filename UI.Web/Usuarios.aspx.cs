@@ -13,12 +13,13 @@ namespace UI.Web
     public partial class Usuarios : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
-        {            
+        {
+            Per = (Persona)Session["persona"];
             if (IsPostBack==false)
             {
-                Per = (Persona)Session["persona"];
                 Entity = (Usuario)Session["usuario"];
                 formPanel.Visible = false;
+                IDTextBox.Enabled = false;
                 if (Per.TipoPersona != Persona.TipoPersonas.Administrador)
                 {
                     imprimirLinkButton.Visible = false;
@@ -125,6 +126,7 @@ namespace UI.Web
         {
 
             this.Entity = this.Logic.GetOne(id);
+            this.IDTextBox.Text = Convert.ToString(this.Entity.ID);
             this.nombreTextBox.Text = this.Entity.Nombre;
             this.apellidoTextBox.Text = this.Entity.Apellido;
             this.emailTextBox.Text = this.Entity.Email;
@@ -147,6 +149,7 @@ namespace UI.Web
 
         private void LoadEntity(Usuario usuario)
         {
+            usuario.ID = int.Parse(this.IDTextBox.Text);
             usuario.Nombre = this.nombreTextBox.Text;
             usuario.Apellido = this.apellidoTextBox.Text;
             usuario.Email = this.emailTextBox.Text;
@@ -200,10 +203,6 @@ namespace UI.Web
             this.apellidoTextBox.Enabled = enable;
             this.emailTextBox.Enabled = enable;
             this.nombreUsuarioTextBox.Enabled = enable;
-            this.claveTextBox.Visible = enable;
-            this.claveLabel.Visible = enable;
-            this.repetirClaveTextBox.Visible = enable;
-            this.repetirClaveLabel.Visible = enable;
             this.idpersona.Enabled = enable;
         }
 

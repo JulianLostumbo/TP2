@@ -24,6 +24,7 @@ namespace Academia
         public ComisionDesktop(ModoForm modo) : this()
         {
             Modo = modo;
+            this.MapearPlanes();
         }
 
         public ComisionDesktop(int ID, ModoForm modo) : this()
@@ -113,7 +114,7 @@ namespace Academia
             cmbPlanes.DisplayMember = "Descripcion";
             if (Modo != ModoForm.Alta)
             {
-                cmbPlanes.SelectedValue = ComisionActual.IdPlan;
+                cmbPlanes.SelectedItem = ComisionActual.IdPlan;
 
             };
         }

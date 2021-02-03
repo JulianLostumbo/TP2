@@ -52,10 +52,11 @@
             <asp:ObjectDataSource ID="objectdocente" runat="server" SelectMethod="GetDocente" TypeName="Data.Database.DocenteCursoAdapter"></asp:ObjectDataSource>
 
             <asp:Label ID="Label3" runat="server" Text="Curso:"></asp:Label>
-            &nbsp;<asp:TextBox ID="CursoTextBox" runat="server" Width="150px"></asp:TextBox>
-            <asp:RequiredFieldValidator ID="RequiredFieldValidator12" runat="server" ControlToValidate="CursoTextBox" ErrorMessage="El curso no puede estar vacío" ForeColor="Red">*</asp:RequiredFieldValidator>
-            <br />
-            <asp:Label ID="Label4" runat="server" Text="Cargo:"></asp:Label>&nbsp;<asp:DropDownList ID="ddlCargo" runat="server">
+            <asp:DropDownList ID="curso" runat="server" DataSourceID="objectcurso" DataTextField="ID" DataValueField="ID">
+            </asp:DropDownList>
+            <asp:ObjectDataSource ID="objectcurso" runat="server" OldValuesParameterFormatString="original_{0}" SelectMethod="GetAll" TypeName="Business.Logic.CursoLogic"></asp:ObjectDataSource>
+            &nbsp;<br />&nbsp;<asp:Label ID="Label4" runat="server" Text="Cargo:"></asp:Label>
+            &nbsp;<asp:DropDownList ID="ddlCargo" runat="server">
                 <asp:ListItem>Auxiliar</asp:ListItem>
                 <asp:ListItem>Profesor</asp:ListItem>
             </asp:DropDownList>

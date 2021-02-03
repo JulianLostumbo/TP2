@@ -1,6 +1,6 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="EstadoAcademico.aspx.cs" Inherits="UI.Web.EstadoAcademico" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="bodyContentPlaceHolder" runat="server">
-    <asp:Panel ID="gridPanel" runat="server" Width="1256px" Height="180px" style="margin-bottom: 0px" OnLoad="gridPanel_Load"> 
+    <asp:Panel ID="gridPanel" runat="server" Width="1256px" Height="357px" style="margin-bottom: 0px" OnLoad="gridPanel_Load"> 
         <h2 style="font-family: calibri; text-align: left">
             <asp:Label ID="lbl" runat="server" Text="Estado Académico del Alumno"></asp:Label>
         </h2>

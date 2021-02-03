@@ -266,7 +266,7 @@ namespace Academia
 
         private void registrarNuevoToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            CursoDesktop frm = new CursoDesktop();
+            CursoDesktop frm = new CursoDesktop(ApplicationForm.ModoForm.Alta);
             frm.MdiParent = this;
             frm.Show();
         }

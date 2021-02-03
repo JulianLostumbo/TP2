@@ -49,6 +49,7 @@ namespace Academia
             else if (Modo == ModoForm.Baja)
             {
                 btnAceptar.Text = "Eliminar";
+                this.txtDescripcion.Enabled = false;
             }
             else
             {

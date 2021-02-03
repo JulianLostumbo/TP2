@@ -85,6 +85,15 @@ namespace Academia
             else if (Modo == ModoForm.Baja)
             {
                 btnAceptar.Text = "Eliminar";
+                txtApellido.Enabled = false;
+                txtEmail.Enabled = false;
+                txtNombre.Enabled = false;
+                txtDireccion.Enabled = false;
+                txtLegajo.Enabled = false;
+                txtTelefono.Enabled = false;
+                txtFechaNac.Enabled = false;
+                cmbPlan.Enabled = false;
+                cmbTipoPersona.Enabled = false;
             }
             else
             {

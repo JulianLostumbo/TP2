@@ -141,22 +141,22 @@ namespace UI.Web
         protected global::System.Web.UI.WebControls.Label Label3;
 
         /// <summary>
-        /// Control CursoTextBox.
+        /// Control curso.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox CursoTextBox;
+        protected global::System.Web.UI.WebControls.DropDownList curso;
 
         /// <summary>
-        /// Control RequiredFieldValidator12.
+        /// Control objectcurso.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator12;
+        protected global::System.Web.UI.WebControls.ObjectDataSource objectcurso;
 
         /// <summary>
         /// Control Label4.

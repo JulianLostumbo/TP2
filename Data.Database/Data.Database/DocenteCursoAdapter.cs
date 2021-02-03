@@ -55,7 +55,7 @@ namespace Data.Database
             try
             {
                 this.OpenConnection();
-                SqlCommand cmdDocenteCursos = new SqlCommand("SELECT dc.id_curso, dc.id_docente, dc.cargo, " +
+                SqlCommand cmdDocenteCursos = new SqlCommand("SELECT  dc.id_dictado, dc.id_curso, dc.id_docente, dc.cargo, " +
                     "personas.nombre, personas.apellido " +
                     "FROM docentes_cursos dc " +
                     "INNER JOIN cursos on dc.id_curso = cursos.id_curso " +

@@ -24,6 +24,7 @@ namespace Academia
         public PlanDesktop(ModoForm modo) : this()
         {
             Modo = modo;
+            this.MapearEspecialidades();
         }
 
         public PlanDesktop(int ID, ModoForm modo) : this()
@@ -51,6 +52,8 @@ namespace Academia
             else if (Modo == ModoForm.Baja)
             {
                 btnAceptar.Text = "Eliminar";
+                this.txtDescripcion.Enabled = false;
+                this.cmbEspecialidad.Enabled = false;
             }
             else
             {

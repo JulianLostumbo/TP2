@@ -24,6 +24,7 @@ namespace Academia
         public MateriaDesktop(ModoForm modo) : this()
         {
             Modo = modo;
+            this.MapearPlanes();
         }
 
         public MateriaDesktop(int ID, ModoForm modo) : this()
@@ -32,6 +33,7 @@ namespace Academia
             MateriaLogic materia = new MateriaLogic();
             MateriaActual = materia.GetOne(ID);
             this.MapearDeDatos();
+            this.MapearPlanes();
         }
 
         public override void MapearDeDatos()
@@ -122,7 +124,7 @@ namespace Academia
             cmbPlan.DisplayMember = "Descripcion";
             if (Modo != ModoForm.Alta)
             {
-                cmbPlan.SelectedValue = MateriaActual.IdPlan;
+                cmbPlan.SelectedItem = MateriaActual.IdPlan;
 
             };
         }

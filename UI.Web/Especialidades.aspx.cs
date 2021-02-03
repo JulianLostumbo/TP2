@@ -17,6 +17,7 @@ namespace UI.Web
             {
                 Per = (Persona)Session["persona"];
                 formPanel.Visible = false;
+                IDTextBox.Enabled = false;
                 if (Per.TipoPersona != Persona.TipoPersonas.Administrador)
                 {
                     nuevoLinkButton.Visible = false;
@@ -114,6 +115,7 @@ namespace UI.Web
         {
 
             this.Entity = this.Logic.GetOne(id);
+            this.IDTextBox.Text = this.Entity.ID.ToString();
             this.descripcionTextBox.Text = this.Entity.Descripcion;
         }
 
@@ -131,6 +133,7 @@ namespace UI.Web
 
         private void LoadEntity(Especialidad especialidad)
         {
+            especialidad.ID = int.Parse(this.IDTextBox.Text);
             especialidad.Descripcion = this.descripcionTextBox.Text;
 
         }
@@ -200,6 +203,7 @@ namespace UI.Web
 
         private void ClearForm()
         {
+            this.IDTextBox.Text = string.Empty;
             this.descripcionTextBox.Text = string.Empty;
         }
 

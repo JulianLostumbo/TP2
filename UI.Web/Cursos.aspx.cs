@@ -119,6 +119,8 @@ namespace UI.Web
 
                 formPanel.Visible = false;
 
+                IDTextBox.Enabled = false;
+
                 Per = (Persona)Session["persona"];
 
                 if (Per.TipoPersona != Persona.TipoPersonas.Profesor)
@@ -150,7 +152,6 @@ namespace UI.Web
 
         private void EnableForm(bool enable)
         {
-            this.IDTextBox.Enabled = enable;
             this.añocalTxt.Enabled = enable;
             this.CupoTxt.Enabled = enable;
             this.idComi.Enabled = enable;

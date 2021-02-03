@@ -91,7 +91,7 @@ namespace UI.Web
             this.Entity = this.Logic.GetOne(id);
             this.IDTextBox.Text = this.Entity.ID.ToString();
             this.idDocente.SelectedValue = this.Entity.IdDocente.ToString();
-            this.CursoTextBox.Text = this.Entity.IdCurso.ToString();
+            this.curso.SelectedValue = this.Entity.IdCurso.ToString();
             this.cargoTextBox.Text = this.Entity.Cargo.ToString();
         }
 
@@ -99,7 +99,8 @@ namespace UI.Web
         {
             if (!this.Page.IsPostBack)
             {
-                formPanel.Visible = false;
+                formPanel.Visible = false; 
+                IDTextBox.Enabled = false;
                 Per = (Persona)Session["persona"];
 
                 if (Per.TipoPersona != Persona.TipoPersonas.Administrador)
@@ -128,15 +129,13 @@ namespace UI.Web
         {
             this.IDTextBox.Text = string.Empty;
             this.cargoTextBox.Text = string.Empty;
-            this.CursoTextBox.Text = string.Empty;
 
         }
 
         private void EnableForm(bool enable)
         {
-            this.IDTextBox.Enabled = enable;
             this.idDocente.Enabled = enable;
-            this.CursoTextBox.Enabled = enable;
+            this.curso.Enabled = enable;
             this.cargoTextBox.Enabled = enable;
             this.ddlCargo.Enabled = enable;
 
@@ -155,7 +154,7 @@ namespace UI.Web
                 docentecurso.Cargo = DocenteCurso.TiposCargos.Profesor;
             }
             
-            docentecurso.IdCurso = int.Parse(this.CursoTextBox.Text);
+            docentecurso.IdCurso = int.Parse(this.curso.SelectedValue);
 
         }
 

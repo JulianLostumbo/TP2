@@ -30,8 +30,8 @@ namespace Academia
             }
             else
             {
-                tbsEliminar.Enabled = false;
-                tbsNuevo.Enabled = false;
+                tbsEliminar.Visible = false;
+                tbsNuevo.Visible = false;
                 this.dgvPersonas.DataSource = ul.GetAll(formLogin.PersonaActual.ID);
             }
         }

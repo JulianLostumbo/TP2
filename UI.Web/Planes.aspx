@@ -37,6 +37,9 @@
     <asp:Panel ID="formPanel" Visible="false" runat="server" Width="737px" Class="form" Height="232px">
         <div style="text-align: left; height: 176px;">
             <br />
+            <asp:Label ID="ID" runat="server" Text="ID: "></asp:Label>
+            <asp:TextBox ID="IDTextBox" runat="server"></asp:TextBox>
+            <br />
             <asp:Label ID="descripcionLabel" runat="server" Text="Descripción: "></asp:Label>
             <asp:TextBox ID="descripcionTextBox" runat="server" Height="16px" Width="363px"></asp:TextBox>
             <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="descripcionTextBox" ErrorMessage="La descripción no puede estar vacía" ForeColor="Red">*</asp:RequiredFieldValidator>

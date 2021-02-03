@@ -30,7 +30,6 @@
         {
             this.cmbCargo = new System.Windows.Forms.ComboBox();
             this.lblCargo = new System.Windows.Forms.Label();
-            this.txtCurso = new System.Windows.Forms.TextBox();
             this.lblCurso = new System.Windows.Forms.Label();
             this.txtID = new System.Windows.Forms.TextBox();
             this.lblID = new System.Windows.Forms.Label();
@@ -38,14 +37,12 @@
             this.btnAceptar = new System.Windows.Forms.Button();
             this.cmbDocente = new System.Windows.Forms.ComboBox();
             this.lblDocente = new System.Windows.Forms.Label();
+            this.cmbCurso = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // cmbCargo
             // 
             this.cmbCargo.FormattingEnabled = true;
-            this.cmbCargo.Items.AddRange(new object[] {
-            "Auxiliar",
-            "Profesor"});
             this.cmbCargo.Location = new System.Drawing.Point(135, 129);
             this.cmbCargo.Name = "cmbCargo";
             this.cmbCargo.Size = new System.Drawing.Size(156, 21);
@@ -59,13 +56,6 @@
             this.lblCargo.Size = new System.Drawing.Size(41, 13);
             this.lblCargo.TabIndex = 16;
             this.lblCargo.Text = "Cargo: ";
-            // 
-            // txtCurso
-            // 
-            this.txtCurso.Location = new System.Drawing.Point(135, 87);
-            this.txtCurso.Name = "txtCurso";
-            this.txtCurso.Size = new System.Drawing.Size(156, 20);
-            this.txtCurso.TabIndex = 1;
             // 
             // lblCurso
             // 
@@ -111,6 +101,7 @@
             this.btnAceptar.TabIndex = 10;
             this.btnAceptar.Text = "Aceptar";
             this.btnAceptar.UseVisualStyleBackColor = true;
+            this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click_1);
             // 
             // cmbDocente
             // 
@@ -129,16 +120,24 @@
             this.lblDocente.TabIndex = 18;
             this.lblDocente.Text = "Docente:";
             // 
+            // cmbCurso
+            // 
+            this.cmbCurso.FormattingEnabled = true;
+            this.cmbCurso.Location = new System.Drawing.Point(136, 90);
+            this.cmbCurso.Name = "cmbCurso";
+            this.cmbCurso.Size = new System.Drawing.Size(156, 21);
+            this.cmbCurso.TabIndex = 19;
+            // 
             // DocenteDesktop
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(304, 209);
+            this.Controls.Add(this.cmbCurso);
             this.Controls.Add(this.cmbDocente);
             this.Controls.Add(this.lblDocente);
             this.Controls.Add(this.cmbCargo);
             this.Controls.Add(this.lblCargo);
-            this.Controls.Add(this.txtCurso);
             this.Controls.Add(this.lblCurso);
             this.Controls.Add(this.txtID);
             this.Controls.Add(this.lblID);
@@ -155,7 +154,6 @@
 
         private System.Windows.Forms.ComboBox cmbCargo;
         private System.Windows.Forms.Label lblCargo;
-        private System.Windows.Forms.TextBox txtCurso;
         private System.Windows.Forms.Label lblCurso;
         private System.Windows.Forms.TextBox txtID;
         private System.Windows.Forms.Label lblID;
@@ -163,5 +161,6 @@
         private System.Windows.Forms.Button btnAceptar;
         private System.Windows.Forms.ComboBox cmbDocente;
         private System.Windows.Forms.Label lblDocente;
+        private System.Windows.Forms.ComboBox cmbCurso;
     }
 }

@@ -36,32 +36,26 @@ namespace Academia
 
         private void tbsEliminar_Click(object sender, EventArgs e)
         {
-            try
-            {
-                int ID = ((Business.Entities.Curso)this.dgvCursos.SelectedRows[0].DataBoundItem).ID;
-                CursoDesktop cd = new CursoDesktop(ID, ApplicationForm.ModoForm.Baja);
-                cd.ShowDialog();
-                this.Listar();
-            }
-            catch
-            {
-                MessageBox.Show("Debe seleccionar una fila", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+
+                if (this.dgvCursos.SelectedRows != null)
+                {
+                    int ID = ((Business.Entities.Curso)this.dgvCursos.SelectedRows[0].DataBoundItem).ID;
+                    CursoDesktop cd = new CursoDesktop(ID, ApplicationForm.ModoForm.Baja);
+                    cd.ShowDialog();
+                    this.Listar();
+                }
         }
 
         private void tbsEditar_Click(object sender, EventArgs e)
         {
-            try
-            {
-                int ID = ((Business.Entities.Curso)this.dgvCursos.SelectedRows[0].DataBoundItem).ID;
-                CursoDesktop cd = new CursoDesktop(ID, ApplicationForm.ModoForm.Modificacion);
-                cd.ShowDialog();
-                this.Listar();
-            }
-            catch
-            {
-                MessageBox.Show("Debe seleccionar una fila", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+            if (this.dgvCursos.SelectedRows != null)
+                {
+                    int ID = ((Business.Entities.Curso)this.dgvCursos.SelectedRows[0].DataBoundItem).ID;
+                    CursoDesktop cd = new CursoDesktop(ID, ApplicationForm.ModoForm.Modificacion);
+                    cd.ShowDialog();
+                    this.Listar();
+                }
+
         }
 
         private void tbsNuevo_Click(object sender, EventArgs e)

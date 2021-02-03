@@ -100,6 +100,7 @@ namespace UI.Web
             {
                 Entity = (Persona)Session["persona"];
                 formPanel.Visible = false;
+                IDTextBox.Enabled = false;
                 if (Entity.TipoPersona != Persona.TipoPersonas.Administrador)
                 {
                     nuevoLinkButton.Visible = false;
@@ -145,6 +146,8 @@ namespace UI.Web
             this.fechaNacTextBox.Enabled = enable;
             this.telefonoTextBox.Enabled = enable;
             this.nroLegajoTextBox.Enabled = enable;
+            this.idplan.Enabled = enable;
+            this.tipoper.Enabled = enable;
 
 
 
@@ -152,6 +155,7 @@ namespace UI.Web
 
         private void LoadEntity(Persona persona)
         {
+            persona.ID = int.Parse(this.IDTextBox.Text);
             persona.Nombre = this.nombreTextBox.Text;
             persona.Apellido = this.apellidoTextBox.Text;
             persona.Email = this.emailTextBox.Text;

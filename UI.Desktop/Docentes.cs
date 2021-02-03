@@ -37,9 +37,8 @@ namespace Academia
         {
             if (this.dgvDocentes.SelectedRows != null)
             {
-                int ID = ((Business.Entities.Comision)this.dgvDocentes.SelectedRows[0].DataBoundItem).ID;
+                int ID = ((Business.Entities.DocenteCurso)this.dgvDocentes.SelectedRows[0].DataBoundItem).ID;
                 DocenteDesktop formComision = new DocenteDesktop(ID, ApplicationForm.ModoForm.Modificacion);
-                //formComision.MapearADatos();
                 formComision.ShowDialog();
                 this.Listar();
             }
@@ -49,7 +48,7 @@ namespace Academia
         {
             if (this.dgvDocentes.SelectedRows != null)
             {
-                int ID = ((Business.Entities.Comision)this.dgvDocentes.SelectedRows[0].DataBoundItem).ID;
+                int ID = ((Business.Entities.DocenteCurso)this.dgvDocentes.SelectedRows[0].DataBoundItem).ID;
                 DocenteDesktop formComision = new DocenteDesktop(ID, ApplicationForm.ModoForm.Baja);
                 formComision.ShowDialog();
                 this.Listar();
