@@ -201,9 +201,7 @@ namespace Academia
 
         private void listadoDeEspecialidadesToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            EspecialidadDesktop frm = new EspecialidadDesktop();
-            frm.MdiParent = this;
-            frm.Show();
+
         }
 
         private void registrarInscripciónToolStripMenuItem_Click(object sender, EventArgs e)

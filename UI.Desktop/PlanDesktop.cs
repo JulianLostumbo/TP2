@@ -121,7 +121,7 @@ namespace Academia
 
         public override bool Validar() 
         {
-            if (this.txtDescripcion.ToString()!="" && this.cmbEspecialidad.SelectedItem.ToString() != string.Empty)
+            if (this.txtDescripcion.Text.ToString()!="" && this.cmbEspecialidad.SelectedItem.ToString() != string.Empty)
             {
                 return true;
             }

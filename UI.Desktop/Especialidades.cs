@@ -49,7 +49,6 @@ namespace Academia
             {
                 int ID = ((Business.Entities.Especialidad)this.dgvEspecialidades.SelectedRows[0].DataBoundItem).ID;
                 EspecialidadDesktop formEspecialidad = new EspecialidadDesktop(ID, ApplicationForm.ModoForm.Modificacion);
-                //formEspecialidad.MapearADatos();
                 formEspecialidad.ShowDialog();
                 this.Listar();
             }

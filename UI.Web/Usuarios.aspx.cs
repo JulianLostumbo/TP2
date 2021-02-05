@@ -20,6 +20,12 @@ namespace UI.Web
             {
                 formPanel.Visible = false;
                 IDTextBox.Enabled = false;
+                perLogic = new PersonaLogic();
+                ddlPersona.DataSource = perLogic.GetAll();
+                ddlPersona.SelectedIndex = -1;
+                ddlPersona.DataTextField = "NomApe";
+                ddlPersona.DataValueField = "ID";
+                ddlPersona.DataBind();
                 if (Per.TipoPersona != Persona.TipoPersonas.Administrador)
                 {
                     imprimirLinkButton.Visible = false;
@@ -42,6 +48,8 @@ namespace UI.Web
                 return _Logic;
             }
         }
+
+        public PersonaLogic perLogic { get; set; }
 
         public enum FormModes
         {
@@ -129,13 +137,10 @@ namespace UI.Web
 
             this.Entity = this.Logic.GetOne(id);
             this.IDTextBox.Text = Convert.ToString(this.Entity.ID);
-            this.nombreTextBox.Text = this.Entity.Nombre;
-            this.apellidoTextBox.Text = this.Entity.Apellido;
-            this.emailTextBox.Text = this.Entity.Email;
             this.habilitadoCheckBox.Checked = this.Entity.Habilitado;
             this.nombreUsuarioTextBox.Text = this.Entity.NombreUsuario;
-            this.idpersona.SelectedValue = Convert.ToString(this.Entity.IdPersona);
-            if (Per.TipoPersona != Persona.TipoPersonas.Administrador )
+            this.ddlPersona.SelectedValue = Convert.ToString(this.Entity.IdPersona);
+            if ((Per.TipoPersona != Persona.TipoPersonas.Administrador))
             {
                 this.claveTextBox.Text = this.Entity.Clave.ToString();
             }
@@ -155,13 +160,15 @@ namespace UI.Web
 
         private void LoadEntity(Usuario usuario)
         {
-            usuario.Nombre = this.nombreTextBox.Text;
-            usuario.Apellido = this.apellidoTextBox.Text;
-            usuario.Email = this.emailTextBox.Text;
+            PersonaLogic pl = new PersonaLogic();
+            Persona p=pl.GetOne(Convert.ToInt32(this.ddlPersona.SelectedValue));
+            usuario.Nombre = p.Nombre;
+            usuario.Apellido = p.Apellido;
+            usuario.Email = p.Email;
             usuario.NombreUsuario = this.nombreUsuarioTextBox.Text;
             usuario.Clave = this.claveTextBox.Text;
             usuario.Habilitado = this.habilitadoCheckBox.Checked;
-            usuario.IdPersona = Convert.ToInt32(this.idpersona.SelectedValue);
+            usuario.IdPersona = Convert.ToInt32(this.ddlPersona.SelectedValue);
 
         }
 
@@ -222,11 +229,8 @@ namespace UI.Web
 
         private void EnableForm(bool enable)
         {
-            this.nombreTextBox.Enabled = enable;
-            this.apellidoTextBox.Enabled = enable;
-            this.emailTextBox.Enabled = enable;
             this.nombreUsuarioTextBox.Enabled = enable;
-            this.idpersona.Enabled = enable;
+            this.ddlPersona.Enabled = enable;
         }
 
         protected void eliminarLinkButton_Click(object sender, EventArgs e)
@@ -255,9 +259,6 @@ namespace UI.Web
 
         private void ClearForm()
         {
-            this.nombreTextBox.Text = string.Empty;
-            this.apellidoTextBox.Text = string.Empty;
-            this.emailTextBox.Text = string.Empty;
             this.habilitadoCheckBox.Checked = false;
             this.nombreUsuarioTextBox.Text = string.Empty;
             this.claveTextBox.Text = string.Empty;

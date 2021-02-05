@@ -43,19 +43,6 @@
             <asp:Label ID="ID" runat="server" Text="ID: "></asp:Label>
             <asp:TextBox ID="IDTextBox" runat="server"></asp:TextBox>
             <br />
-            <asp:Label ID="nombreLabel" runat="server" Text="Nombre: "></asp:Label>
-            <asp:TextBox ID="nombreTextBox" runat="server"></asp:TextBox>
-            <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="nombreTextBox" ErrorMessage="El nombre no puede estar vacío" ForeColor="Red">*</asp:RequiredFieldValidator>
-            <br />
-            <asp:Label ID="apellidoLabel" runat="server" Text="Apellido: "></asp:Label>
-            <asp:TextBox ID="apellidoTextBox" runat="server"></asp:TextBox>
-            <asp:RequiredFieldValidator ID="RequiredFieldValidator7" runat="server" ControlToValidate="apellidoTextBox" ErrorMessage="El apellido no puede estar vacío" ForeColor="Red">*</asp:RequiredFieldValidator>
-            <br />
-            <asp:Label ID="emailLabel" runat="server" Text="Email: "></asp:Label>
-            <asp:TextBox ID="emailTextBox" runat="server" TextMode="Email"></asp:TextBox>
-            <asp:RequiredFieldValidator ID="RequiredFieldValidator8" runat="server" ControlToValidate="emailTextBox" ErrorMessage="El email no puede estar vacío" ForeColor="Red">*</asp:RequiredFieldValidator>
-            <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ControlToValidate="emailTextBox" ErrorMessage="Email ingresado inválido" ForeColor="Red" ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*">*</asp:RegularExpressionValidator>
-            <br />
             <asp:Label ID="habilitadoLabel" runat="server" Text="Habilitado: "></asp:Label>
             <asp:CheckBox ID="habilitadoCheckBox" runat="server" />
             <br />
@@ -73,10 +60,9 @@
             <asp:CompareValidator ID="CompareValidator1" runat="server" ControlToCompare="claveTextBox" ControlToValidate="repetirClaveTextBox" ErrorMessage="Las claves no coinciden" ForeColor="Red">*</asp:CompareValidator>
             <asp:RequiredFieldValidator ID="RequiredFieldValidator11" runat="server" ControlToValidate="repetirClaveTextBox" ErrorMessage="La clave de confirmación no puede estar vacía" ForeColor="Red">*</asp:RequiredFieldValidator>
             <br />
-            <asp:Label ID="repetirClaveLabel0" runat="server" Text="Legajo de Persona:  "></asp:Label>
-            <asp:DropDownList ID="idpersona" runat="server" DataSourceID="objectpersona" DataTextField="Legajo" DataValueField="ID">
+            <asp:Label ID="lblLegajo" runat="server" Text="Persona:"></asp:Label>
+            <asp:DropDownList ID="ddlPersona" runat="server">
             </asp:DropDownList>
-            <asp:ObjectDataSource ID="objectpersona" runat="server" SelectMethod="GetAll" TypeName="Data.Database.PersonaAdapter" OldValuesParameterFormatString="original_{0}"></asp:ObjectDataSource>
             <br />
             <asp:ValidationSummary ID="ValidationSummary1" runat="server" ForeColor="Red" Height="137px" Width="437px" />
             <br />

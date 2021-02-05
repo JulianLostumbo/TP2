@@ -102,7 +102,7 @@ namespace Academia
 
         public override bool Validar() 
         {
-            if (this.txtDescripcion.ToString()!="")
+            if (this.txtDescripcion.Text.ToString()!="")
             {
                 return true;
             }

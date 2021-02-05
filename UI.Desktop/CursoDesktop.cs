@@ -146,15 +146,15 @@ namespace Academia
             this.MapearADatos();
         }
 
-        public bool Validar(int cupo, int anio)
+        public override bool Validar()
         {
-            if (cupo >= 0 && anio != 0)
+            if (int.Parse(txtCupo.Text.ToString()) >= 0 && int.Parse(txtAnioCalendario.Text.ToString()) != 0 && txtCupo.Text.ToString()!="" && txtAnioCalendario.Text.ToString()!="")
             {
                 return true;
             }
             else
             {
-                this.Notificar("Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                this.Notificar("Error", "Campo/s introducidos inválidos ", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
 
@@ -162,22 +162,19 @@ namespace Academia
 
         private void btnAceptar_Click(object sender, EventArgs e)
         {
-            int cupo = int.Parse(this.txtCupo.Text);
-            int anio = int.Parse(this.txtAnioCalendario.Text);
-
-            if (Modo == ModoForm.Alta && this.Validar(cupo, anio) == true)
+            if (Modo == ModoForm.Alta && this.Validar() == true)
             {
                 this.GuardarCambios();
                 MessageBox.Show("Comisión registrada exitosamente", "Nueva Comisión", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 this.Close();
             }
-            else if (Modo == ModoForm.Modificacion && this.Validar(cupo, anio) == true)
+            else if (Modo == ModoForm.Modificacion && this.Validar() == true)
             {
                 this.GuardarCambios();
                 MessageBox.Show("Comisión modificada exitosamente", "Modificar Comisión", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 this.Close();
             }
-            else if (Modo == ModoForm.Baja && this.Validar(cupo, anio) == true)
+            else if (Modo == ModoForm.Baja && this.Validar() == true)
             {
                 this.GuardarCambios();
                 MessageBox.Show("Comisión eliminada correctamente", "Eliminar Comisión", MessageBoxButtons.OK, MessageBoxIcon.Information);

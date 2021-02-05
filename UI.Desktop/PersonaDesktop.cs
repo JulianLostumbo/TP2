@@ -47,7 +47,7 @@ namespace Academia
             cmbPlan.DisplayMember = "Descripcion";
             if (Modo != ModoForm.Alta)
             {
-                cmbPlan.SelectedValue = formLogin.PersonaActual.IdPlan;
+                cmbPlan.SelectedValue = Entity.IdPlan;
 
             };
         }
@@ -58,7 +58,7 @@ namespace Academia
 
             if (Modo != ModoForm.Alta)
             {
-                cmbTipoPersona.SelectedItem = formLogin.PersonaActual.TipoPersona;
+                cmbTipoPersona.SelectedItem = Entity.TipoPersona;
 
             }
 
@@ -125,7 +125,7 @@ namespace Academia
                 PersonaNueva.Email = this.txtEmail.Text;
                 PersonaNueva.FechaNac = Convert.ToDateTime(this.txtFechaNac.Text);
                 PersonaNueva.Telefono = this.txtTelefono.Text;
-                formLogin.PersonaActual = PersonaNueva;
+                Entity = PersonaNueva;
                 PersonaLogic pl = new PersonaLogic();
                 PersonaNueva.State = BusinessEntity.States.New;
                 pl.Save(PersonaNueva);
@@ -135,19 +135,19 @@ namespace Academia
             else if (Modo == ModoForm.Modificacion)
             {
 
-                formLogin.PersonaActual.Nombre = this.txtNombre.Text;
-                formLogin.PersonaActual.Apellido = this.txtApellido.Text;
-                formLogin.PersonaActual.Direccion = this.txtDireccion.Text;
-                formLogin.PersonaActual.Legajo = int.Parse(txtLegajo.Text);
-                formLogin.PersonaActual.Email = this.txtEmail.Text;
-                formLogin.PersonaActual.IdPlan = Convert.ToInt32(cmbPlan.SelectedValue.ToString());
-                formLogin.PersonaActual.TipoPersona = (Persona.TipoPersonas)Enum.Parse(typeof(Persona.TipoPersonas), cmbTipoPersona.SelectedValue.ToString());
-                formLogin.PersonaActual.FechaNac = Convert.ToDateTime(this.txtFechaNac.Text);
-                formLogin.PersonaActual.Telefono = this.txtTelefono.Text;
+                Entity.Nombre = this.txtNombre.Text;
+                Entity.Apellido = this.txtApellido.Text;
+                Entity.Direccion = this.txtDireccion.Text;
+                Entity.Legajo = int.Parse(txtLegajo.Text);
+                Entity.Email = this.txtEmail.Text;
+                Entity.IdPlan = Convert.ToInt32(cmbPlan.SelectedValue.ToString());
+                Entity.TipoPersona = (Persona.TipoPersonas)Enum.Parse(typeof(Persona.TipoPersonas), cmbTipoPersona.SelectedValue.ToString());
+                Entity.FechaNac = Convert.ToDateTime(this.txtFechaNac.Text);
+                Entity.Telefono = this.txtTelefono.Text;
 
                 PersonaLogic pl = new PersonaLogic();
-                formLogin.PersonaActual.State = BusinessEntity.States.Modified;
-                pl.Save(formLogin.PersonaActual);
+                Entity.State = BusinessEntity.States.Modified;
+                pl.Save(Entity);
 
 
             }
@@ -155,8 +155,8 @@ namespace Academia
             {
 
                 PersonaLogic pl = new PersonaLogic();
-                formLogin.PersonaActual.State = BusinessEntity.States.Deleted;
-                pl.Save(formLogin.PersonaActual);
+                Entity.State = BusinessEntity.States.Deleted;
+                pl.Save(Entity);
             }
             else
                 btnAceptar.Text = "Aceptar";
@@ -167,15 +167,16 @@ namespace Academia
             this.MapearADatos();
         }
 
-        public bool Validar(string apellido, string nombre, string email, string direc, string tel, int leg)
+        public override bool Validar()
         {
-            if (apellido.Length != 0 & nombre.Length != 0 & email.Length != 0 & email.Length != 0 & tel.Length != 0 & leg > 0)
+            if (this.txtApellido.Text.ToString()!="" & this.txtNombre.Text.ToString() != "" & this.txtEmail.Text.ToString() != "" & this.txtEmail.Text.ToString().Contains("@") & this.txtFechaNac.Text.ToString() != "" &
+                (this.txtEmail.Text.ToString().Contains(".com") || this.txtEmail.Text.ToString().Contains(".com.ar")) & this.txtDireccion.Text.ToString() != "" & this.txtTelefono.Text.ToString() != "" & int.Parse(this.txtLegajo.Text.ToString()) > 0 & this.txtLegajo.Text.ToString() != "")
             {
                 return true;
             }
             else
             {
-                this.Notificar("Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                this.Notificar("Error", "Campo/s introducidos inválidos ", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
 
@@ -183,30 +184,25 @@ namespace Academia
 
         private void btnAceptar_Click(object sender, EventArgs e)
         {
-            string Apellido = this.txtApellido.Text;
-            string Nombre = this.txtNombre.Text;
-            string Email = this.txtEmail.Text;
-            string Telefono = this.txtTelefono.Text;
-            string Direccion = this.txtDireccion.Text;
-            int Legajo = int.Parse(this.txtLegajo.Text);
-            if (Modo == ModoForm.Alta && this.Validar(Apellido, Nombre, Email, Direccion, Telefono, Legajo) == true)
+            if (Modo == ModoForm.Alta && this.Validar())
             {
                 this.GuardarCambios();
                 MessageBox.Show("Materia registrada exitosamente", "Nueva Materia", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 this.Close();
             }
-            else if (Modo == ModoForm.Modificacion && this.Validar(Apellido, Nombre, Email, Direccion, Telefono, Legajo) == true)
+            else if (Modo == ModoForm.Modificacion && this.Validar())              
             {
                 this.GuardarCambios();
                 MessageBox.Show("Materia modificada exitosamente", "Modificar Materia", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 this.Close();
             }
-            else if (Modo == ModoForm.Baja && this.Validar(Apellido, Nombre, Email, Direccion, Telefono, Legajo) == true)
+            else if (Modo == ModoForm.Baja && this.Validar())
             {
                 this.GuardarCambios();
                 MessageBox.Show("Materia eliminada correctamente", "Eliminar Materia", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 this.Close();
             }
+
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)

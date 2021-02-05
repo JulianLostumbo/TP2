@@ -36,5 +36,10 @@ namespace Business.Entities
         public int IdPlan { get; set; }
 
         public string DescPlan { get; set; }
+
+        public string NomApe
+        {
+            get { return Apellido + ", " + Nombre; }
+        }
     }
 }

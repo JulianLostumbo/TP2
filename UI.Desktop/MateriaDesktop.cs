@@ -124,14 +124,14 @@ namespace Academia
             cmbPlan.DisplayMember = "Descripcion";
             if (Modo != ModoForm.Alta)
             {
-                cmbPlan.SelectedItem = MateriaActual.IdPlan;
+                cmbPlan.SelectedValue = MateriaActual.IdPlan;
 
             };
         }
 
         public override bool Validar() 
         {
-            if (this.txtDescripcion.ToString()!="" && this.txtHsSemanales.ToString() != "" && this.txtHsTotales.ToString() != "0" && this.cmbPlan.ToString() != string.Empty && this.txtHsSemanales.ToString() != "0" && this.txtHsTotales.ToString() != "0")
+            if (this.txtDescripcion.Text.ToString()!="" && this.txtHsSemanales.Text.ToString() != "" && this.txtHsTotales.Text.ToString() != "0" && this.cmbPlan.SelectedValue.ToString() != string.Empty && this.txtHsSemanales.Text.ToString() != "0" && this.txtHsTotales.Text.ToString() != "0")
             {
                 return true;
             }

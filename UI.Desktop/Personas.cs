@@ -60,16 +60,12 @@ namespace Academia
 
         private void tbsEliminar_Click(object sender, EventArgs e)
         {
-            try
+            if (this.dgvPersonas.SelectedRows != null)
             {
                 int ID = ((Business.Entities.Persona)this.dgvPersonas.SelectedRows[0].DataBoundItem).ID;
                 PersonaDesktop pd = new PersonaDesktop(ID, ApplicationForm.ModoForm.Baja);
                 pd.ShowDialog();
                 this.Listar();
-            }
-            catch
-            {
-                MessageBox.Show("Debe seleccionar una fila", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 

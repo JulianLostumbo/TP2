@@ -83,7 +83,6 @@ namespace UI.Web
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            errorLbl.Visible = false;
             idCurso = int.Parse(Request.QueryString["ID"]);
             il = new InscripcionLogic();
             gridPanel.Visible = true;
@@ -102,18 +101,21 @@ namespace UI.Web
 
         protected void btnNota_Click(object sender, EventArgs e)
         {
-            formPanel.Visible = true;
+            if (isEntitySelected)
+            {
+                formPanel.Visible = true;
+            }
         }
 
         protected void AceptarBtn_Click(object sender, EventArgs e)
         {
-            if (int.Parse(txtNota.Text) > 0 && int.Parse(txtNota.Text) < 10)
+            if (int.Parse(txtNota.Text) > 0 && int.Parse(txtNota.Text) <= 10)
             {
                 this.Entity = new AlumnoInscripcion();
                 Entity = il.GetOne(SelectedID);
                 Entity.State = BusinessEntity.States.Modified;
                 Entity.Nota = int.Parse(txtNota.Text);
-                if (int.Parse(txtNota.Text) > 6)
+                if (int.Parse(txtNota.Text) >= 6)
                 {
                     Entity.Condicion = "Aprobado";
                 }
@@ -127,8 +129,9 @@ namespace UI.Web
             }
             else
             {
-                this.errorLbl.Text = "Debe ingresar un numero";
+                Response.Write("<script> alert(" + "'Debe ingresar una nota válida'" + ") </script>");
             }
+            txtNota.Text = "";
         }
 
         protected void gridView_SelectedIndexChanged(object sender, EventArgs e)

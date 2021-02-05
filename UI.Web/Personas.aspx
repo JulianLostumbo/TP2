@@ -68,14 +68,14 @@
             <asp:RequiredFieldValidator ID="RequiredFieldValidator11" runat="server" ControlToValidate="direccionTextBox" ErrorMessage="La dirección no puede estar vacío" ForeColor="Red">*</asp:RequiredFieldValidator>
             <br />
             <asp:Label ID="fechaNacLabel" runat="server" Text="Fecha de Nacimiento:"></asp:Label>
-            <asp:TextBox ID="fechaNacTextBox" runat="server"></asp:TextBox>
+            <asp:TextBox ID="fechaNacTextBox" runat="server">dd-mm-aaaa</asp:TextBox>
             <asp:RequiredFieldValidator ID="RequiredFieldValidator12" runat="server" ControlToValidate="fechaNacTextBox" ErrorMessage="La fecha de nacimiento no puede estar vacío" ForeColor="Red">*</asp:RequiredFieldValidator>
-            <br />
+            <span style="font-family: calibri; font-size: small"><em>[dd-mm-aaaa]</em></span><br />
             <asp:Label ID="LegajoLabel" runat="server" Text="Nro de Legajo:"></asp:Label>
             <asp:TextBox ID="nroLegajoTextBox" runat="server"></asp:TextBox>
             <asp:RequiredFieldValidator ID="RequiredFieldValidator13" runat="server" ControlToValidate="nroLegajoTextBox" ErrorMessage="El nro de lagajo no puede estar vacío" ForeColor="Red">*</asp:RequiredFieldValidator>
             <br />
-             <asp:Label ID="PlanLabel" runat="server" Text="Plan: "></asp:Label>
+            <asp:Label ID="PlanLabel" runat="server" Text="Plan: "></asp:Label>
             &nbsp;&nbsp;
             <asp:DropDownList ID="idplan" runat="server" DataSourceID="objectplan" DataTextField="Descripcion" DataValueField="ID"></asp:DropDownList>
         <asp:ObjectDataSource ID="objectplan" runat="server" SelectMethod="GetAll" TypeName="Business.Logic.PlanLogic"></asp:ObjectDataSource>

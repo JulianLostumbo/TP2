@@ -50,6 +50,7 @@
             this.lblID = new System.Windows.Forms.Label();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnAceptar = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // cmbTipoPersona
@@ -89,7 +90,7 @@
             // 
             this.txtFechaNac.Location = new System.Drawing.Point(161, 139);
             this.txtFechaNac.Name = "txtFechaNac";
-            this.txtFechaNac.Size = new System.Drawing.Size(181, 20);
+            this.txtFechaNac.Size = new System.Drawing.Size(117, 20);
             this.txtFechaNac.TabIndex = 3;
             // 
             // txtEmail
@@ -235,11 +236,22 @@
             this.btnAceptar.UseVisualStyleBackColor = true;
             this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click);
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Calibri", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(284, 143);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(67, 13);
+            this.label1.TabIndex = 34;
+            this.label1.Text = "dd-mm-aaaa";
+            // 
             // PersonaDesktop
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(354, 412);
+            this.ClientSize = new System.Drawing.Size(371, 412);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.cmbTipoPersona);
             this.Controls.Add(this.lblTipoPersona);
             this.Controls.Add(this.txtLegajo);
@@ -293,5 +305,6 @@
         private System.Windows.Forms.Label lblTipoPersona;
         private System.Windows.Forms.TextBox txtLegajo;
         private System.Windows.Forms.Label lblLegajo;
+        private System.Windows.Forms.Label label1;
     }
 }

@@ -60,18 +60,21 @@ namespace UI.Web
 
         protected void ButtonInsc_Click(object sender, EventArgs e)
         {
-            CursoLogic cl = new CursoLogic();
-            Curso cur = cl.GetOne((int)this.gridView.SelectedValue);
-            AlumnoInscripcion alum = new AlumnoInscripcion();
-            alum.Condicion = "Regular";
-            alum.IDAlumno = Per.ID;
-            alum.IDCurso = cur.ID;
-            alum.State = BusinessEntity.States.New;
-            Insc.Save(alum);
-            ButtonInsc.Visible = false;
-            LabelError.Visible = true;
-            LabelError.Text = "Inscripcion registrada correctamente!";
-            this.Listar();
+            if (isEntitySelected)
+            {
+                CursoLogic cl = new CursoLogic();
+                Curso cur = cl.GetOne((int)this.gridView.SelectedValue);
+                AlumnoInscripcion alum = new AlumnoInscripcion();
+                alum.Condicion = "Regular";
+                alum.IDAlumno = Per.ID;
+                alum.IDCurso = cur.ID;
+                alum.State = BusinessEntity.States.New;
+                Insc.Save(alum);
+                ButtonInsc.Visible = false;
+                LabelError.Visible = true;
+                LabelError.Text = "Inscripcion registrada correctamente!";
+                this.Listar();
+            }
         }
 
         protected void Page_Load(object sender, EventArgs e)

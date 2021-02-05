@@ -40,9 +40,6 @@ namespace Academia
         {
             this.txtID.Text = this.UsuarioActual.ID.ToString();
             this.chkHabilitado.Checked = this.UsuarioActual.Habilitado;
-            this.txtNombre.Text = this.UsuarioActual.Nombre;
-            this.txtApellido.Text = this.UsuarioActual.Apellido;
-            this.txtEmail.Text = this.UsuarioActual.Email;
             this.txtUsuario.Text = this.UsuarioActual.NombreUsuario;
             if (formLogin.PersonaActual.TipoPersona!=Persona.TipoPersonas.Administrador)
             {
@@ -59,19 +56,14 @@ namespace Academia
             else if (Modo == ModoForm.Baja)
             {
                 btnAceptar.Text = "Eliminar";
-                txtApellido.Enabled = false;
-                txtEmail.Enabled = false;
-                txtNombre.Enabled = false;
+                cmbPersona.Enabled = false;
                 txtUsuario.Enabled = false;
                 chkHabilitado.Enabled = false;
-                cmbLegajo.Enabled = false;
             }
             else
             {
                 btnAceptar.Text = "Aceptar";
-                txtApellido.Enabled = false;
-                txtEmail.Enabled = false;
-                txtNombre.Enabled = false;
+                cmbPersona.Enabled = false;
                 txtUsuario.Enabled = false;
             }
 
@@ -85,12 +77,13 @@ namespace Academia
             {
                 Usuario UsuarioNuevo = new Usuario();
                 UsuarioNuevo.Habilitado = this.chkHabilitado.Checked;
-                UsuarioNuevo.Nombre = this.txtNombre.Text;
-                UsuarioNuevo.Apellido = this.txtApellido.Text;
-                UsuarioNuevo.Email = this.txtEmail.Text;
+                UsuarioNuevo.Nombre = ((Persona)(this.cmbPersona.SelectedItem)).Nombre;
+                UsuarioNuevo.Apellido = ((Persona)(this.cmbPersona.SelectedItem)).Apellido;
+                UsuarioNuevo.Legajo = ((Persona)(this.cmbPersona.SelectedItem)).Legajo;
+                UsuarioNuevo.IdPersona = ((Persona)(this.cmbPersona.SelectedItem)).ID;
+                UsuarioNuevo.Email = ((Persona)(this.cmbPersona.SelectedItem)).Email;
                 UsuarioNuevo.Clave = this.txtPass.Text;
                 UsuarioNuevo.NombreUsuario = this.txtUsuario.Text; 
-                UsuarioNuevo.IdPersona = Convert.ToInt32(this.cmbLegajo.SelectedValue.ToString());
                 UsuarioActual = UsuarioNuevo;
                 UsuarioLogic nuevousuario = new UsuarioLogic();
                 nuevousuario.Save(UsuarioActual);
@@ -100,12 +93,13 @@ namespace Academia
             {
 
                 UsuarioActual.Habilitado = this.chkHabilitado.Checked;
-                UsuarioActual.Nombre = this.txtNombre.Text;
-                UsuarioActual.Apellido = this.txtApellido.Text;
-                UsuarioActual.Email = this.txtEmail.Text;
+                UsuarioActual.Nombre = ((Persona)(this.cmbPersona.SelectedItem)).Nombre;
+                UsuarioActual.Apellido = ((Persona)(this.cmbPersona.SelectedItem)).Apellido;
+                UsuarioActual.Legajo = ((Persona)(this.cmbPersona.SelectedItem)).Legajo;
+                UsuarioActual.Email = ((Persona)(this.cmbPersona.SelectedItem)).Email;
                 UsuarioActual.Clave = this.txtPass.Text;
                 UsuarioActual.NombreUsuario = this.txtUsuario.Text;
-                UsuarioActual.IdPersona = Convert.ToInt32(this.cmbLegajo.SelectedValue.ToString());
+                UsuarioActual.IdPersona = ((Persona)(this.cmbPersona.SelectedItem)).ID;
                 UsuarioLogic nuevousuario = new UsuarioLogic();
                 nuevousuario.Update(UsuarioActual);
 
@@ -128,13 +122,14 @@ namespace Academia
 
         public void MapearPersonas()
         {
-            UsuarioLogic ul = new UsuarioLogic();
-            cmbLegajo.DataSource = ul.GetPersonas();
-            cmbLegajo.ValueMember = "ID";
-            cmbLegajo.DisplayMember = "Legajo";
+            PersonaLogic pl = new PersonaLogic();
+            cmbPersona.DataSource = pl.GetAll();
+            cmbPersona.ValueMember = "ID";
+            cmbPersona.DisplayMember = "NomApe";
             if (Modo != ModoForm.Alta)
             {
-                cmbLegajo.SelectedItem = UsuarioActual.Legajo;
+                Persona Per = pl.GetOne(UsuarioActual.IdPersona);
+                cmbPersona.SelectedValue = Per.ID;
             }
         }
 
@@ -145,18 +140,17 @@ namespace Academia
 
         public override bool Validar() 
         {
-            if (this.txtNombre.ToString() != string.Empty &&
-                this.txtApellido.ToString() != string.Empty &&
-                this.cmbLegajo.SelectedItem.ToString() != string.Empty &&
-                this.txtEmail.ToString() != string.Empty &&
-                this.txtUsuario.ToString() != string.Empty &&
-                this.txtPass.ToString() != string.Empty &&
-                this.txtPass.ToString().Length >= 8 &&
-                this.txtPass.ToString() == this.txtRepetirPass.ToString() &&
-                ((Modo!=ApplicationForm.ModoForm.Alta && UsuarioActual.Clave == this.txtPass.Text.ToString() && formLogin.PersonaActual.TipoPersona == Persona.TipoPersonas.Administrador) ||
-                formLogin.PersonaActual.TipoPersona != Persona.TipoPersonas.Administrador) &&
-                this.txtEmail.ToString().Contains("@") &&
-                (this.txtEmail.ToString().Contains(".com") || this.txtEmail.ToString().Contains(".com.ar")))
+            if (
+                ((Modo == ApplicationForm.ModoForm.Alta && this.txtUsuario.Text.ToString() != "") | 
+                (Modo != ApplicationForm.ModoForm.Alta &&
+                formLogin.PersonaActual.TipoPersona == Persona.TipoPersonas.Administrador &&
+                UsuarioActual.Clave == this.txtPass.Text.ToString()) |
+                (Modo != ApplicationForm.ModoForm.Alta &&
+                formLogin.PersonaActual.TipoPersona != Persona.TipoPersonas.Administrador)) &
+                this.txtPass.Text.ToString() != "" &
+                this.txtRepetirPass.Text.ToString()!="" &
+                this.txtPass.Text.ToString().Length >= 8 &
+                this.txtPass.Text.ToString() == this.txtRepetirPass.Text.ToString())
             {
                 return true;
             }
@@ -170,24 +164,28 @@ namespace Academia
         private void btnAceptar_Click(object sender, EventArgs e)
         {
 
-            if (Modo == ModoForm.Alta && this.Validar() == true)
+            if (Validar())
             {
-                this.GuardarCambios();
-                MessageBox.Show("Usuario registrado exitosamente", "Nuevo Usuario", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                this.Close();
+                if (Modo == ModoForm.Alta)
+                {
+                    this.GuardarCambios();
+                    MessageBox.Show("Usuario registrado exitosamente", "Nuevo Usuario", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    this.Close();
+                }
+                else if (Modo == ModoForm.Modificacion)
+                {
+                    this.GuardarCambios();
+                    MessageBox.Show("Usuario modificado exitosamente", "Modificar Usuario", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    this.Close();
+                }
+                else if (Modo == ModoForm.Baja)
+                {
+                    this.GuardarCambios();
+                    MessageBox.Show("Usuario eliminado correctamente", "Eliminar Usuario", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    this.Close();
+                }
             }
-            else if (Modo == ModoForm.Modificacion && this.Validar() == true)
-            {
-                this.GuardarCambios();
-                MessageBox.Show("Usuario modificado exitosamente", "Modificar Usuario", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                this.Close();
-            }
-            else if (Modo == ModoForm.Baja && this.Validar() == true)
-            {
-                this.GuardarCambios();
-                MessageBox.Show("Usuario eliminado correctamente", "Eliminar Usuario", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                this.Close();
-            }
+
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)

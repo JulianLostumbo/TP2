@@ -43,7 +43,7 @@ namespace Academia
             }
             else
             {
-                MessageBox.Show("Debe seleccionar una fila", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Debe ingresar una nota válida", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 

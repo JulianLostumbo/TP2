@@ -114,7 +114,7 @@ namespace Academia
             cmbPlanes.DisplayMember = "Descripcion";
             if (Modo != ModoForm.Alta)
             {
-                cmbPlanes.SelectedItem = ComisionActual.IdPlan;
+                cmbPlanes.SelectedValue= ComisionActual.IdPlan;
 
             };
         }
@@ -127,7 +127,7 @@ namespace Academia
 
         public override bool Validar() 
         {
-            if (this.txtDescripcion.ToString() != "" && this.txtAnioEspecialidad.ToString() != "" && this.cmbPlanes.SelectedItem.ToString() != string.Empty  && this.txtAnioEspecialidad.ToString() != "0")
+            if (this.txtDescripcion.Text.ToString() != "" && this.txtAnioEspecialidad.Text.ToString() != "" && this.cmbPlanes.SelectedItem.ToString() != string.Empty  && this.txtAnioEspecialidad.Text.ToString() != "0")
             {
                 return true;
             }

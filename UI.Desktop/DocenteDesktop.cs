@@ -141,7 +141,7 @@ namespace Academia
             cmbDocente.DisplayMember = "Apellido";
             if (Modo != ModoForm.Alta)
             {
-                cmbDocente.SelectedItem = DocenteActual.IdDocente;
+                cmbDocente.SelectedValue = DocenteActual.IdDocente;
 
             };
         }
@@ -152,7 +152,7 @@ namespace Academia
 
             if (Modo != ModoForm.Alta)
             {
-                cmbCargo.SelectedItem = (DocenteCurso.TiposCargos)Enum.Parse(typeof(DocenteCurso.TiposCargos), cmbCargo.SelectedValue.ToString());
+                cmbCargo.SelectedItem = DocenteActual.Cargo;
 
             }
 
@@ -166,7 +166,7 @@ namespace Academia
             cmbCurso.DisplayMember = "ID";
             if (Modo != ModoForm.Alta)
             {
-                cmbCurso.SelectedItem = DocenteActual.IdCurso;
+                cmbCurso.SelectedValue = DocenteActual.IdCurso;
 
             };
         }
